@@ -27,18 +27,18 @@ Pattern](http://snook.ca/archives/javascript/no-love-for-module-pattern/),
 
 * [jQuery home page](http://jquery.com),
 * [jQuery API Browser](http://api.jquery.com),
-* [Ściąga z selektorów jQuery](/doc/cheatsheets/rc007-010d-jquery_selectors.pdf)
+* [Ściąga z selektorów jQuery](<%= url_for "/doc/cheatsheets/rc007-010d-jquery_selectors.pdf" %>)
   (zawiera też tabelę z selektorami CSS).
 * [Updated jQuery 
   Bookmarklet](http://www.learningjquery.com/2008/06/updated-jquery-bookmarklet),
   Karl Swedberg
 
-Szablon pliku do testowania jQuery: [skel.html](/doc/skel.html).
-
+Szablon pliku do testowania jQuery: 
+[skel.html](<%= url_for "/doc/skel.html" %>)
 
 ## Zebra effect
 
-Pierwsze koty za płoty:  [ABBA](/examples/javascript/abba).
+Pierwsze koty za płoty:  [ABBA](<%= url_for '/examples/javascript/abba' %>).
 
 
 ## Sortowanie kolumn tabeli
@@ -50,7 +50,7 @@ i zapamiętuje go, po zamianie na duże litery,
 w pseudoatrybucie elementu o nazwie *sortKey*.
 Ta technika nazywa się **expando**.
 
-[Sortowanie](/examples/javascript/sort).
+[Sortowanie](<%= url_for '/examples/javascript/sort' %>).
 
     $('#alpha').each(function() {
       var $table = $(this);  // zapamiętaj

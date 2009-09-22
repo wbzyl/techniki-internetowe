@@ -3,9 +3,6 @@ require 'ti'
 #gem 'rack-htmltidy'
 #require 'rack/htmltidy'
 
-gem 'wbzyl-sinatra-static-assets'
-require 'sinatra/static_assets'
-
 use Rack::ShowExceptions
 use Rack::Lint
 
