@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script>
+  $(document).ready(function(){
+    $.ajax({
+      dataType: 'jsonp',
+      data: 'id=8',
+      jsonp: 'callback',
+      url: 'http://localhost:4567/jsonp',
+      success: function (data) {
+        // alert(data); // [object Object]
+        alert('Ticker: ' + data.symbol + ' Price: ' + data.price);
+      },
+    });
+  });
+  </script>
+</head>
+<body><h3>JSONP test via .ajax call</h3></body>
+</html>

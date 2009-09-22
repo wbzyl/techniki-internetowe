@@ -1,0 +1,17 @@
+.javascript .normal {}
+.javascript .comment { color: #005; }
+.javascript .keyword { color: #A00; }
+.javascript .predefined_types { color: #DD0000; }
+
+.javascript .char { color: #F07; }
+.javascript .ident { color: #004; }
+
+.javascript .hex { color: #F99; }
+.javascript .oct { color: #F99; }
+.javascript .integer { color: #F99; }
+.javascript .float { color: #F99; }
+.javascript .unicode { color: #F99; }
+
+.javascript .string { color: #944; background: #FFE; }
+
+.javascript .other { color: black; }

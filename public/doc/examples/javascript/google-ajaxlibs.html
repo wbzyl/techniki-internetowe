@@ -1,0 +1,114 @@
+<!--
+     Przykład ze strony:
+
+       http://marcgrabanski.com/webroot/resources/jquery-ui-google-maps/tutorial-part1.html
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <link href="/stylesheets/examples/javascript/google.css" media="all" rel="Stylesheet" type="text/css" charset="utf-8">
+
+  <style media="screen" type="text/css">
+    #map { width: 500px; height: 500px; }
+
+    #list { float: left; width: 200px; background: #eeeeee; }
+    #list li:hover { background: #444444; color: #cccccc; cursor: pointer; cursor: hand; }
+    #list li { margin: 10px 0; list-style: none; }
+
+    #message { position: absolute; padding: 10px; background: #555555; color:#ffffff; width: 75px; }
+  </style>
+
+  <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAclFeD2G7qVIZBibltVswbRT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQi-b1may6II5J8L2Hq5iVR4QV20g"></script>
+
+  <script type="text/javascript" charset="utf-8">
+    google.load("maps", "2");
+    google.load("jquery", "1");
+  </script>
+
+  <script type="text/javascript" charset="utf-8">
+     $(document).ready(function() {
+
+       var map = new google.maps.Map2(document.getElementById('map'));
+       var zakopane = new google.maps.LatLng(49.29196, 19.94800);
+       map.setCenter(zakopane, 10);
+
+       // Set 4 random points.
+
+       var bounds = map.getBounds();
+       var southWest = bounds.getSouthWest();
+       var northEast = bounds.getNorthEast();
+       var lngSpan = northEast.lng() - southWest.lng();
+       var latSpan = northEast.lat() - southWest.lat();
+       var markers = [];
+       for (var i = 0; i < 4; i++) {
+          var point = new google.maps.LatLng(southWest.lat() + latSpan * Math.random(),
+                                             southWest.lng() + lngSpan * Math.random());
+          marker = new google.maps.Marker(point);
+          map.addOverlay(marker);
+          markers[i] = marker;
+       }
+
+       // Add a panTo behavior to center the map on the marker.
+       // marker.getLatLng() returns the latitude and longitude of the
+       // marker, while map.panTo() allows us to center the map on that
+       // latitude and longitude.
+
+       $(markers).each(function(i,marker) {
+
+         google.maps.Event.addListener(marker, "click", function() {
+           // Bez efektów specjalnych
+           // map.panTo(marker.getLatLng());
+           // Efekty: FadeIn, etc.
+           displayPoint(marker, i)
+         });
+
+         $("<li />")
+           .html("Random Place " + (i + 1))
+           .click(function() {
+              map.panTo(marker.getLatLng()); 
+           })
+          .appendTo("#list");
+
+       });
+
+       // We have to place the message div inside the map. To do this, we
+       // can use jQuery to append it to an object. The map view is
+       // seperated into panes. Each pane is a div layered on top of the
+       // other. To get the div object that we want to attach our message
+       // div to, we can use map.getPane(PANE)
+
+       $("#message").appendTo(map.getPane(G_MAP_FLOAT_SHADOW_PANE));
+
+       // A helper function
+
+       function displayPoint(marker, index) {
+           $("#message").hide();
+           var moveEnd = google.maps.Event.addListener(map, "moveend", function() {
+             var markerOffset = map.fromLatLngToDivPixel(marker.getLatLng());
+             $("#message").fadeIn().css({ top:markerOffset.y, left:markerOffset.x });
+             google.maps.Event.removeListener(moveEnd);
+           });
+           map.panTo(marker.getLatLng());
+       }
+
+     });
+  </script>
+
+  <title>Random Places around Zakopane</title>
+</head>
+  
+<body>
+
+  <div id="map"></div>
+  <ul id="list"></ul>
+
+  <div id="message">Constant text.</div>
+
+  <p class="clear">&nbsp;</p>
+
+</body>
+  
+</html>

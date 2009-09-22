@@ -1,0 +1,57 @@
+<h1 class="header">HTML, CSS, Javascript</h1>
+
+
+<h2>HTML 4.01, XHTML 1.1, HTML 5</h2>
+
+<ol>
+<% @html.each do |section| %>
+  <li><%= link_to section, 'html' %></li>
+<% end %>
+</ol>
+
+<h2>CSS 2.1</h2>
+
+<ol>
+<% @css.each do |section| %>
+  <li><%= link_to section, 'css' %></li>
+<% end %>
+</ol>
+
+<h2>Javascript</h2>
+
+<ol>
+<% @javascript.each do |section| %>
+  <li><%= link_to section, 'javascript' %></li>
+<% end %>
+</ol>
+
+
+<h1 class="header">Technologie serwisów internetowych</h1>
+
+
+<h2>Sinatra</h2>
+
+<ol>
+<% @sinatra.each do |section| %>
+  <li><%= link_to section, 'sinatra' %></li>
+<% end %>
+</ol>
+
+
+<h1 class="header">SQL Receptury</h1>
+
+<ol>
+<% @sql.each do |section| %>
+  <li><%= link_to section, 'sql' %></li>
+<% end %>
+</ol>
+
+
+<h1 class="header">Ty i Wydajność. Wydajność i Ty</h1>
+
+<ol>
+<% @performance.each do |section| %>
+  <li><%= link_to section, 'performance' %></li>
+<% end %>
+</ol>
+

@@ -1,0 +1,21 @@
+## Szablon HTML 4.01
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+        "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link href="/favicon.ico" rel="SHORTCUT ICON">
+        <link href="dummy.css" media="all" rel="Stylesheet"
+              type="text/css" charset="utf-8">
+        <script src="dummy.js" 
+              type="text/javascript" charset="utf-8"></script>
+        <title>Jakiś tytuł</title>
+      </head>
+      <body>
+        <!-- ciało dokumentu -->
+      </body>
+    </html>
+{:lang=html}
+
+## Szablon XHTML 1.0

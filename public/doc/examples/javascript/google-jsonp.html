@@ -1,0 +1,80 @@
+<!--
+     The key below is good for all URLs: http://localhost/
+     This key is valid for these APIs:
+
+         JavaScript Maps API
+         Maps API for Flash
+         HTTP Service 
+
+     jQuery Documentation: http://code.google.com/intl/pl/apis/ajax/documentation/
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link href="/stylesheets/examples/javascript/google.css" media="all" rel="Stylesheet" 
+      type="text/css" charset="utf-8">
+
+<style media="screen" type="text/css">
+#service { 
+  border: 1px solid black; 
+  padding: 20px; 
+  background-color: white; 
+}
+
+#search {
+  position: relative;
+  margin-bottom: 20px;
+}
+#search-text {
+  width: 16em;
+}
+.overlabel {
+  position: relative;
+}
+.overlabel label {
+  position: absolute;  
+  top: 6px;
+  left: 3px;
+  color: #999;
+  cursor: text;
+}
+#search label {
+  display: block;
+}
+</style>
+
+<script src="http://www.google.com/jsapi?key=ABQIAAAAclFeD2G7qVIZBibltVswbRT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQi-b1may6II5J8L2Hq5iVR4QV20g"></script>
+<script>
+  // Load the latest version of jQuery 1.* library.
+  google.load("jquery", "1");
+</script>
+
+<script type="text/javascript" src="/javascripts/jquery.form.js"></script>
+
+<script src="/javascripts/examples/javascript/json.js"></script>
+
+<title>JSONP technique</title>
+</head>
+  
+<body>
+
+<h2>Google search JSONP example</h2>
+
+<pre id="service"></pre>
+
+<h2>JSONP + jQuery.Form Plugin</h2>
+
+<form id="GoogleForm" 
+      action="http://ajax.googleapis.com/ajax/services/search/web?v=1.0" 
+      method="get" 
+      accept-charset="utf-8">
+  <label for="q">search with google</label>
+  <input type="text" name="q" id="q" />
+</form>
+
+</body>
+  
+</html>

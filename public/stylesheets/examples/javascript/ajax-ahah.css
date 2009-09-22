@@ -1,0 +1,58 @@
+#content {
+  margin: 100px 0 25px 0;
+  padding: 1em 2em;
+  min-height: 300px;
+  border: 1px solid #330A04;
+  clear: both;
+}
+
+#throbber {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#fortune {
+  color: white;
+}
+
+#love, #linux, #asciiart, #pets {
+  float: left;
+  width: 190px;
+  height: 44px;
+  text-align: center;
+  font-size: 18pt;
+}
+
+.author {
+  font-style: italic;
+  text-align: right;
+  padding-right: 4em;
+}
+
+#love {
+  background-color: black;
+  cursor: pointer;
+}
+#linux {
+  background-color: #084B78;
+  cursor: pointer;
+}
+#asciiart {
+  background-color: #1C1C1C;
+  cursor: pointer;
+}
+#pets {
+  background-color: #076CB0;
+  cursor: pointer;
+}
+
+#select {
+  margin: 75px 0 -75px 0;
+  padding: 0;
+}

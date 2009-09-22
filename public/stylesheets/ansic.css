@@ -1,0 +1,18 @@
+.ansic .normal {}
+.ansic .comment { color: #005; }
+.ansic .keyword { color: #A00; }
+.ansic .predefined_types { color: #DD0000; }
+
+.ansic .char { color: #F07; }
+.ansic .ident { color: #004; }
+
+.ansic .hex { color: #F99; }
+.ansic .oct { color: #F99; }
+.ansic .integer { color: #F99; }
+.ansic .float { color: #F99; }
+
+.ansic .string { color: #944; background: #FFE; }
+
+.ansic .preprocessor { color: #FF00FF; }
+
+.ansic .other { color: black; }

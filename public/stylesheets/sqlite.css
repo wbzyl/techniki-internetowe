@@ -1,0 +1,12 @@
+.sqlite .normal {}
+.sqlite .comment { color: #005; }
+
+.sqlite .function { color: #077; }
+.sqlite .keyword { color: #A00; }
+.sqlite .datatype { color: #DD0000; }
+
+.sqlite .ident { color: #004; }
+
+.sqlite .string { color: #944; background: #FFE; }
+
+.sqlite .other { color: black; }

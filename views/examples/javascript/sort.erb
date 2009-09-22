@@ -1,0 +1,108 @@
+<h1>Sortowanie kolumn tabeli</h1>
+
+<h3>Sortowanie alfabetyczne i numeryczne</h2>
+
+<p>
+  W pierwszej tabelce kliknięcie na komórkę tabeli
+  z <b>album</b> spowoduje posortowanie alfabetyczne zawartości
+  komórek w tej kolumnie, a kliknięcie komórki z <b>rok wydania</b>
+  — numeryczne.
+</p>  
+
+<table id="alpha">
+  <colgroup>
+    <col class="title"><col class="year">
+  </colgroup>
+  <thead>
+    <tr>
+      <td class="sort-alpha">album ▲</td>          <!-- U+25B2 -->
+      <td class="sort-numeric">rok wydania ▼</td>  <!-- U+25BC -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Ring Ring</td><td>1973</td></tr>
+    <tr><td>Waterloo</td><td>1974</td></tr>
+    <tr><td>ABBA</td><td>1975</td></tr>
+    <tr><td>Arrival</td><td>1976</td></tr>
+    <tr><td>The Album</td><td>1977</td></tr>
+    <tr><td>Voulez-Vous</td><td>1979</td></tr>
+    <tr><td>Super Trouper</td><td>1980</td></tr>
+    <tr><td>The Visitors</td><td>1981</td></tr>
+  </tbody>
+</table>
+
+
+<h3>Przyspieszanie działanie kodu</h2>
+
+<table id="expando">
+  <colgroup>
+    <col class="title"><col>
+  </colgroup>
+  <thead>
+    <tr>
+      <td class="sort-alpha">album ▲</td>          <!-- U+25B2 -->
+      <td>rok wydania</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Ring Ring</td><td>1973</td></tr>
+    <tr><td>Waterloo</td><td>1974</td></tr>
+    <tr><td>ABBA</td><td>1975</td></tr>
+    <tr><td>Arrival</td><td>1976</td></tr>
+    <tr><td>The Album</td><td>1977</td></tr>
+    <tr><td>Voulez-Vous</td><td>1979</td></tr>
+    <tr><td>Super Trouper</td><td>1980</td></tr>
+    <tr><td>The Visitors</td><td>1981</td></tr>
+  </tbody>
+</table>
+
+
+<h3>TableSorter Plugin</h2>
+
+<p>
+  Zmodyfikowany przykład ze strony wtyczki 
+  <a href="http://tablesorter.com/docs">TableSorter</a>.
+</p>
+
+<table id="niedziela" class="tablesorter"> 
+<colgroup>
+  <col width="20%">
+  <col width="20%">
+  <col width="15%">
+  <col>
+</colgroup>
+<thead> 
+<tr> 
+    <th>nazwisko</th> 
+    <th>imię</th> 
+    <th>login</th> 
+    <th>www</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+    <td>Waliński</td> 
+    <td>Sylwester</td> 
+    <td>swalinsk</td> 
+    <td>http://manta.univ.gda.pl/~swalinsk</td> 
+</tr> 
+<tr> 
+    <td>Szuta</td> 
+    <td>Bartosz</td> 
+    <td>bszuta</td> 
+    <td>http://manta.univ.gda.pl/~bszuta</td> 
+</tr> 
+<tr> 
+    <td>Molenda</td> 
+    <td>Radosław</td> 
+    <td>rmolenda</td> 
+    <td>http://manta.univ.gda.pl/~rmolenda</td> 
+</tr> 
+<tr> 
+    <td>Szor</td> 
+    <td>Michał</td> 
+    <td>mszor</td> 
+    <td>http://manta.univ.gda.pl/~mszor</td> 
+</tr> 
+</tbody> 
+</table> 

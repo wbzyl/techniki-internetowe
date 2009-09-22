@@ -1,0 +1,19 @@
+body {
+  background-color: #DDDDDD;
+  font: normal 14px/1.6 sans-serif;
+}
+@media projection {
+  body {
+    background-color: #FFF889; /* bright ideas */
+    font: bold 28px/1.6 sans-serif;
+  }
+  h2 {
+    page-break-before: always;
+  }      
+  h1 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 50%;
+  }
+}

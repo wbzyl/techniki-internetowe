@@ -1,0 +1,12 @@
+[
+  [ "intro", "Wstęp" ],
+  [ "select", "Odczytywanie danych z bazy" ],
+  [ "sort", "Sortowanie wyników zapytań" ],
+  [ "group_by", "Grupowanie wyników zapytań" ],
+  [ "join", "Łączenie tabel w zapytaniach" ],
+  [ "rozenshtein", "Tabele Rozenshteina" ],
+  [ "insert", "Wprowadzanie i aktualizowanie danych w tabelach" ],
+  [ "delete", "Usuwanie rekordów" ],
+  [ "dates", "Operacje na liczbach i datach" ],
+  [ "raporty", "Tworzenie raportów" ]
+]

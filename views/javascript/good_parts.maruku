@@ -1,0 +1,282 @@
+Tytuł tego modułu i wszystkie przykłady pochodzą książki
+[*JavaScript: The Good Parts*](http://oreilly.com/catalog/9780596517748/index.html)
+napisanej przez guru tego języka, Douglasa Crockforda.
+
+*Uwaga terminologiczna:*
+Funkcję będącą własnością obiektu nazywamy *metodą*.
+Na przykład, w poniższym kodzie *increment* jest metodą.
+
+    var myObject = {
+      value: 0,
+      increment: function (inc) {
+        this.value += typeof inc == 'number' ? inc : 1;
+      }
+    };
+    myObject.increment();
+    print(myObject.value);  // 1
+      
+    myObject.increment(2);
+    print(myObject.value);  // 3
+{:lang=javascript}
+
+Uwaga dotycząca uruchamiania kodu:
+Kod uruchamiamy w interpreterze `js`
+pochodzącym z pakietu *js* 
+(JavaScript interpreter and libraries).
+Listę funkcji dostępnych w `js` uzyskamy wpisując `help()`
+i wciskając enter.
+
+
+## The Function Invocation Pattern
+
+Obchodzimy błąd projektowy jezyka:
+W wewnętrznej funkcji pomocniczej `this` jest 
+*bound to the global object*, a nie do obiektu 
+`myObject`. 
+
+Na szczęście łatwo jest obejść ten błąd.
+Konwencja: nazwa zmiennej której
+używamy do zapamiętania referencji do
+obiektu, to zwyczajowo `that`.
+
+    myObject.double = function () {
+      var that = this;  // workaround
+      var helper = function () {
+        that.value += that.value;
+      }
+      helper(); // wywołujemy funkcję pomocniczą
+    }
+    myObject.double();
+    print(myObject.value);
+{:lang=javascript}
+
+
+## Augumenting Types, I
+
+Dwa przykłady.
+
+Zaczynamy od definicji metody pomocniczej
+o nazwie *method*.
+
+    Function.prototype.method = function (name, func) {
+      if (!this.prototype[name]) {
+        this.prototype[name] = func;
+      }
+    };
+{:lang=javascript}    
+
+Dodajemy metodę *integer* do typu 'number'.
+
+    Number.method('integer', function () {
+      return Math[this < 0 ? 'ceiling' : 'floor'](this);
+    });
+
+    (-10 / -3).integer();
+{:lang=javascript}
+
+Dodajemy metodę *trim* do typu 'string'.
+
+    String.method('trim', function () {
+      return this.replace(/^\s+|\s+$/g, '');
+    });
+
+    "  ala ma kota  ".trim();
+{:lang=javascript}
+
+
+## Closures
+
+Funkcje wewnętrzne mają dostęp do parametrów i zmiennych
+funkcji w której są definiowane, za wyjątkiem
+**this** oraz **arguments**.
+
+    var fade = function (node) {
+      var level = 1;
+      var step = function () {
+        var hex = level.toString(16);
+        node.style.backgroundColor = '#FFFF' + hex + hex;
+        if (level < 15) {
+          level += 1;
+          setTimeout(step, 100);
+        }
+      };
+      setTimeout(step, 100);
+    }
+    fade(document.body);
+{:lang=javascript}
+
+Powyższy i poniższy kod uruchamiamy w konsoli rozszerzenia *Firebug*.
+
+    var add_the_handlers = function (nodes) {
+      var i;
+      for (i = 0; i < nodes.length; i += 1) {
+        nodes[i].onclick = function (i) {
+          return function (event) {
+            alert(i);
+          };
+        }(i);
+      } 
+    };
+    elems = document.getElementsByTagName('p');
+    add_the_handlers(elems);
+{:lang=javascript}
+
+
+## Moduły
+
+Tworzymy obiekt do generowania *serial numbers*.
+
+    var sequencer = function () {
+      var prefix = '';
+      var seq = 0;
+      
+      return {
+        set_prefix: function (p) {
+          prefix = String(p);
+        },
+        set_seq: function (s) {
+          seq = s;
+        },
+        gensym: function () {
+          var result = prefix + seq;
+          seq += 1;
+          return result;
+        }
+      };
+    }();  //  <<-- !!
+
+    sequencer.set_prefix('Q');
+    sequencer.set_seq(1000); 
+    sequencer.gensym();
+{:lang=javascript}
+
+
+## Curry
+
+*Currying* to funkcja utworzona z funkcji i ustalenia
+kilku argumentów (zazwyczaj jednego).
+
+Dodajemy do języka metodę **curry**.
+
+    Function.method('curry', function () {
+      var args = arguments, that = this;
+      return function () {
+        return that.apply(null, args.concat(arguments));
+      };
+    });  
+    // nie działa, ponieważ arguments nie jest *prawdziwą* tablicą
+    // (arguments nie ma metody concat)
+{:lang=javascript}
+
+Działający kod:
+
+    Function.method('curry', function () {
+      var slice = Array.prototype.slice,
+          args = slice.apply(arguments), 
+          that = this;
+      return function () {
+        return that.apply(null, args.concat(slice.apply(arguments)));
+      };
+    });  
+
+    var add = function (a, b) {
+      return a + b;
+    }
+    var add2 = add.curry(2);
+    add2(6);
+{:lang=javascript}
+
+
+## Memoization
+
+Unikamy niepotrzebnych obliczeń, zapamiętując
+(gdzie?) wyniki wykonanych obliczeń.
+
+Bez memoization:
+
+    var fibonacci = function (n) {
+      return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
+    };
+    for (var i = 0; i <= 12; i += 1) {
+      print('// ' + i + ': ' + fibonacci(i));
+    };
+{:lang=javascript}
+
+Z memoization:
+
+    var fibonacci = function () {
+      var memo = [0, 1];
+      var fib = function (n) {
+        var result = memo[n];
+        if (typeof result !== 'number') {
+          result = fib(n - 1) + fib(n - 2);
+          memo[n] = result;
+        };
+        return result;
+      };
+      return fib;
+    }();
+    for (var i = 0; i <= 12; i += 1) {
+      print('// ' + i + ': ' + fibonacci(i));
+    };
+{:lang=javascript}
+
+Funkcja ułatwiająca kodowanie *memoized* funkcji.
+
+    var memoizer = function (memo, fundamental) {
+      var shell = function (n) {
+        var result = memo[n];
+        if (typeof result !== 'number') {
+          result = fundamental(shell, n);
+          memo[n] = result;
+        };
+        return result;
+      };
+      return shell;
+    };
+    
+    var fibonacci = memoizer([0, 1], function(shell, n) {
+      return shell(n - 1) + shell(n - 2);
+    });
+    for (var i = 0; i <= 12; i += 1) {
+      print('// ' + i + ': ' + fibonacci(i));
+    };
+
+    var factorial = memoizer([1], function (shell, n) {
+      return n * shell(n - 1);
+    });
+    for (var i = 0; i <= 10; i += 1) {
+      print('// ' + i + ': ' + factorial(i));
+    };
+{:lang=javascript}
+
+
+## Augumenting Types, X
+
+Do podstawowych typów języka można dodawać swoje metody, ponieważ
+każdy obiekt utworzony via `{ ... }` dziedziczy metody
+standardowego obiektu języka `Object.prototype`.
+
+Metoda `beget`, dodana do obiektu `Object`, tworzy
+nowy obiekt używający podanego obiektu jako
+swojego prototypu.
+
+    if (typeof Object.beget !== 'function') {
+      Object.beget = function(o) {
+        var F = function () {};
+        F.prototype = o;
+        return new F();
+      }
+    }
+{:lang=javascript}
+
+Przykład użycia: `another_stooge` dziedziczy metody
+po `stooge`.
+
+    var stooge = {
+      "first-name": "Jerome",
+      "last-name": "Howard"
+    };
+    var another_stooge = Object.beget(stooge);
+    another_stooge.nickname = "Moe";
+{:lang=javascript}

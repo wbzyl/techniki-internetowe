@@ -1,0 +1,43 @@
+## HTML
+
+1. Przygotować walidującą się stronę w HTML 4.01 strict.
+   Strona powinna zawierać następujące elementy:
+   a, blockquote, img, h1, h2, h3, ol, p, ul.
+
+1. Do przygotowanej strony dodać jeden z szablonów
+   ze strony <a href="http://www.freecsstemplates.org">Free CSS
+   Templates</a>. Strona powinna zawierać menu z linkami
+   do kilku innych stron.
+
+1. Zainstalować dodatek
+   [FullerScreen](https://addons.mozilla.org/en-US/firefox/addon/4650")
+   — really full screen with slideshow support.
+   Przygotować slideshow korzystający z możliwości oferowanych
+   przez to rozszerzenie.
+   [Tutaj jest przykład takiego pokazu
+   slajdów](http://disruptive-innovations.com/zoo/fullerscreen/samples/projection-test.html)
+   (klawiszologia: f11 — toggle slideshow, shift+f11 — toggle slide manager).
+
+1. Przygotować dwie tabelki z planem zajęć — **pionową** i **poziomą**.
+   W tabelce pionowej dni tygodnia należy umieścić w główce tabeli,
+   a w tabelce poziomej — w pierwszej kolumnie.
+
+1. Przygotować jeszcze dwie tabelki: pionową i poziomą,
+   z tym samym, aktualnym programem TV dowolnej wybranej przez siebie stacji.
+
+
+**Uwaga:** każda tabelka powinna zawierać następujące elementy:
+table, tr, td, caption, thead, tbody, tfoot, colgroup, col.
+Należy też skorzystać z atrybutów: colspan i rowspan.
+
+
+## Haml
+
+1. Przepisać plan zajęć w Haml.
+
+1. Przepisać jeden z szablonów
+   [freeCSStemplates](http://www.freecsstemplates.org).
+
+1. Przygotować w HAML szablon do dokumentów
+   w formacie Atom 1.0 oraz RSS 2.0.
+   Definicje znajdziesz w [Wikipedii](http://pl.wikipedia.org)

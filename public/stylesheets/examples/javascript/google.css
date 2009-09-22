@@ -1,0 +1,34 @@
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #20416A;
+}
+
+body {
+  margin: 1em auto 1em auto;
+  padding: 1em 2em 2em 1em;
+  width: 760px;
+  border: 1px solid black;
+  background-color: #E8DDCB;
+}
+
+#map {
+  width: 480px; 
+  height: 480px; 
+  float: left; 
+  border: 1px solid black;
+}
+
+#route {
+  width:  240px; 
+  height: 470px; 
+  float: right; 
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+}
+
+.clear {
+  clear: both;
+}

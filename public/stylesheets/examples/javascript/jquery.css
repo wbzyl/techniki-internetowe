@@ -1,0 +1,26 @@
+/* sand fly: #B32900
+       tuna: #DE8531
+*/
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #330A04;
+}
+
+body {
+  margin: 1em auto 1em auto;
+  padding: 0 2em 2em 2em;
+  width: 760px;
+  border: 1px solid black;
+  background-color: #FFF4B0;
+  font: normal 14px/1.6 Tahoma, Verdana, sans-serif;
+}
+
+.clear {
+  clear: both;
+}
+
+h1, h2, h3, h4 {
+  color: #6C1305;
+}

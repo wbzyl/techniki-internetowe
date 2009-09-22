@@ -1,0 +1,15 @@
+---
+environment: production
+chdir: /home/pracown/wbzyl/www/ti/current
+address: localhost
+user: wbzyl
+group: wbzyl
+port: 4000
+servers: 1
+pid: /home/pracown/wbzyl/www/ti/shared/pid/thin.pid
+log: /home/pracown/wbzyl/www/ti/shared/log/thin.log
+rackup: /home/pracown/wbzyl/www/ti/current/config.ru
+max_conns: 1024
+timeout: 16
+max_persistent_conns: 512
+daemonize: true

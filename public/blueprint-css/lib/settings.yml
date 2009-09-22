@@ -1,0 +1,14 @@
+techniki-internetowe:
+  path: /home/wbzyl/blueprint/ti/public/stylesheets
+  custom_layout:
+    column_count: 21
+    column_width: 33
+    gutter_width: 11
+  plugins:
+    - fancy-type
+    - buttons
+    - link-icons
+  semantic_classes:
+    "#footer, #header": ".span-21, div.span-21"
+    "#content": ".span-13, div.span-13"
+    "#notes": ".span-8, div.span-8"

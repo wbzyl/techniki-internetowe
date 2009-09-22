@@ -1,0 +1,103 @@
+html {
+  /* http://www.hicksdesign.co.uk/journal/forcing-scrollbars-now-even-better */
+  height: 100%; 
+  margin-bottom: 1px;
+
+  background-color: #3D6AFF;
+  background-image: url(images/clouds-impressions.png);
+}
+
+body {
+  margin: 22px 0px 22px 44px; 
+  padding: 0 0 22px 22px;
+  width: 913px;
+  background-color: #E3E8CF;
+  border: 1px solid #403B33;
+  line-height: 1.6;
+}
+
+h1.header {
+  font-weight: bold;
+  background-color: #70AFC4;
+  color: #54310E;
+  margin: 0 0 22px -22px;
+  padding: 22px 0 11px 22px;
+  border-bottom: none;
+}
+
+#content {
+  position: relative;
+}
+
+h2, h3, h4 {
+  color: #286A80;
+}
+
+h2 {
+  border-bottom: 2px dotted #286A80;
+}
+
+blockquote {
+  margin-right: 11px;
+  width: 278px;
+  margin: 0 -581px 0 581px;
+  float: right; 
+  position: absolute;
+  padding: 1em 1.5em 0 1.5em;
+  background: #ADD8C7;
+}
+
+blockquote img {
+  display: block;
+  margin: 0 auto 11px auto;
+}
+
+blockquote p.author {
+  color: #0007CC;
+  font-style: italic;
+  text-align: right;
+  padding-right: 44px;
+  margin-top: -1em;
+}
+
+pre, code {
+  font-family: Andale Mono, monospace; 
+}
+
+pre {
+   margin-left: -28px;
+   border-left: 11px solid #403B33;
+   padding-left: 22px;
+}
+
+pre code {
+   border: none;
+   padding: 0;
+   margin: 0;
+}
+
+code {
+   border: 1px solid #403B33;
+   padding: 0.06em 0.125em;
+   margin: 0 2px;
+}
+
+caption {
+  text-align: right;
+}
+
+thead th {
+  background-color: #ADD8C7;
+}
+
+.table1 {
+  background-color: #EB7C7C;
+}
+
+.table2 {
+  background-color: #ECB39F;
+}
+
+li ul {
+  margin-bottom: 1.5em;
+}

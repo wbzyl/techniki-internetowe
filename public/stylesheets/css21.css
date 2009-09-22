@@ -1,0 +1,43 @@
+/*
+   zobacz:
+     podstawowe kolory -- http://msdn2.microsoft.com/en-us/library/ms531197.aspx
+     nazwy kolorów     -- http://msdn2.microsoft.com/en-us/library/aa358802.aspx
+*/
+
+.css21 .normal {}
+
+.css21 .comment { color: #888; }
+.css21 .cdo { color: #666; }
+.css21 .cdc { color: #666; }
+.css21 .string { color: #944; background: #FFE; }
+.css21 .invalid { color: #FF0000; }
+.css21 .keyword { color: #BB0000; }
+.css21 .property { color:  #ff4500; }
+.css21 .ident { color: #000080; }
+.css21 .id { color: #0000FF; }
+
+.css21 .important { color: #EE0000; background: #ffd700;}
+
+/* @ keywords */
+.css21 .import { color: #A0A; }
+.css21 .page { color: #A0A; }
+.css21 .media { color: #A0A; }
+.css21 .charset { color: #A0A; }
+
+.css21 .uri { color: #7BB; }
+.css21 .function { color: #077; }
+
+/* numbers */
+.css21 .hash { color: #07F; }
+.css21 .ems { color: #07F; }
+.css21 .exs { color: #07F; }
+.css21 .length { color: #07F; }
+.css21 .angle { color: #07F; }
+.css21 .time { color: #07F; }
+.css21 .freq { color: #07F; }
+.css21 .dimension { color: #07F; }
+.css21 .percentage { color: #07F; }
+.css21 .number { color: #07F; }
+
+/* html 4.01 tags */
+.css21 .tag { color: #008000; }

@@ -1,0 +1,41 @@
+.poem {
+  width: 400px;
+  white-space: pre;
+  margin: 0;
+}
+.poem .stanza {
+  margin: -0.5em 1em -0.5em 1em;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+.emphasized {
+  font-style: italic;
+  border: 1px solid #888888;
+}
+
+table {
+  width: 399px;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #B32900;
+  color: white;
+}
+
+td {
+  padding-left: 2em;
+  border: 1px solid #888888;
+}
+
+.odd {
+  background-color: #DE8531;
+}
+
+.even {
+  background-color: #FFF79D;
+}
+
+.title {
+  width: 66%;
+}

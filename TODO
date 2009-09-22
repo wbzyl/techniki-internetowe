@@ -1,0 +1,10 @@
+
+Maruku BUG: 
+
+  w automatycznie generowanych `id` pomijane są polskie literki
+
+Throbber:
+
+  wygenerować w odpowiednich kolorach:
+
+  Online Throbber Generator: http://www.ajaxload.info/
