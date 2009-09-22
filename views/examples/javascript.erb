@@ -2,17 +2,15 @@
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="/stylesheets/examples/javascript/jquery.css" 
-          type="text/css" media="screen" charset="utf-8">
-    <link rel="stylesheet" href="/stylesheets/examples/javascript/<%= @example %>.css" 
-          type="text/css" media="screen" charset="utf-8">
 
-    <script src="/javascripts/jquery.js" 
+    <%= stylesheet_link_tag "/stylesheets/examples/javascript/jquery.css",
+                            "/stylesheets/examples/javascript/#{@example}.css" %>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" 
             type="text/javascript" charset="utf-8"></script>
-    <script src="/javascripts/jquery.tablesorter.js" 
-            type="text/javascript" charset="utf-8"></script>
-    <script src="/javascripts/examples/javascript/<%= @example %>.js" 
-            type="text/javascript" charset="utf-8"></script>
+
+    <%= javascript_script_tag "/javascripts/jquery.tablesorter.js",
+                              "/javascripts/examples/javascript/#{@example}.js" %>
     
     <title>Techniki internetowe</title>
   </head>
