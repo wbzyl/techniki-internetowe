@@ -1,0 +1,28 @@
+
+# Moje notatki do wykładów.
+
+## WWW in nutshell
+
+  Znaczniki HTML. Kodowanie
+  Tabelki, obrazki, linki, listy, akapity.
+  Elementy: div i span. Atrybuty elementów;
+  atrybuty class oraz id.
+
+  CSS: składnia
+  Ustawianie kolorów, marginesów, wypełnień.
+  Elementy blokowe oraz inline.
+
+  Nieco Javascript w wersji jQuery.
+
+  HTTP:
+   Rack: proste przykłady z middleware
+
+   Sinatra: kontroler z routingiem i metodami pomocniczymi,
+   widoki ERB, zmienne instancji @costam
+
+   Active Record : zob. pierwszy screencast R. Batesa
+
+
+### WWW w szczegółach
+
+  Datamapper alternatywą dla Active Record.
