@@ -35,11 +35,11 @@ end
 
 helpers do
 
-#  def link_to_chapter(where, part)
-#    filename = where[0]
-#    title = where[1]
-#    "<a href='#{part}/#{filename}'>#{title}</a>"
-#  end
+  def link_to_chapter(where, part)
+    filename = where[0]
+    title = where[1]
+    "<a href='#{part}/#{filename}'>#{title}</a>"
+  end
   
   def title(part, filename)
     part = @toc[part]
