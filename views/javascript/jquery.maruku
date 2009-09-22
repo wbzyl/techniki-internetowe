@@ -164,4 +164,4 @@ Szybkie guglanie dało link do
 [tablesorter](http://tablesorter.com/docs)
 (strona z fajnym demo).
 
-A [tutaj](/examples/javascript/sort) jest demo przeniesione na moją stronę.
+[A tutaj](<%= url_for "/examples/javascript/sort" %>) jest demo przeniesione na moją stronę.
