@@ -350,6 +350,8 @@ za pomocą programu `bluecloth`:
 
 ## Active Record
 
+Tworzymy plik *ar.rb* o zawartości:
+
     require 'rubygems'
     require 'activerecord'
 
@@ -393,6 +395,7 @@ za pomocą programu `bluecloth`:
 
 Teraz uruchamiamy `irb`.
 
+    require 'ar'
     Post.all
     Comments.all
     p1 = Post.find(1)
