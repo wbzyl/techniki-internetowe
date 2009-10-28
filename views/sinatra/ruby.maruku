@@ -402,6 +402,12 @@ Teraz uruchamiamy `irb`.
     c1 = Comment.find 1
     c1.body = "xyz"
     c1.save
+    Post.find_by_body "perl"
+    Post.all(:conditions => {:body => 'ruby'})
+    Post.find_all_by_body "perl"
+    Post.all(:conditions => ['body LIKE ?', '%ub%']) # SQL fragment
+    what = 'ub'
+    Post.all(:conditions => ['body LIKE ?', '%#{what}%'])
 {:lang=ruby}
 
 [Rails API](http://api.rubyonrails.org) — ActiveRecord README
