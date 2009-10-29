@@ -354,11 +354,11 @@ Tworzymy plik *ar.rb* o zawartości:
 
     require 'rubygems'
     require 'activerecord'
-
+    
     ActiveRecord::Base.establish_connection(
       :adapter => 'sqlite3',
-      :dbfile =>  'blog.sqlite3'
-     )
+      :database =>  'blog.sqlite3'
+    )
 
     begin
       ActiveRecord::Schema.define do
