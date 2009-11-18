@@ -1,3 +1,14 @@
+<blockquote>
+<%= image_tag "/images/d_baranovskiy.jpg", :alt => "[Dmitry Baranovskiy]" %>
+<p>
+  <b>Global scope</b>.  Treat it like a public toilet. You can’t avoid
+  it, but while you’re there have the least contact possible: you
+  have no idea who has been here, or what they’ve done, and no idea
+  who and what will come after.
+</p>
+<p class="author">— Dmitry Baranovskiy</p>
+</blockquote>
+
 Tytuł tego modułu i wszystkie przykłady pochodzą książki
 [*JavaScript: The Good Parts*](http://oreilly.com/catalog/9780596517748/index.html)
 napisanej przez guru tego języka, Douglasa Crockforda.
