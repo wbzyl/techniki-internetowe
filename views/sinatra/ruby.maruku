@@ -403,6 +403,7 @@ Teraz uruchamiamy `irb`.
     c1.body = "xyz"
     c1.save
     Post.find_by_body "perl"
+    # Post.find(:all, ...
     Post.all(:conditions => {:body => 'ruby'}, :order => "created_at DESC")
     Post.find_all_by_body "perl"
     Post.all(:conditions => ['body LIKE ?', '%ub%']) # SQL fragment
