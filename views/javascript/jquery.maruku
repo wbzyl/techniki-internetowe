@@ -165,3 +165,19 @@ Szybkie guglanie dało link do
 (strona z fajnym demo).
 
 [A tutaj](<%= url_for "/examples/javascript/sort" %>) jest demo przeniesione na moją stronę.
+
+
+## Więcej fajnych wtyczek:
+
+Tabelki:
+
+* [Expand table rows with jQuery - jExpand 
+  plugin](http://www.jankoatwarpspeed.com/post/2009/07/20/Expand-table-rows-with-jQuery-jExpand-plugin.aspx)
+  — naprawdę fajne!
+* [Flexgrid](http://flexigrid.info/) — przykład z kodami państw: PL/Polska itd.
+* [Ingrid](http://reconstrukt.com/ingrid/) — column resizing
+* [TreeTable](http://blog.cubicphuse.nl/2008/11/12/jquery-treetable-2-0) — 
+  nazwa mówi wszystko
+* [Coda Slider](http://www.ndoherty.biz/tag/coda-slider/) — coś do slajdów?
+* [jCarousel](http://sorgalla.com/jcarousel/) — j.w.
+* [jQuery.ScrollTo](http://flesler.blogspot.com/2007/10/jqueryscrollto.html) — j.w.
