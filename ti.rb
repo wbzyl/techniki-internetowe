@@ -4,19 +4,14 @@
 
 require 'rubygems'
 
-gem 'json'
 require 'json'
 
-gem 'sinatra'
 require 'sinatra'
 
 #gem 'emk-sinatra-url-for'
 #require 'sinatra/url_for'
 
-gem 'wbzyl-sinatra-static-assets'
 require 'sinatra/static_assets'
-
-gem 'wbzyl-sinatra-maruku'
 require 'sinatra/maruku'
 
 before do
