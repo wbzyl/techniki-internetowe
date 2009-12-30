@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="640px"
+   height="480px"
+   id="svg106"
+   sodipodi:version="0.32"
+   inkscape:version="0.46+devel"
+   sodipodi:docname="layout.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs108">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 240 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="640 : 240 : 1"
+       inkscape:persp3d-origin="320 : 160 : 1"
+       id="perspective114" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.5645833"
+     inkscape:cx="320"
+     inkscape:cy="240"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     showgrid="true"
+     objecttolerance="20"
+     gridtolerance="10"
+     inkscape:window-width="1280"
+     inkscape:window-height="978"
+     inkscape:window-x="0"
+     inkscape:window-y="25">
+    <inkscape:grid
+       type="xygrid"
+       id="grid116"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="20px"
+       spacingy="20px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata111">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <rect
+       style="fill:#ffcc00"
+       id="rect118"
+       width="560"
+       height="160"
+       x="40"
+       y="20"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#c8ab37"
+       id="rect120"
+       width="560"
+       height="280"
+       x="40"
+       y="180"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#aad400"
+       id="rect126"
+       width="240"
+       height="120"
+       x="40"
+       y="40"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#d4ff2a"
+       id="rect128"
+       width="320"
+       height="120"
+       x="280"
+       y="40"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="44"
+       y="36"
+       id="text122"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan124"
+         x="44"
+         y="36">#header .span-21</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="56.532623"
+       y="65.893478"
+       id="text130"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan132"
+         x="56.532623"
+         y="65.893478">.push-1 .span-7</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="295.03864"
+       y="65.171768"
+       id="text134"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan136"
+         x="295.03864"
+         y="65.171768">.span-13 .last</tspan></text>
+    <rect
+       style="fill:#ff9955"
+       id="rect142"
+       width="340"
+       height="240"
+       x="40"
+       y="200"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="45.358189"
+       y="197.33156"
+       id="text138"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan140"
+         x="45.358189"
+         y="197.33156">.span-21 .container .showgrid</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="61.893478"
+       y="225.68044"
+       id="text144"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan146"
+         x="61.893478"
+         y="225.68044">#content .push-1 .span-12</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18;-inkscape-font-specification:DejaVu LGC Serif;font-family:DejaVu LGC Serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+       x="122.07723"
+       y="319.57391"
+       id="text148"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan150"
+         x="122.07723"
+         y="319.57391">&lt;%= yield %&gt;</tspan></text>
+    <rect
+       style="fill:#ffccaa"
+       id="rect152"
+       width="220"
+       height="240"
+       x="380"
+       y="200"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="396.10651"
+       y="226.31956"
+       id="text154"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan156"
+         x="396.10651"
+         y="226.31956">.span-8 .last</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:DejaVu LGC Serif;-inkscape-font-specification:DejaVu LGC Serif"
+       x="120.79894"
+       y="126.55134"
+       id="text179"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan181"
+         x="120.79894"
+         y="126.55134">[Logo]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:DejaVu LGC Serif;-inkscape-font-specification:DejaVu LGC Serif"
+       x="511.48361"
+       y="68"
+       id="text183"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan185"
+         x="511.48361"
+         y="68">[links]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:DejaVu LGC Serif;-inkscape-font-specification:DejaVu LGC Serif"
+       x="421.19839"
+       y="319.57391"
+       id="text187"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/wbzyl/public_git/projects/couchdb-tutorial/layout.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan189"
+         x="421.19839"
+         y="319.57391">[quotations]</tspan></text>
+  </g>
+</svg>
