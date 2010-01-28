@@ -271,7 +271,11 @@ W katalogu `lib` uruchamiamy Skrypt `compressor.rb`:
 
 ## Layout, czyli układ strony dla RDiscount
 
-Tak wygląda layout (todo: wstawić layout.png).
+Tak wygląda layout:
+
+<p><%= image_tag("/images/layout.png", :alt => "BlueprintCSS based layout") %></p>
+
+A tak HTML:
 
     <!DOCTYPE html>
     <html>
@@ -313,3 +317,4 @@ Tak wygląda layout (todo: wstawić layout.png).
     </html>
 {:lang=html}
 
+A tak HAML: TODO

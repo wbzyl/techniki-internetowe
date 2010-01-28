@@ -1,6 +1,7 @@
 [
   [ "intro", "Wstęp"],
   [ "hello", "Szablony dokumentów HTML"] ,
+  [ "tables", "Tabele + CSS"] ,
   [ "markdown", "Markdown" ],
   [ "maruku", "Maruku" ],
   [ "haml", "HAML" ],
