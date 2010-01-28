@@ -71,4 +71,4 @@ Plik `projection.css`:
     }
 {:lang="css21"}
 
-[Tutaj jest link do tego przykładu](/examples/css/projection.html).
+[Tutaj jest link do tego przykładu](<%= url_for '/doc/examples/css/projection.html' %>).

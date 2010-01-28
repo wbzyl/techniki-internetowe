@@ -1,21 +1,25 @@
 <!doctype html>
 <meta charset="utf-8" />
-<title>Składanie obramowań</title>
+<title>Obliczanie szerokości tabeli</title>
 <style>
 table { 
   background: #888; 
+  border-spacing: 8px;
+  table-layout: fixed;
+  width: 500px;
   border-collapse: collapse;
-  border: 8px outset gray;
 }
-td           { width: 80px; padding: 20pt; border: 10px solid #C00; }
-#r2c1, #r2c2 { border: hidden; }
-#r1c1, #r1c4 { border-width: 24px; background: #DDD; }
-#r2c4        { border-style: double; border-width: 8px; border-color: #00C; }
-#r3c4        { border-style: dotted; border-width: 2px; border-color: #0C0; }
-#r4c1        { border-bottom-style: hidden; background: #DD0; }
-#r4c3        { border-top: 50px solid silver; }
+td    { padding: 20pt; border: 10px solid black; }
+#r1c2 { background: #CCC; }
+#r3   { background: #AAA; }
+#r3c3 { background: #CCC; }
 </style>
+<h3>Układ o stałej szerokości</h3>
 <table>
+  <colgroup>
+    <col id="c1"><col id="c2">
+    <col id="c3"><col id="c4">
+  </colgroup>
   <tr id="r1">
     <td id="r1c1">1-1</td><td id="r1c2">1-2</td>
     <td id="r1c3">1-3</td><td id="r1c4">1-4</td>
