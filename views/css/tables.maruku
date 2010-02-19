@@ -90,7 +90,7 @@ Uwaga: atrybut *style* przeszedł do pojemnika *style*.
 
 Dodajemy wypełnienie i kolorujemy elementy tak:
 
-    td    { padding: 20pt; }
+    td    { padding: 20pt; border: 10px solid black; }
     #r1c2 { background: #CCC; }
     #r3   { background: #AAA; }
     #r3c3 { background: #CCC; }
