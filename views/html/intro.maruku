@@ -1,3 +1,36 @@
+## Wykład 1 (20.02.2010)
+
+Informacja o HTML 5, CSS 3 oraz Javascript + jQuery.
+Kodowanie stron: utf-8.
+
+Podstawowe znaczniki: h1, p, img, a, em;
+znaczniki tabelkowe: table, ..., td (razem 10).
+
+Walidacja stron: HTML 4 i 5.
+
+Firefoks + rozszerzenie Firebug. Google Chrome.
+
+## Wykład 2 (27.02.2010)
+
+Elementy div i span. Atrybuty elementów: id i span.
+
+Podstawowe błędy w pisywaniu kodu HTML: 
+cudzysłowy, kreski.
+
+Notacje do wpisywania HTML: Markdown. jBlog. 
+
+???
+
+## Wykład 8, 9 (8.05, 15.05.2010)
+
+Szlifowanie strony WWW: HTML 5, CSS 3, Javascript (jQuery).
+
+## Wykład 10 (22.05.2010)
+
+Zaliczenia. Egzamin termin zerowy.
+
+
+<!-- 
 ## Wykład 1 (22.02.2009)
 
 Podstawowa dokumentacja: HTML, CSS.
@@ -103,3 +136,5 @@ Pominąłem:
   * tworzenie gałęzi
 
 Szkoda!
+
+-->
