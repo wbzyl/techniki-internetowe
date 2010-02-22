@@ -49,11 +49,11 @@ bez wspomagajacego kodu Javascript.
 Kod ma działać w Firefoxie, w IE niekoniecznie.
 
 1\. Zaprogramować taką
-[czerwono-niebieską ramkę](/images/examples/css/tests/002-border.png)
+<%= link_to "czerwono-niebieską ramkę", "/images/examples/css/tests/002-border.png" %>
 jak na załączonym obrazku.
 
 <blockquote>
-  <p><img src="/images/examples/css/tests/003-rollover.png" alt="rollover" /></p>
+  <p><%= image_tag "/images/examples/css/tests/003-rollover.png", :alt=>"rollover" %></p>
 </blockquote>
 
 2\. W tym zadaniu należy uzyskać efekt *roll over*, taki jak na
@@ -110,7 +110,7 @@ i ustawionymi kolorami…
 {:lang=html}
 
 <blockquote>
-  <p><img src="/images/examples/css/tests/004-alternate.png" alt="alternate colors" /></p>
+  <p><%= image_tag "/images/examples/css/tests/004-alternate.png", :alt=>"alternate colors" %></p>
 </blockquote>
 
 3\. (i) Przygotować CSS kolorujacy górną połowę wiersza tekstu na niebiesko,
@@ -130,10 +130,9 @@ na jedną literę **nie zalicza** tego zadania.
 Należy ten efekt osiągnąć oszczędniejszymi środkami, ale
 zamiast spanów można użyć fontu *monospaced* (wskazówka?).
 
-
 <blockquote>
-  <p><img src="/images/examples/css/thumb-konwersja-istniejacej-strony.png" alt="E. Meyer, CSS I" /></p>
-  <p><a href="/images/examples/css/konwersja-istniejacej-strony.png">[większy obrazek]</a></p>
+ <p><%= image_tag "/images/examples/css/thumb-konwersja-istniejacej-strony.png", :alt=>"E. Meyer, CSS I" %></p>
+ <p><%= link_to "większy obrazek", "/images/examples/css/konwersja-istniejacej-strony.png" %></p>
 </blockquote>
 
 ### Konwersja istniejącej strony
@@ -145,9 +144,9 @@ wymaga dwóch kroków:
 * dodania kodu CSS zastępującego wycięty kod
 
 Tutaj mamy
-[stronę w czystym HTML](/doc/examples/css/konwersja_istniejacej_strony/original.html).
+<%= link_to "stronę w czystym HTML", "/doc/examples/css/konwersja_istniejacej_strony/original.html" %>.
 A tutaj mamy
-[stronę z wyciętym kodem](/doc/examples/css/konwersja_istniejacej_strony/original-stripped.html)
+<%= link_to "stronę z wyciętym kodem", "/doc/examples/css/konwersja_istniejacej_strony/original-stripped.html" %>.
 
 Twoje zadanie polega na dodaniu kodu CSS przywracającego
 oryginalny wygląd strony.
@@ -171,11 +170,3 @@ jak postrzega świat 15% ludzi.
 
 3. Przygotować stronę demonstrującą możliwości frameworka.
    Najpierw obejrzeć gotowca *tests/parts/sample.html*.
-
-
-## Moja strona WWW
-
-Przygotować własną stronę WWW. Strona powinna mieć
-menu i co najmniej 3 podstrony, w tym stronę
-a galerią zdjęć i stronę z tabelką:
-z planem zajęć albo z programem TV.
