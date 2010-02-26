@@ -32,6 +32,7 @@ Pattern](http://snook.ca/archives/javascript/no-love-for-module-pattern/),
 * [Updated jQuery 
   Bookmarklet](http://www.learningjquery.com/2008/06/updated-jquery-bookmarklet),
   Karl Swedberg
+* [jQuery source viewer](http://james.padolsey.com/jquery/#v=1.4&fn=css)
 
 Szablon pliku do testowania jQuery: 
 [skel.html](<%= url_for "/doc/skel.html" %>)
