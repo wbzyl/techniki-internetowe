@@ -59,3 +59,14 @@ Jeszcze jeden przykład:
     <title>Minimalny dokument HTML 5</title>
     <p>ąćęłńóśźż ĄĆĘŁŃÓŚŹŻ</p>
 {:lang=html}
+
+### Różnice między HTM 4 a 5
+
+Zob. [TML5 differences from HTML4](http://dev.w3.org/html5/html4-differences/)
+
+Nowe:
+
+* wideo
+* canvas
+* baza danych
+* nowe elementy
