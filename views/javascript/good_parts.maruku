@@ -280,3 +280,20 @@ po `stooge`.
     var another_stooge = Object.beget(stooge);
     another_stooge.nickname = "Moe";
 {:lang=javascript}
+
+## Augumenting Objects, X
+
+Przykład wymaga jeszcze dopracowania.
+Kod wklejamy na konsoli *js*.
+
+    var t = [2, 2, 2]
+    // zmieniamy wartość elementu t[1], np.
+    t[1] = t[1] * t[1]  // albo tak 
+    t[1] = 2*t[1] * 1 
+    t.zmien1 = function() { this[1] = this[1]*this[1]; }
+    t.zmien1()
+    t //=> 2, 4, 2
+    t.zmien1 = function(f) { this[1] = f(this[1]); }
+    var kwadrat = function(arg) { return arg*arg; }
+    t.zmien1(kwadrat)
+    t.zmien1(function(arg) { return 2*arg+1; })
