@@ -62,11 +62,14 @@ Jeszcze jeden przykład:
 
 ### Różnice między HTM 4 a 5
 
-Zob. [TML5 differences from HTML4](http://dev.w3.org/html5/html4-differences/)
+Zob. [HTML5 differences from HTML4](http://dev.w3.org/html5/html4-differences/)
 
-Nowe:
+Nowe rzeczy w HTML:
 
 * wideo
 * canvas
 * baza danych
+* geolocation
 * nowe elementy
+
+[HTML5 demos and examples](http://html5demos.com/).
