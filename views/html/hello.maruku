@@ -59,3 +59,18 @@ Jeszcze jeden przykład:
     <title>Minimalny dokument HTML 5</title>
     <p>ąćęłńóśźż ĄĆĘŁŃÓŚŹŻ</p>
 {:lang=html}
+
+### Różnice między HTM 4 a 5
+
+Zob. [HTML5 differences from HTML4](http://dev.w3.org/html5/html4-differences/)
+
+Nowe rzeczy w HTML:
+
+* wideo
+* canvas
+* baza danych
+* geolocation
+* edytowalne elementy (local storage)
+* nowe elementy
+
+[HTML5 demos and examples](http://html5demos.com/).
