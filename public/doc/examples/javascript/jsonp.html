@@ -6,7 +6,7 @@
   <script>
   $(document).ready(function(){
     $.getJSON("http://localhost:4567/jsonp", 
-              { 'callback': '?', 'id': '8' }, 
+              "callback=jsonp1234&id=8", 
               function(data) {
                 alert('Ticker: ' + data.symbol + ' Price: ' + data.price);
               }

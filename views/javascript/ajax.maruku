@@ -21,8 +21,10 @@ danych na żądanie.
 * Ascii-Art: wybieramy dokument po wpisaniu 
   liczby w formularzu. 
 
-[Tutaj](/examples/javascript/ajax-ahah) umieściłem
-przykład w którym użyto wszystkich czterech technik.
+
+Przykład w którym użyto wszystkich czterech technik umieściłem
+<%= link_to "tutaj", "/examples/javascript/ajax-ahah" %>.
+
 
 
 ## Love: AHAH
@@ -342,7 +344,7 @@ kod Javascript.
 Zobacz poniżej działający skrypt korzystający z metody *$.ajax*.
 
 Jeśli **przed** wejściem 
-[na taką stronę](/doc/examples/javascript/jsonp.html):
+<%= link_to "na taką stronę", "/doc/examples/javascript/jsonp.html" %>:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
                         "http://www.w3.org/TR/html4/loose.dtd">
@@ -386,7 +388,7 @@ i sprawdzamy, czy działa:
 
 
 Po uruchomieniu tego serwera na porcie 4567, 
-[wchodzimy na tę stronę](/doc/examples/javascript/jsonp-ajax.html):
+<%= link_to "wchodzimy na tę stronę", "/doc/examples/javascript/jsonp-ajax.html" %>:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
                         "http://www.w3.org/TR/html4/loose.dtd">

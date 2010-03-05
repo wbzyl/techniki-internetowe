@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
   $('#love').click(function () {
-    $('#content').load('/doc/examples/javascript/love.html');
+    $('#content').load('/ti/doc/examples/javascript/love.html');
     //$('#content').hide().load('/examples/javascript/love.html', function () {
     //  $(this).fadeIn();
     //});
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('#linux').click(function () {
-    $.getJSON('/data/linux.json', function (data) {
+    $.getJSON('/ti/data/linux.json', function (data) {
       $('#content').empty();
 
       // alert("data: " + data);
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('#pets').click(function () {
-    $.get('/data/pets.xml', function(data) {
+    $.get('/ti/data/pets.xml', function(data) {
       //alert("data:\n" + data);
       $('#content').empty();
       var html = '';
@@ -67,7 +67,7 @@ $(document).ready(function () {
     $('#select').show();
 
     $('#select').submit(function (event) {
-      $.post('/asciiart', $(this).find('input').serialize(), function(data) {
+      $.post('/ti/asciiart', $(this).find('input').serialize(), function(data) {
         //alert(data);
         $('#content').html(data);
       });

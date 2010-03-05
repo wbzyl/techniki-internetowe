@@ -96,3 +96,7 @@ Na koniec, fragment pliku z cytatami `education.json`:
    for new sinatra projects.](http://github.com/quirkey/sinatra-gen/)
 3. [Building your own Sinatra clone: 
    Parts I-V](http://remi.org/2009/03/30/building-your-own-sinatra-clone-part-1.html)
+
+Przykładowe aplikacje:
+
+* Keith Norman, Allison Liechty. [Rubex](http://github.com/wbzyl/Rubex)
