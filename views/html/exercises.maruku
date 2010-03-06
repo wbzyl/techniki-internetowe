@@ -12,21 +12,6 @@
 1. Jeszcze raz dwa poprzednie zadania ale w HTML 5.
 
 
-### Slajdy: FullerScreen, S4, S5 i S6
-
-Zainstalować dodatek
-[FullerScreen](https://addons.mozilla.org/en-US/firefox/addon/4650")
-— really full screen with slideshow support.
-Przygotować slideshow korzystający z możliwości oferowanych
-przez to rozszerzenie.
-[Tutaj jest przykład takiego pokazu
-slajdów](http://disruptive-innovations.com/zoo/fullerscreen/samples/projection-test.html)
-
-Klawiszologia: f11 — toggle slideshow, shift+f11 — toggle slide manager.
-
-Uwaga: Na razie jest tylko „Unofficial version for Firefox 3.5.”
-
-
 ### Plany zajęć
 
 Przygotować dwie tabelki z planem zajęć — **pionową** i **poziomą**.
@@ -54,6 +39,8 @@ kolor, dodać to i owo tak aby było lepiej.
 * Chart <%= image_tag '/images/tabele/chart.png', :alt => "[chart]" %>
 
 
+<!--
+
 ## Haml
 
 1. Przepisać plan zajęć w Haml.
@@ -64,3 +51,20 @@ kolor, dodać to i owo tak aby było lepiej.
 1. Przygotować w HAML szablon do dokumentów
    w formacie Atom 1.0 oraz RSS 2.0.
    Definicje znajdziesz w [Wikipedii](http://pl.wikipedia.org)
+
+### Slajdy: FullerScreen, S4, S5 i S6
+
+Zainstalować dodatek
+[FullerScreen](https://addons.mozilla.org/en-US/firefox/addon/4650")
+— really full screen with slideshow support.
+Przygotować slideshow korzystający z możliwości oferowanych
+przez to rozszerzenie.
+[Tutaj jest przykład takiego pokazu
+slajdów](http://disruptive-innovations.com/zoo/fullerscreen/samples/projection-test.html)
+
+Klawiszologia: f11 — toggle slideshow, shift+f11 — toggle slide manager.
+
+Uwaga: Na razie jest tylko „Unofficial version for Firefox 3.5.”
+
+-->
+

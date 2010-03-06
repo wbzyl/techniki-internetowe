@@ -1,9 +1,14 @@
 ## Rozgrzewka
 
-1 Zaczynamy od przeanalizowania różnych stylizacji prostej tabelki z
+
+<!--
+
+1. Zaczynamy od przeanalizowania różnych stylizacji prostej tabelki z
   [CSS Table Gallery](http://icant.co.uk/csstablegallery).
   Inne stylizacje ogladamy przez RSS Feed, albo wpisując URL:
   *http://icant.co.uk/csstablegallery/index.php?css=***mała liczba całkowita**.
+
+-->
 
 1. Zaprojektować jedną tabelkę do obowiązującego planu zajęć
    dla pierwszego, drugiego i trzeciego roku.
@@ -15,15 +20,20 @@
    Tabelkę należy wystylizować wyłącznie za pomocą zewnętrznego arkusza
    stylów o nazwie *plan\_zajec.css*.
 
-1. Zaprojektować tabelkę do
-   [własności i wartości CSS dotyczących tekstu](http://www.w3.org/TR/CSS21/text.html).
-   Tak jak poprzedni do wystylizowania tabelkę należy
-   użyć zewnętrznego arkusza stylów. Tabelkę
-   umieścić w pliku *text.html*, a arkusz
-   stylu &#x2014; *text.css*.
+1. Przygotować formularz wykorzystujący wszystkie elementy
+   opisane na stronie P. Wimmera
+   [Formularze](http://neuron.bednarska.edu.pl/html/form/form.htm).
+   W atrybucie *action* elementu *form* umieścić
+   swój adres email.
+   Formularz ma być *funkcjonalny*. Co to oznacza, można
+   przeczytać 
+   [tutaj](http://articles.sitepoint.com/article/fancy-form-design-css),
+   [tutaj](http://articles.sitepoint.com/article/steps-useable-forms),
 
-1. Wystylizować program telewizyjny ze strony
-   [TELEwizji](http://www.telewizja.info.pl/index.php).
+   W HTML 5 poświęcono sporo uwagi formularzom.
+   Można o tym poczytać tutaj:
+   [A vocabulary and associated APIs for HTML and XHTML](http://www.w3.org/TR/html5/forms.html), a tutaj jest proste demo:
+   [HTML 5 Forms Demo](http://brucelawson.co.uk/tests/html5-forms-demo.html).
 
 1. Przygotować w oparciu o arkusz stylu CSS galerię zdjęć.
    [Tutaj](http://www.cssplay.co.uk/menu/gallery_100.html),
@@ -34,10 +44,22 @@
    A [tutaj](http://www.cssplay.co.uk/menu)
    jest lista wszystkich projektów umieszczonych na *CSS play*.
 
+<!--
+1. Zaprojektować tabelkę do
+   [własności i wartości CSS dotyczących tekstu](http://www.w3.org/TR/CSS21/text.html).
+   Tak jak poprzedni do wystylizowania tabelkę należy
+   użyć zewnętrznego arkusza stylów. Tabelkę
+   umieścić w pliku *text.html*, a arkusz
+   stylu &#x2014; *text.css*.
+
+1. Wystylizować program telewizyjny ze strony
+   [TELEwizji](http://www.telewizja.info.pl/index.php).
+
 1. Wybrany CSS stylizujący galerię zdjęć przepisać w SASS.
    Sparametryzować galerię, tzn. nazwać *magiczne* stałe
    występujące w arkuszu, tak aby można było je zmieniać,
    dostosowując arkusz do zdjęć różnej wielkości.
+-->
 
 
 ## Fiki miki różne triki
@@ -48,9 +70,10 @@ bez wspomagajacego kodu Javascript.
 
 Kod ma działać w Firefoxie, w IE niekoniecznie.
 
-1\. Zaprogramować taką
-<%= link_to "czerwono-niebieską ramkę", "/images/examples/css/tests/002-border.png" %>
-jak na załączonym obrazku.
+Zaprogramować taką czerwono-niebieską ramkę
+jak na załączonym poniżej obrazku.
+
+<%= image_tag "/images/examples/css/tests/002-border.png" %>
 
 <blockquote>
   <p><%= image_tag "/images/examples/css/tests/003-rollover.png", :alt=>"rollover" %></p>
