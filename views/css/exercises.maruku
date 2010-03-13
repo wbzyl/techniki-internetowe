@@ -168,6 +168,7 @@ wymaga dwóch kroków:
 
 Tutaj mamy
 <%= link_to "stronę w czystym HTML", "/doc/examples/css/konwersja_istniejacej_strony/original.html" %>.
+
 A tutaj mamy
 <%= link_to "stronę z wyciętym kodem", "/doc/examples/css/konwersja_istniejacej_strony/original-stripped.html" %>.
 
