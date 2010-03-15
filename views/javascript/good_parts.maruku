@@ -110,6 +110,35 @@ której używamy do zapamiętania referencji do obiektu, to zwyczajowo
     print(obiekt.value);
 {:lang=javascript}
 
+### Going functional
+
+Definiujemy funkcję tworzącą obiekty:
+
+    var cat = function(spec) {
+      // tworzymy pusty obiekt
+      var that = {};
+      // dodajemy do obiektu metody (i właściwości)
+      // tak
+      that.get_name = function() {
+        return spec.name;
+      };
+      // albo tak
+      var says = function() {
+        return spec.says || 'miau';
+      }; 
+      that.says = says;
+      // zwracamy zmieniony obiekt
+      return that;   // 
+    };
+{:lang=javascript}
+
+Przykład użycia:
+
+    var mójKot = cat({name: 'Bazylek'});
+    mójKot.says();
+    mójKot.get_name();
+{:lang=javascript}
+
 
 ## Augumenting Types, I
 
