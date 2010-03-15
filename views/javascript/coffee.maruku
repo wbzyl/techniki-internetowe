@@ -1,0 +1,19 @@
+<blockquote>
+<%= image_tag "/images/pablo_picasso.jpg", :alt => "[Pablo Picasso]" %>
+<p>
+Every act of creation is first of all an act of destruction
+</p>
+<p class="author">- Pablo Picasso</p>
+</blockquote>
+
+* Jeremy Ashkenas. [CoffeeScript][] —  podręcznik użytkownika, tutorial, etc.
+* Jeremy Ashkenas. [CoffeeScript src](http://github.com/jashkenas/coffee-script)
+* Ryan Dahl. [Nodejs][] — evented I/O for V8 JavaScript
+* Jeremy Ashkenas. [Docco][] — literate-programming-style documentation generator
+
+
+
+[coffeescript]: http://jashkenas.github.com/coffee-script/ "CoffeeScript"
+[coffeescript src]:  "CoffeeScript"
+[nodejs]: http://nodejs.org/ "Node.js"
+[docco]: http://github.com/jashkenas/docco "docco"

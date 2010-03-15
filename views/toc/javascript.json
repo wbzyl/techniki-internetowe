@@ -1,6 +1,7 @@
 [
   [ "intro", "Wstęp" ],
   [ "good_parts", "JavaScript: The Good Parts" ],
+  [ "coffee", "CoffeeScript" ],
   [ "google-maps", "Google Maps API" ],
   [ "jquery", "jQuery w przykładach" ],
   [ "jquery-ui", "jQuery UI w przykładach" ],
