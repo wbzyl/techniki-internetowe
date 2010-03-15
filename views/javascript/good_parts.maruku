@@ -4,27 +4,88 @@ napisanej przez guru tego języka, Douglasa Crockforda.
 
 *Uwaga terminologiczna:*
 Funkcję będącą własnością obiektu nazywamy *metodą*.
-Na przykład, w poniższym kodzie *increment* jest metodą.
+Na przykład, w poniższym kodzie *increment* jest metodą,
+a *value* własnością:
 
-    var myObject = {
+    var obiekt = {
       value: 0,
       increment: function (inc) {
         this.value += typeof inc == 'number' ? inc : 1;
       }
     };
-    myObject.increment();
-    print(myObject.value);  // 1
+    obiekt.increment();
+    print(obiekt.value);  // 1
       
-    myObject.increment(2);
-    print(myObject.value);  // 3
+    obiekt.increment(2);
+    print(obiekt.value);  // 3
 {:lang=javascript}
 
-Uwaga dotycząca uruchamiania kodu:
-Kod uruchamiamy w interpreterze `js`
-pochodzącym z pakietu *js* 
-(JavaScript interpreter and libraries).
-Listę funkcji dostępnych w `js` uzyskamy wpisując `help()`
-i wciskając enter.
+Uwaga dotycząca uruchamiania kodu: kod Javascripy uruchamiamy na
+konsoli *js*.  Listę dostępnych funkcji uzyskamy wpisując
+w powłoce `help()` i wciskając enter.
+
+
+## Obiekty
+
+Literał obiektu:
+
+    var pusty_obiekt = {};
+    var inny_obiekt = {};
+    var pusty_obiekt_1 = pusty_obiekt_2 = {};
+    inny_obiekt.x = '_^_'
+    print(inny_obiekt.x)
+    print(pusty_obiekt.x)
+    pusty_obiekt_1.x = '_v_'
+    print(pusty_obiekt_2.x)
+{:lang=javascript}
+
+Ważne:
+
+    print(pusty_obiekt.x)   //=> undefined
+    print(pusty_obiekt.x.y) //=> TypeError: inny_pusty_obiekt.x has no properties
+    pusty_obiekt.x && pusty_obiekt.x.y  //=> tak unikamy TypeError
+{:lang=javascript}
+
+Do typów podstawowych można dodawać swoje metody, ponieważ
+każdy obiekt utworzony via `{ ... }` dziedziczy metody
+standardowego obiektu języka `Object.prototype`.
+
+Ale możemy też wybrać obiekt po którym będzie dziedziczył nowo
+utworzony obiekt. Metoda `beget` obiektu `Objecct` ułatwia tworzenie
+obiektów, które będą dziedziczyć własności po innym obiekcie.
+
+Metoda `beget` tworzy nowy obiekt używający podanego obiektu jako
+swojego prototypu.
+
+    if (typeof Object.beget !== 'function') {
+      Object.beget = function(o) {
+        var F = function () {};
+        F.prototype = o;
+        return new F();
+      }
+    }
+{:lang=javascript}
+
+Przykład użycia: `ja` dziedziczy metody
+po `osoba`.
+
+    var osoba = {
+      "imię": "Jan",
+      "nazwisko": "Nowak",
+      "nick": "Janek"
+    };
+    var ja = Object.beget(osoba);
+    ja.nick;  //=> Janek
+    ja.nick = "Włodek";
+    delete ja.nick;
+    ja.nick;  //=> Janek
+{:lang=javascript}
+
+Refleksja:
+
+    osoba.toString();              //=> [object Object]
+    osoba.hasOwnProperty('nick');  //=> true
+{:lang=javascript}
 
 
 ## The Function Invocation Pattern
@@ -32,22 +93,21 @@ i wciskając enter.
 Obchodzimy błąd projektowy jezyka:
 W wewnętrznej funkcji pomocniczej `this` jest 
 *bound to the global object*, a nie do obiektu 
-`myObject`. 
+`obiekt`. 
 
-Na szczęście łatwo jest obejść ten błąd.
-Konwencja: nazwa zmiennej której
-używamy do zapamiętania referencji do
-obiektu, to zwyczajowo `that`.
+Na szczęście łatwo jest obejść ten błąd.  Konwencja: nazwa zmiennej
+której używamy do zapamiętania referencji do obiektu, to zwyczajowo
+`that`.
 
-    myObject.double = function () {
+    obiekt.double = function () {
       var that = this;  // workaround
       var helper = function () {
         that.value += that.value;
       }
       helper(); // wywołujemy funkcję pomocniczą
     }
-    myObject.double();
-    print(myObject.value);
+    obiekt.double();
+    print(obiekt.value);
 {:lang=javascript}
 
 
@@ -124,7 +184,7 @@ Powyższy i poniższy kod uruchamiamy w konsoli rozszerzenia *Firebug*.
 
 ## Moduły
 
-Tworzymy obiekt do generowania *serial numbers*.
+Tworzymy obiekt do generowania *numerów seryjnych*:
 
     var sequencer = function () {
       var prefix = '';
@@ -148,6 +208,12 @@ Tworzymy obiekt do generowania *serial numbers*.
     sequencer.set_prefix('Q');
     sequencer.set_seq(1000); 
     sequencer.gensym();
+{:lang=javascript}
+
+Prosty przykład wyjaśniający znaczenie `()` powyżej:
+
+    var o = function() { return {msg: 'hello world'}; }()
+    o.msg  //=> hello world
 {:lang=javascript}
 
 
@@ -178,12 +244,13 @@ Działający kod:
         return that.apply(null, args.concat(slice.apply(arguments)));
       };
     });  
-
+    
     var add = function (a, b) {
       return a + b;
     }
+    
     var add2 = add.curry(2);
-    add2(6);
+    print(add2(6));  //=> 8
 {:lang=javascript}
 
 
@@ -251,49 +318,34 @@ Funkcja ułatwiająca kodowanie *memoized* funkcji.
 {:lang=javascript}
 
 
-## Augumenting Types, X
-
-Do podstawowych typów języka można dodawać swoje metody, ponieważ
-każdy obiekt utworzony via `{ ... }` dziedziczy metody
-standardowego obiektu języka `Object.prototype`.
-
-Metoda `beget`, dodana do obiektu `Object`, tworzy
-nowy obiekt używający podanego obiektu jako
-swojego prototypu.
-
-    if (typeof Object.beget !== 'function') {
-      Object.beget = function(o) {
-        var F = function () {};
-        F.prototype = o;
-        return new F();
-      }
-    }
-{:lang=javascript}
-
-Przykład użycia: `another_stooge` dziedziczy metody
-po `stooge`.
-
-    var stooge = {
-      "first-name": "Jerome",
-      "last-name": "Howard"
-    };
-    var another_stooge = Object.beget(stooge);
-    another_stooge.nickname = "Moe";
-{:lang=javascript}
-
 ## Augumenting Objects, X
 
 Przykład wymaga jeszcze dopracowania.
 Kod wklejamy na konsoli *js*.
 
     var t = [2, 2, 2]
-    // zmieniamy wartość elementu t[1], np.
-    t[1] = t[1] * t[1]  // albo tak 
-    t[1] = 2*t[1] * 1 
+    
+    // zmieniamy wartość elementu t[1]
+    t[1] = t[1] * t[1]
+    
+    // albo tak
     t.zmien1 = function() { this[1] = this[1]*this[1]; }
     t.zmien1()
     t //=> 2, 4, 2
+    
+    // albo tak
     t.zmien1 = function(f) { this[1] = f(this[1]); }
+    t.zmien1(function(arg) { return arg*arg; })
+    
     var kwadrat = function(arg) { return arg*arg; }
     t.zmien1(kwadrat)
-    t.zmien1(function(arg) { return 2*arg+1; })
+{:lang=javascript}
+
+Lepszy przykład:
+
+    var a = [1, 2, 3, 4];
+    a.map = function(f) { for(var i=0; i<this.length; i++) this[i] = f(this[i]); }
+    a.map(function(arg) { return arg*arg; })  //=> 1,4,9,16
+    var kwadrat = function(arg) { return arg*arg; }
+    a.map(kwadrat)  //=> 1,16,81,256
+{:lang=javascript}
