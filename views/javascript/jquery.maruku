@@ -1,3 +1,9 @@
+Zaczynamy od instalacji dwóch rozszerzeń Firefoksa:
+
+* [jQuery Documentation](https://addons.mozilla.org/en-US/firefox/addon/12230)
+* [FireQuery](https://addons.mozilla.org/en-US/firefox/addon/12632)
+
+
 Biblioteka jQuery to jeden duży **module pattern**
 (D. Crockford):
 
