@@ -1,32 +1,37 @@
-## Dziesięć prostych zadań
-
-
 <blockquote>
-<h2>Everybody Got to Learn Sometime</h2>
+<h3>Everybody Got to Learn Sometime</h3>
 <p>
-It was a rainy night
-When he came into sight
-Standing by the road
-With no umbrella, no coat
-</p>
-So I pulled up along side
-And I offered him a ride
-He accepted with a smile
-So we drove for a while
-<p>
+  It was a rainy night<br/>
+  When he came into sight<br/>
+  Standing by the road<br/>
+  With no umbrella, no coat
 </p>
 <p>
-I didn't ask him his name
-This lonely boy in the rain
-Fate, tell me it's right
-Is this love at first sight?
+  So I pulled up along side<br/>
+  And I offered him a ride<br/>
+  He accepted with a smile<br/>
+  So we drove for a while
+</p>
+<p>
+  I didn't ask him his name<br/>
+  This lonely boy in the rain<br/>
+  Fate, tell me it's right<br/>
+  Is this love at first sight?
 </p>
 </blockquote>
 
-Zaczynamy od instalacji rozszerzenia do Firefoksa o nazwie
-[JavaScript Debugger](https://addons.mozilla.org/en-US/firefox/addon/216).
-Następnie przechodzimy do lektury tego samouczka
-[]
+Zanim rozwiążemy pierwsze zadanie pisząc program w języku Javascript,
+zainstalujemy rozszerzenie do Firefoksa o nazwie [JavaScript
+Debugger](https://addons.mozilla.org/en-US/firefox/addon/216).
+
+Następnie przechodzimy do lektury samouczka Svend’a Tofte. 
+[Learning the JavaScript debugger Venkman](http://www.svendtofte.com/code/learning_venkman/).
+
+Dlaczego powinniśmy zacząć od instalacji debuggera wyjaśnia
+Svend zaraz na początku samouczka…
+
+
+## Dziesięć prostych zadań
 
 1\. Zdefiniować funkcję `max()` o dwóch argumentach 
 całkowitych, wypisującą większy z podanych argumentów.
