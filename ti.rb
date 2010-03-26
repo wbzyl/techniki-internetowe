@@ -4,9 +4,10 @@
 
 require 'rubygems'
 
-require 'json'
+gem 'sinatra', '<1.0'
+require 'sinatra'
 
-require 'sinatra', '<1.0'
+require 'json'
 
 #gem 'emk-sinatra-url-for'
 #require 'sinatra/url_for'
@@ -15,8 +16,9 @@ require 'sinatra/static_assets'
 require 'sinatra/maruku'
 
 before do
+
   # When served by Sinatra itself
-  mime :sql, 'text/plain; charset="UTF-8"'
+  #mime_type :sql, 'text/plain; charset="UTF-8"'
   
   @toc = {
     'html'        => JSON.parse(File.read(File.dirname(__FILE__) + '/views/toc/html.json')),
