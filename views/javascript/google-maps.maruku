@@ -82,7 +82,7 @@ Plik `google.js`:
     google.setOnLoadCallback(initialize);
 {:lang=javascript}
 
-[Link do tej strony](/doc/examples/javascript/google.html).
+<%= link_to "Link do tej strony", "/doc/examples/javascript/google.html" %>.
 
 **Uwaga**: Google Maps API Key, dla tego przykładu i innych przykładów
 został wygenerowany dla URL **http://localhost/**.

@@ -6,7 +6,7 @@ require 'rubygems'
 
 require 'json'
 
-require 'sinatra'
+require 'sinatra', '<1.0'
 
 #gem 'emk-sinatra-url-for'
 #require 'sinatra/url_for'
