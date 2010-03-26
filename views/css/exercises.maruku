@@ -30,6 +30,15 @@
    [tutaj](http://articles.sitepoint.com/article/fancy-form-design-css),
    [tutaj](http://articles.sitepoint.com/article/steps-useable-forms),
 
+   Formularze testujemy wpisując w atrybucie *action* elementu *form*
+   swój adres email. Po kliknięciu przycisku *submit*,
+   na wpisany adres zostanie przesłany email.
+  
+   Ale można też postąpić inaczej — można uruchomić 
+   [prostą aplikację Sinatry](http://github.com/wbzyl/jquery-form).
+   Reszta jest opisana w README.   
+
+
    W HTML 5 poświęcono sporo uwagi formularzom.
    Można o tym poczytać tutaj:
    [A vocabulary and associated APIs for HTML and XHTML](http://www.w3.org/TR/html5/forms.html), a tutaj jest proste demo:
