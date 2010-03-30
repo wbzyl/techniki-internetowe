@@ -173,6 +173,11 @@ Dodajemy metodę *trim* do typu 'string'.
 {:lang=javascript}
 
 
+## Co to jest „lexical scope” i „current context”
+
+TODO: Tim Caswell. [What is „this”?](http://howtonode.org/what-is-this)
+
+
 ## Closures
 
 Funkcje wewnętrzne mają dostęp do parametrów i zmiennych
