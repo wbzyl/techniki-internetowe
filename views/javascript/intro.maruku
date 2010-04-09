@@ -67,6 +67,25 @@ The **very best** part:
 + stability: no new design errors since **1999**!
 
 
+## Biblioteki Javascript
+
+
+* [jQuery](http://jquery.com/)
+* [jQuery UI](http://jqueryui.com/)
+* [Mootools](http://mootools.net/)
+
+[Wtyczki do jQuery](http://plugins.jquery.com/):
+
+* Roberto Bicchierai.
+  [jQuery.calendarPicker](http://bugsvoice.com/applications/bugsVoice/site/test/calendarPickerDemo.jsp)
+
+[Google AJAX API](http://code.google.com/intl/pl/apis/ajax/):
+
+* [Google AJAX Libraries API](http://code.google.com/intl/pl/apis/ajaxlibs/)
+* [Google Maps API](http://code.google.com/intl/pl/apis/maps/)
+* [Google Book Search APIs](http://code.google.com/intl/pl/apis/books/)
+
+
 ## Linki
 
 [Javascript tutorial by Google](http://code.google.com/intl/pl/edu/ajax/tutorials/intro-to-js.html)
