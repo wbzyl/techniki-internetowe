@@ -49,3 +49,23 @@ Inne:
   ContentFlow is a flexible Coverflow/ImageFlow like flow written
   in javascript, which can handle any kind of content. It supports all
   new and old major and not so major browsers
+
+
+## Różności
+
+[Google Closure Tools](http://code.google.com/intl/pl-PL/closure/):
+
+* a JavaScript optimizer
+* a comprehensive JavaScript library
+* an easy templating system for both Java & JavaScript
+
+Dion Almaer. „Future of the Web”.
+The Ajax revolution saw a sea change in web application
+development. By taking advantage of long-dormant browser capabilities,
+we were able to take our craft to new levels—reinventing
+well-established genres, challenging desktop applications, and
+jump-starting a renaissance in web start-ups.
+
+<embed src="http://blip.tv/play/AYGz_3EC" 
+  type="application/x-shockwave-flash" width="480" height="300" 
+  allowscriptaccess="always" allowfullscreen="true"></embed>
