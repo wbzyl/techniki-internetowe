@@ -46,6 +46,8 @@ Inne:
   according to a grid. The result minimizes vertical gaps between
   elements of varying height, just like a mason fitting stones in a
   wall
+* [flot](http://code.google.com/p/flot/) — 
+  Attractive Javascript plotting for jQuery 
 
 Inne:
 
