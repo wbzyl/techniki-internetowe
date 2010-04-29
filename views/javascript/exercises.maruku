@@ -20,6 +20,8 @@
 </p>
 </blockquote>
 
+<!--
+
 Zanim rozwiążemy pierwsze zadanie pisząc program w języku Javascript,
 zainstalujemy rozszerzenie do Firefoksa o nazwie [JavaScript
 Debugger](https://addons.mozilla.org/en-US/firefox/addon/216).
@@ -30,6 +32,7 @@ Następnie przechodzimy do lektury samouczka Svend’a Tofte.
 Dlaczego powinniśmy zacząć od instalacji debuggera wyjaśnia
 Svend zaraz na początku samouczka…
 
+-->
 
 ## Dziesięć prostych zadań
 
