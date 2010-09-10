@@ -21,7 +21,7 @@ danych na żądanie.
 * Ascii-Art: wybieramy dokument po wpisaniu 
   liczby w formularzu. 
 
-<%= link_to "Przykład", "/examples/javascript/ajax-ahah" %> 
+Tutaj umieściłem <%= link_to "przykład", "/examples/javascript/ajax-ahah" %> 
 w którym użyto wszystkich czterech technik.
 
 
