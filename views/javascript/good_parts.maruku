@@ -15,7 +15,7 @@ a *value* własnością:
     };
     obiekt.increment();
     print(obiekt.value);  // 1
-      
+
     obiekt.increment(2);
     print(obiekt.value);  // 3
 {:lang=javascript}
@@ -91,9 +91,9 @@ Refleksja:
 ## The Function Invocation Pattern
 
 Obchodzimy błąd projektowy jezyka:
-W wewnętrznej funkcji pomocniczej `this` jest 
-*bound to the global object*, a nie do obiektu 
-`obiekt`. 
+W wewnętrznej funkcji pomocniczej `this` jest
+*bound to the global object*, a nie do obiektu
+`obiekt`.
 
 Na szczęście łatwo jest obejść ten błąd.  Konwencja: nazwa zmiennej
 której używamy do zapamiętania referencji do obiektu, to zwyczajowo
@@ -125,10 +125,10 @@ Definiujemy funkcję tworzącą obiekty:
       // albo tak
       var says = function() {
         return spec.says || 'miau';
-      }; 
+      };
       that.says = says;
       // zwracamy zmieniony obiekt
-      return that;   // 
+      return that;   //
     };
 {:lang=javascript}
 
@@ -152,7 +152,7 @@ o nazwie *method*.
         this.prototype[name] = func;
       }
     };
-{:lang=javascript}    
+{:lang=javascript}
 
 Dodajemy metodę *integer* do typu 'number'.
 
@@ -209,10 +209,26 @@ Powyższy i poniższy kod uruchamiamy w konsoli rozszerzenia *Firebug*.
             alert(i);
           };
         }(i);
-      } 
+      }
     };
     elems = document.getElementsByTagName('p');
     add_the_handlers(elems);
+{:lang=javascript}
+
+I jeszcze jeden przykład. Co wypisuje poniższy kod:
+
+    for (var i = 1; i <= 3; i++) {
+      setTimeout(function() { console.log(i); }, 0);
+    }
+{:lang=javascript}
+
+A co ten kod:
+
+    for (var i = 1; i <= 3; i++) {
+      (function(i) {
+        setTimeout(function() { console.log(i); }, 0);
+      })(i);
+    }
 {:lang=javascript}
 
 
@@ -223,7 +239,7 @@ Tworzymy obiekt do generowania *numerów seryjnych*:
     var sequencer = function () {
       var prefix = '';
       var seq = 0;
-      
+
       return {
         set_prefix: function (p) {
           prefix = String(p);
@@ -240,7 +256,7 @@ Tworzymy obiekt do generowania *numerów seryjnych*:
     }();  //  <<-- !!
 
     sequencer.set_prefix('Q');
-    sequencer.set_seq(1000); 
+    sequencer.set_seq(1000);
     sequencer.gensym();
 {:lang=javascript}
 
@@ -263,7 +279,7 @@ Dodajemy do języka metodę **curry**.
       return function () {
         return that.apply(null, args.concat(arguments));
       };
-    });  
+    });
     // nie działa, ponieważ arguments nie jest *prawdziwą* tablicą
     // (arguments nie ma metody concat)
 {:lang=javascript}
@@ -272,17 +288,17 @@ Działający kod:
 
     Function.method('curry', function () {
       var slice = Array.prototype.slice,
-          args = slice.apply(arguments), 
+          args = slice.apply(arguments),
           that = this;
       return function () {
         return that.apply(null, args.concat(slice.apply(arguments)));
       };
-    });  
-    
+    });
+
     var add = function (a, b) {
       return a + b;
     }
-    
+
     var add2 = add.curry(2);
     print(add2(6));  //=> 8
 {:lang=javascript}
@@ -335,7 +351,7 @@ Funkcja ułatwiająca kodowanie *memoized* funkcji.
       };
       return shell;
     };
-    
+
     var fibonacci = memoizer([0, 1], function(shell, n) {
       return shell(n - 1) + shell(n - 2);
     });
@@ -358,19 +374,19 @@ Przykład wymaga jeszcze dopracowania.
 Kod wklejamy na konsoli *js*.
 
     var t = [2, 2, 2]
-    
+
     // zmieniamy wartość elementu t[1]
     t[1] = t[1] * t[1]
-    
+
     // albo tak
     t.zmien1 = function() { this[1] = this[1]*this[1]; }
     t.zmien1()
     t //=> 2, 4, 2
-    
+
     // albo tak
     t.zmien1 = function(f) { this[1] = f(this[1]); }
     t.zmien1(function(arg) { return arg*arg; })
-    
+
     var kwadrat = function(arg) { return arg*arg; }
     t.zmien1(kwadrat)
 {:lang=javascript}
