@@ -2,7 +2,7 @@
 
 Walidator HTML: `http://validator.w3.org/`.
 
-    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
         "http://www.w3.org/TR/html4/strict.dtd">
     <html>
       <head>
@@ -10,7 +10,7 @@ Walidator HTML: `http://validator.w3.org/`.
         <link href="/favicon.ico" rel="SHORTCUT ICON">
         <link href="dummy.css" media="all" rel="Stylesheet"
               type="text/css" charset="utf-8">
-        <script src="dummy.js" 
+        <script src="dummy.js"
               type="text/javascript" charset="utf-8"></script>
         <title>Jakiś tytuł</title>
       </head>
@@ -45,7 +45,7 @@ Kompletny(?) szablon dokumentu HTML 5:
     </html>
 {:lang=html}
 
-Przykład pobrałem ze strony 
+Przykład pobrałem ze strony
 [HTML5 Doctor](http://html5doctor.com/html-5-boilerplates/).
 
 Pytanie: *boilerplate* – jak to przetłumaczyć?

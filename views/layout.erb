@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!doctype html>
+<html>
   <head>
     <meta charset="utf-8">
-
     <%= stylesheet_link_tag "/stylesheets/screen.css", "/stylesheets/coderay.css", "/stylesheets/application.css" %>
 
     <script src='/javascripts/jquery.js' type="text/javascript" charset="utf-8"></script>
@@ -12,8 +10,9 @@
     <title>Techniki internetowe</title>
   </head>
   <body>
-    <h1 class="header"><%= @title %></h1>
-    <%= yield %>
+    <h1 class="header">
+      <%= @title %>
+    </h1>
+    <%= yield.force_encoding "UTF-8" %>
   </body>
-
 </html>
