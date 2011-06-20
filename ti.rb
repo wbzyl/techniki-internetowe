@@ -1,32 +1,23 @@
 # -*- coding: utf-8 -*-
 
-# thin --rackup config.ru -p 4000 start
-
-require 'rubygems'
-
-gem 'sinatra', '<1.0'
 require 'sinatra'
-
+require 'maruku'
 require 'json'
 
-#gem 'emk-sinatra-url-for'
-#require 'sinatra/url_for'
-
 require 'sinatra/static_assets'
-require 'sinatra/maruku'
+#require 'sinatra/maruku'
 
 before do
-
   # When served by Sinatra itself
   #mime_type :sql, 'text/plain; charset="UTF-8"'
-  
+
   @toc = {
     'html'        => JSON.parse(File.read(File.dirname(__FILE__) + '/views/toc/html.json')),
     'css'         => JSON.parse(File.read(File.dirname(__FILE__) + '/views/toc/css.json')),
     'javascript'  => JSON.parse(File.read(File.dirname(__FILE__) + '/views/toc/javascript.json')),
     'sinatra'     => JSON.parse(File.read(File.dirname(__FILE__) + '/views/toc/sinatra.json')),
     'sql'         => JSON.parse(File.read(File.dirname(__FILE__) + '/views/toc/sql.json')),
-    'performance' => JSON.parse(File.read(File.dirname(__FILE__) + '/views/toc/performance.json'))    
+    'performance' => JSON.parse(File.read(File.dirname(__FILE__) + '/views/toc/performance.json'))
   }
 end
 
@@ -37,17 +28,17 @@ helpers do
     title = where[1]
     "<a href='#{part}/#{filename}'>#{title}</a>"
   end
-  
+
   def title(part, filename)
     part = @toc[part]
     where = part ? part.find { |s| s[0] == filename } : nil
     if where
       where[1]
     else
-      redirect '/'  
+      redirect '/'
     end
   end
-  
+
   def css(filename)
     # STDERR.puts "-------->|#{request.env['SCRIPT_NAME']}|\n"
     # STDERR.puts "-------->|#{request.env.inspect}|\n"
@@ -58,11 +49,11 @@ helpers do
     # "SERVER_PORT"=>"80"
     "#{request.env['SCRIPT_NAME']}/stylesheets/#{filename}.css"
   end
-  
+
   def js(filename)
     "#{request.env['SCRIPT_NAME']}/javascripts/#{filename}.js"
   end
-  
+
   def image(filename)
     "#{request.env['SCRIPT_NAME']}/images/#{filename}"
   end
@@ -78,7 +69,7 @@ get '/' do
   @sql         = @toc['sql']
   @performance = @toc['performance']
   @request_uri = request['REQUEST_URI']
-  erb :toc
+  erubis :toc
 end
 
 # render jQuery examples
@@ -112,15 +103,16 @@ post '/asciiart' do
   end
 end
 
+# maruku :"#{params[:part]}/#{params[:section]}", :html_use_syntax => true
 get '/:part/:section' do
   #STDERR.puts "part: #{params[:part]}, section: #{params[:section]}"
   @title = title(params[:part], params[:section])
-  maruku :"#{params[:part]}/#{params[:section]}", :html_use_syntax => true
+  markdown :"#{params[:part]}/#{params[:section]}", :layout_engine => :erubis
 end
 
 # jeśli nie zostanie obsłużone przez routing
 not_found do
   status(404)
   @message || "Sinatra doesn't know about that!\n"
-  # erb :error  
+  # erb :error
 end
