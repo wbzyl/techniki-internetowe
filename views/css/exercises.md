@@ -26,17 +26,17 @@
    W atrybucie *action* elementu *form* umieścić
    swój adres email.
    Formularz ma być *funkcjonalny*. Co to oznacza, można
-   przeczytać 
+   przeczytać
    [tutaj](http://articles.sitepoint.com/article/fancy-form-design-css),
    [tutaj](http://articles.sitepoint.com/article/steps-useable-forms),
 
    Formularze testujemy wpisując w atrybucie *action* elementu *form*
    swój adres email. Po kliknięciu przycisku *submit*,
    na wpisany adres zostanie przesłany email.
-  
-   Ale można też postąpić inaczej — można uruchomić 
+
+   Ale można też postąpić inaczej — można uruchomić
    [prostą aplikację Sinatry](http://github.com/wbzyl/jquery-form).
-   Reszta jest opisana w README.   
+   Reszta jest opisana w README.
 
 
    W HTML 5 poświęcono sporo uwagi formularzom.
@@ -82,10 +82,10 @@ Kod ma działać w Firefoxie, w IE niekoniecznie.
 Zaprogramować taką czerwono-niebieską ramkę
 jak na załączonym poniżej obrazku.
 
-<%= image_tag "/images/examples/css/tests/002-border.png" %>
+{%= image_tag "/images/examples/css/tests/002-border.png" %}
 
 <blockquote>
-  <p><%= image_tag "/images/examples/css/tests/003-rollover.png", :alt=>"rollover" %></p>
+  <p>{%= image_tag "/images/examples/css/tests/003-rollover.png", :alt=>"rollover" %}</p>
 </blockquote>
 
 2\. W tym zadaniu należy uzyskać efekt *roll over*, taki jak na
@@ -108,7 +108,7 @@ i ustawionymi kolorami…
       <meta http-equiv="Content-Type"
             content="text/html; charset=utf-8" />
       <style type="text/css">
-{:lang=html}
+
         ul#navlist {
           list-style-type: none;
           font-family: sans-serif;
@@ -126,7 +126,7 @@ i ustawionymi kolorami…
         ul#navlist li a:hover {
           background: #ffffcc; color:black;
         }
-{:lang=css21}
+
       </style>
     </head>
     <body>
@@ -139,10 +139,10 @@ i ustawionymi kolorami…
       </ul>
     </body>
     </html>
-{:lang=html}
+
 
 <blockquote>
-  <p><%= image_tag "/images/examples/css/tests/004-alternate.png", :alt=>"alternate colors" %></p>
+  <p>{%= image_tag "/images/examples/css/tests/004-alternate.png", :alt=>"alternate colors" %}</p>
 </blockquote>
 
 3\. (i) Przygotować CSS kolorujacy górną połowę wiersza tekstu na niebiesko,
@@ -155,7 +155,7 @@ Efekt, który należy osiągnąć ma być taki jak na obrazku obok.
 *Uwaga:* Taki oto kod:
 
     <p class="blue">a<span class="red">b</span>c<span class="red">...
-{:lang=html}
+
 
 w którym używamy jednego elementu span
 na jedną literę **nie zalicza** tego zadania.
@@ -163,8 +163,8 @@ Należy ten efekt osiągnąć oszczędniejszymi środkami, ale
 zamiast spanów można użyć fontu *monospaced* (wskazówka?).
 
 <blockquote>
- <p><%= image_tag "/images/examples/css/thumb-konwersja-istniejacej-strony.png", :alt=>"E. Meyer, CSS I" %></p>
- <p><%= link_to "większy obrazek", "/images/examples/css/konwersja-istniejacej-strony.png" %></p>
+ <p>{%= image_tag "/images/examples/css/thumb-konwersja-istniejacej-strony.png", :alt=>"E. Meyer, CSS I" %}</p>
+ <p>{%= link_to "większy obrazek", "/images/examples/css/konwersja-istniejacej-strony.png" %}</p>
 </blockquote>
 
 ### Konwersja istniejącej strony
@@ -176,10 +176,10 @@ wymaga dwóch kroków:
 * dodania kodu CSS zastępującego wycięty kod
 
 Tutaj mamy
-<%= link_to "stronę w czystym HTML", "/doc/examples/css/konwersja_istniejacej_strony/original.html" %>.
+{%= link_to "stronę w czystym HTML", "/doc/examples/css/konwersja_istniejacej_strony/original.html" %}.
 
 A tutaj mamy
-<%= link_to "stronę z wyciętym kodem", "/doc/examples/css/konwersja_istniejacej_strony/original-stripped.html" %>.
+{%= link_to "stronę z wyciętym kodem", "/doc/examples/css/konwersja_istniejacej_strony/original-stripped.html" %}.
 
 Twoje zadanie polega na dodaniu kodu CSS przywracającego
 oryginalny wygląd strony.

@@ -17,7 +17,7 @@ Przykład 1.
 
     require 'rubygems'
     require 'rack'
-    
+
     app = lambda do |env|
       [
        200,                                              # status
@@ -26,7 +26,7 @@ Przykład 1.
       ]
     end
     Rack::Handler::Thin.run(app, :Port => 3000)
-{:lang=ruby}
+
 
 Przykład 2. A Rack application is an Ruby object (not a class) that
 responds to call. It takes exactly one argument, the environment and
@@ -35,21 +35,21 @@ the body.
 
     require 'rubygems'
     require 'rack'
-    
+
     class HelloWorld
       def call(env)
         [200, {"Content-Type" => "text/html"}, "Hello Rack!"]
       end
     end
     Rack::Handler::Thin.run HelloWorld.new
-{:lang=ruby}
+
 
 Przykład 3. Middleware.
 
     require 'rubygems'
     require 'rack'
     require 'haml'
-    
+
     engine = Haml::Engine.new( IO.read("hello.haml") )
 
     app = lambda do |env|
@@ -59,15 +59,15 @@ Przykład 3. Middleware.
        [ engine.render ]
       ]
     end
-    
+
     app = Rack::Builder.new do
       use Rack::CommonLogger
       use Rack::Static, :urls => ["/stylesheets", "/images"] #, :root ="public"
       run app
     end
-    
+
     Rack::Handler::Thin.run app
-{:lang=ruby}
+
 
 gdzie plik *hello.haml* może wyglądać tak:
 
@@ -78,13 +78,13 @@ gdzie plik *hello.haml* może wyglądać tak:
       %head
         %meta{"http-equiv"=>"content-type", |
               :content=>"text/html; charset=utf-8"}
-        %link{:href=>"/stylesheets/hello.css", |
+        %link
               :media=>"screen",:rel=>"stylesheet",:type=>"text/css"}
         %title .:.moja stronka.:.
       %body
         %h1 Wycieczka w Tatry Zachodnie
         %p
-          %img{:src=>"/images/08100002.jpg",:alt=>"ścieżka na.."}
+          %img
 
 Bez `Rack::Static` nie byłyby pliki z arkuszami stylów
 i kodem Javascript oraz obrazki.
@@ -100,37 +100,37 @@ file. Supply it a run Rack Object and you’re ready to go:
     $ rackup config.ru
 
 `rackup` converts the supplied rack config file to
-an instance of `Rack::Builder`. 
+an instance of `Rack::Builder`.
 This is how is happens under the hood (just so you get an idea):
 
     config_file = File.read( CONFIG )
     rack_application = eval("Rack::Builder.new { #{config_file} }")
-{:lang=ruby}
 
-And then rackup supplies `rack_application` 
+
+And then rackup supplies `rack_application`
 to the respective webserver:
 
     SERVER.run rack_application, options
-{:lang=ruby}
+
 
 The config file is treated as if it is the body of
 
     app = Rack::Builder.new { ... CONFIG ... }.to_app
-{:lang=ruby}
+
 
 Also, the first line starting with `#\` is treated as if it was
 options, allowing rackup arguments to be specified in the config
 file. For example:
 
     #\ -w -p 8765
-      
+
     use Rack::Reloader, 0
     use Rack::ContentLength
     app = proc do |env|
       [ 200, {'Content-Type' => 'text/plain'}, "a" ]
     end
     run app
-{:lang=ruby}
+
 
 **Pytania:** 1. Czy opcje z pierwszego wiersza przebijają opcje z
 linii poleceń? 2. Czy przebijają opcje z pliku konfiguracyjnego dla
@@ -160,21 +160,21 @@ Following the community convention: use the block form of `Rack::Builder`:
       run infinity
     end
     Rack::Handler::Thin.run builder
-{:lang=ruby}
+
 
 Routing examples follow.
 
 Let’s say you want to show “infinity 0.1” for all the paths under
-`/version` (i.e. `/version`, `/version/whatever` **but not** 
+`/version` (i.e. `/version`, `/version/whatever` **but not**
 `/versionsomething`), you might want to do something like:
 
-    infinity = Proc.new do |env| 
+    infinity = Proc.new do |env|
       [200, {"Content-Type" => "text/html"}, env.inspect]
     end
-      
+
     builder = Rack::Builder.new do
       use Rack::CommonLogger
-       
+
       map '/' do
         run infinity
       end
@@ -183,7 +183,7 @@ Let’s say you want to show “infinity 0.1” for all the paths under
       end
     end
     Rack::Handler::Thin.run builder
-{:lang=ruby}
+
 
 Let’s say you feel like adding information about last version. So to
 show “infinity beta 0.0” at `/version/last`:
@@ -191,7 +191,7 @@ show “infinity beta 0.0” at `/version/last`:
     infinity = Proc.new {|env| [200, {"Content-Type" => "text/html"}, env.inspect]}
     builder = Rack::Builder.new do
       use Rack::CommonLogger
-      
+
       map '/' do
         run infinity
       end
@@ -205,14 +205,14 @@ show “infinity beta 0.0” at `/version/last`:
       end
     end
     Rack::Handler::Thin.run builder
-{:lang=ruby}
+
 
 Finally, the *Infinty* app converted to rackup.
 
     #\ -p 4000 -s thin
-    
+
     infinity = Proc.new {|env| [200, {"Content-Type" => "text/html"}, env.inspect]}
-    
+
     map '/' do
       run infinity
     end
@@ -224,7 +224,7 @@ Finally, the *Infinty* app converted to rackup.
         run Proc.new {|env| [200, {"Content-Type" => "text/plain"}, "infinity beta 1.0"] }
       end
     end
-{:lang=ruby}
+
 
 
 ### Building Rack Middleware: **Rack::Upcase**
@@ -233,7 +233,7 @@ Przykład pokazujący, że napisanie prostego middleware
 nie jest trudne i nie zajmuje dużo czasu.
 
     #\ -p 4000 -s thin
-    
+
     require 'rubygems'
     require 'rack'
 
@@ -242,7 +242,7 @@ nie jest trudne i nie zajmuje dużo czasu.
         def initialize app
           @app = app
         end
-       
+
         def call env
           status, headers, body = @app.call env
           [status, headers, [body.first.upcase]]
@@ -250,15 +250,15 @@ nie jest trudne i nie zajmuje dużo czasu.
       end
     end
 
-    use Rack::Lint    
+    use Rack::Lint
     use Rack::Upcase
     use Rack::ContentLength
     app = lambda { |env| [200, { 'Content-Type' => 'text/html' }, 'Hello World'] }
 
     run app
-{:lang=ruby}
 
-**Uwaga:** plik powyżej uruchamiamy za pomocą polecenia 
+
+**Uwaga:** plik powyżej uruchamiamy za pomocą polecenia
 
     rackup upcase.ru
 

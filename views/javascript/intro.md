@@ -2,7 +2,7 @@ Według guru Javascript, Douglasa Crockforda,
 język składa się z *good parts* i *bad parts*.
 
 <blockquote>
-<%= image_tag "/images/d_baranovskiy.jpg", :alt => "[Dmitry Baranovskiy]" %>
+{%= image_tag "/images/d_baranovskiy.jpg", :alt => "[Dmitry Baranovskiy]" %}
 <p>
   <b>Global scope</b>.  Treat it like a public toilet. You can’t avoid
   it, but while you’re there have the least contact possible: you
@@ -33,7 +33,7 @@ język składa się z *good parts* i *bad parts*.
     false == null      // false
     null == undefined  // true
     " \t\r\n " == 0    // true
-{:lang=javascript}
+
 
 ### Bad Heritage
 
@@ -79,7 +79,7 @@ The **very best** part:
 * Roberto Bicchierai.
   [jQuery.calendarPicker](http://bugsvoice.com/applications/bugsVoice/site/test/calendarPickerDemo.jsp)
 * Christoph Schüßler.
-  [jQuery.popeye 2.0](http://dev.herr-schuessler.de/jquery/popeye/index.html) — 
+  [jQuery.popeye 2.0](http://dev.herr-schuessler.de/jquery/popeye/index.html) —
   an inline lightbox alternative
 
 [Google AJAX API](http://code.google.com/intl/pl/apis/ajax/):

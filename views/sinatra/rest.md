@@ -1,6 +1,6 @@
 REST, to skrótowiec *Representational State Transfer*.
 
-Cytat z *Wikipedii:* 
+Cytat z *Wikipedii:*
 
 An important concept in REST is the existence of resources
 (sources of specific information), each of which is referenced with a
@@ -17,7 +17,7 @@ w architekturze REST?
 3. Dostęp do zasobów uzyskujemy korzystając z standardowych
    metod HTTP (czasowniki: POST, GET, PUT i DELETE).
 4. Protokół z którego korzystamy jest:
-   klient/serwer, bezstanowy, cacheable, 
+   klient/serwer, bezstanowy, cacheable,
    layered (tzn. zasób może składać się z zasobów).
 
 Protokół HTTP jest taki jak to opisano powyżej.
@@ -41,7 +41,7 @@ thought of as comprising three aspects:
 Znalezione w sieci:
 
 * [sinatra-rest](http://github.com/blindgaenger/sinatra-rest/)
-  generates RESTful routes for the models of 
+  generates RESTful routes for the models of
   a Sinatra application (ActiveRecord, DataMapper, Stone)
 
 
@@ -51,8 +51,8 @@ Aside to **notka**, dygresja, uwaga na marginesie.
 
 Aside to resource, zasób.
 
-                                         Read ID=4 
-    GET /asides/4      <-->  Service  <-------------->  SQLite 
+                                         Read ID=4
+    GET /asides/4      <-->  Service  <-------------->  SQLite
 
                                          Create
     POST /asides       <-->  Service  <-------------->  SQLite
@@ -93,7 +93,7 @@ bloku `configure`:
         # nic nie rób, ponieważ tabelka została już utworzona
       end
     end
-{:lang=ruby}
+
 
 Dostęp do tabelki uzyskamy korzystając z gotowców
 odziedziczonych z klasy *ActiveRecord::Base*:
@@ -103,7 +103,7 @@ odziedziczonych z klasy *ActiveRecord::Base*:
       named_scope :recent, { :limit => 2,
                              :order => 'updated_at DESC' }
     end
-{:lang=ruby}
+
 
 Przy okazji zażyczymy sobie walidacji w kolumnie
 *body* tabelki oraz zdefiniujemy metodę klasy
@@ -127,7 +127,7 @@ jej definicję umieścimy w bloku `helpers`.
         "Error: już było\n"
       end
     end
-{:lang=ruby}
+
 
 Obiecana powyżej definicja `aside_url`:
 
@@ -143,14 +143,14 @@ Obiecana powyżej definicja `aside_url`:
         "#{base_url}asides/#{aside.id}"
       end
     end
-{:lang=ruby}
+
 
 Teraz uruchamiamy aplikację:
 
     ruby asides.rb
     -- create_table(:asides)
        -> 0.3567s
-    == Sinatra/0.9.1 has taken the stage on 4567 
+    == Sinatra/0.9.1 has taken the stage on 4567
          for development with backup from Thin
     >> Thin web server (v1.0.0 codename That's What She Said)
     >> Maximum connections set to 1024
@@ -180,7 +180,7 @@ Wykonanie tego samego polecenia jeszcze raz:
     Content-Length: 18
     Connection: keep-alive
     Server: thin 1.0.0 codename That's What She Said
-    
+
     Error: już było
 
 
@@ -202,9 +202,9 @@ Sprytne pobieranie: od razu w kilku formatach.
         aside.to_json
       end
     end
-{:lang=ruby}
 
-Po wrzuceniu kilku asides do tabelki, możemy spróbować 
+
+Po wrzuceniu kilku asides do tabelki, możemy spróbować
 pobrać je w formacie XML lub JSON:
 
     curl -i --url http://localhost:4567/asides/1.xml -X GET
@@ -228,7 +228,7 @@ Kod bardzo podobny do metody `post`:
         "Error: nie udało się uaktualnić aside.\n"
       end
     end
-{:lang=ruby}
+
 
 Tak uaktualniamy aside:
 
@@ -244,7 +244,7 @@ Niektóre dygresje, to pomyłki:
       status(200)
       "Usunięto aside\n"
     end
-{:lang=ruby}
+
 
 Tak usuwamy aside:
 
@@ -262,7 +262,7 @@ W bloku *configure* aplikacji dodajemy stałą:
     configure do
       ...
       CREDENTIALS = ['admin', 'asides']
-{:lang=ruby}
+
 
 Następnie dopisujemy do metod pomocniczych metodę *protected\!*:
 
@@ -270,18 +270,18 @@ Następnie dopisujemy do metod pomocniczych metodę *protected\!*:
       ...
       def protected!
         auth = Rack::Auth::Basic::Request.new(request.env)
-      
+
         # Request a username/password if the user does not send one
         unless auth.provided?
           response['WWW-Authenticate'] = %Q{Basic Realm="Asides"}
           throw :halt, [401, "Authentication Required\n"]
         end
-      
+
         # A request with non-basic auth is a bad request
         unless auth.basic?
           throw :halt, [400, 'Bad Request']
         end
-      
+
         # Authentication is well-formed, check the credentials
         if auth.provided? && CREDENTIALS == auth.credentials
           return true
@@ -289,7 +289,7 @@ Następnie dopisujemy do metod pomocniczych metodę *protected\!*:
           throw :halt, [403, 'Forbidden']
         end
       end
-{:lang=ruby}
+
 
 A tak zabezpieczamy metodę *delete* przed nieuprawnionym
 dostępem:
@@ -299,7 +299,7 @@ dostępem:
       Aside.delete_all
       status(204)
     end
-{:lang=ruby}
+
 
 A tak sprawdzamy czy zabezpieczenie działa:
 
@@ -319,16 +319,16 @@ A tak usuwnamy **wszystkie** asides:
     require 'rubygems'
     require 'rest_client'
     require 'json'
-    
+
     if __FILE__ == $PROGRAM_NAME
       json   = RestClient.get('http://localhost:4567/asides')
       asides = JSON.load(json)
-      
+
       asides.each do |aside|
         puts "(#{aside['id']}) - #{aside['body']}"
       end
     end
-{:lang=ruby}
+
 
 Uruchamiamy klienta:
 
@@ -342,24 +342,24 @@ Dokumentacja do gemu *rest-client* (0.9.2).
 Obsługa błędów, etc.
 
     disable :show_exceptions
-      
+
     error ActiveRecord::RecordNotFound do
       status(404)
       @msg = "Aside not found\n"
     end
-    
+
     not_found do
       status(404)
       @msg || "Asides doesn't know about that!\n"
     end
-{:lang=ruby}    
+
 
 Sprawdzamy:
 
     curl -i --url http://localhost:4567/asides/69.json
     ...
     Aside not found
-     
+
     curl -i --url http://localhost:4567/jokes
     ...
     Asides doesn't know about that!
@@ -371,7 +371,7 @@ Sprawdzamy:
       @asides = Aside.recent
       last_modified @asides.first.updated_at
       ...
-{:lang=ruby}
+
 
 Teraz wykonujemy:
 

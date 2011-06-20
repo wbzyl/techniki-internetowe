@@ -10,7 +10,7 @@ Po uruchomieniu, aplikacja jest dostępna pod adresem:
 Wyświetlany cytat jest losowany z pliku `education.json`,
 a same cytaty pochodzą z uniksowej aplikacji *Fortune*.
 
-Aplikację *Education* można sklonować z serwera 
+Aplikację *Education* można sklonować z serwera
 [*Github*](http://github.com):
 
     git clone git://github.com/wbzyl/sinatra_fortune.git
@@ -31,25 +31,25 @@ Plik `education.rb` zawiera implementację aplikacji:
     require 'json'
     gem 'sinatra', '>=0.9.0.5'
     require 'sinatra'
-    
+
     before do
       data =
         begin
-          File.read(File.dirname(__FILE__) + '/public/education.json') 
+          File.read(File.dirname(__FILE__) + '/public/education.json')
         rescue Errno::ENOENT
           '[ { "q":  "A gdzie jest plik education.json", "a": "Administrator"} ]'
         end
       @quotations = JSON.parse data
-      @length = @quotations.length  
+      @length = @quotations.length
     end
-    
+
     get '/' do
       education = @quotations[rand(@length)]
       @quotation = education['q']
       @author = education['a']
       erb :index
     end
-{:lang=ruby}
+
 
 Layout aplikacji `layout.erb`:
 
@@ -57,11 +57,11 @@ Layout aplikacji `layout.erb`:
     <html>
       <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="/stylesheets/application.css" 
+        <link rel="stylesheet" href="/stylesheets/application.css"
               type="text/css" media="screen" charset="utf-8">
-        <script src="/javascripts/jquery.js" 
+        <script src="/javascripts/jquery.js"
               type="text/javascript" charset="utf-8"></script>
-        <script src="/javascripts/application.js" 
+        <script src="/javascripts/application.js"
               type="text/javascript" charset="utf-8"></script>
         <title>Random Quotes</title>
       </head>
@@ -70,13 +70,13 @@ Layout aplikacji `layout.erb`:
         <%%= yield %> <!-- tutaj jest wstawiany plik index.erb -->
       </body>
     </html>
-{:lang=html}
+
 
 Plik `index.erb` to tylko dwa wiersze kodu:
 
     <p class="quote"><%%= @quotation %></p>
     <p class="author"><%%= @author %></p>
-{:lang=html}
+
 
 Na koniec, fragment pliku z cytatami `education.json`:
 
@@ -90,11 +90,11 @@ Na koniec, fragment pliku z cytatami `education.json`:
 
 ## Znalezione w sieci
 
-1. A base Sinatra application template with DataMapper, RSpec, and Haml. 
+1. A base Sinatra application template with DataMapper, RSpec, and Haml.
     [Just fork and build.](http://github.com/zapnap/sinatra-template/)
-2. [Rubigen based generator 
+2. [Rubigen based generator
    for new sinatra projects.](http://github.com/quirkey/sinatra-gen/)
-3. [Building your own Sinatra clone: 
+3. [Building your own Sinatra clone:
    Parts I-V](http://remi.org/2009/03/30/building-your-own-sinatra-clone-part-1.html)
 
 Przykładowe aplikacje:

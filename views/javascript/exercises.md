@@ -26,7 +26,7 @@ Zanim rozwiążemy pierwsze zadanie pisząc program w języku Javascript,
 zainstalujemy rozszerzenie do Firefoksa o nazwie [JavaScript
 Debugger](https://addons.mozilla.org/en-US/firefox/addon/216).
 
-Następnie przechodzimy do lektury samouczka Svend’a Tofte. 
+Następnie przechodzimy do lektury samouczka Svend’a Tofte.
 [Learning the JavaScript debugger Venkman](http://www.svendtofte.com/code/learning_venkman/).
 
 Dlaczego powinniśmy zacząć od instalacji debuggera wyjaśnia
@@ -36,7 +36,7 @@ Svend zaraz na początku samouczka…
 
 ## Dziesięć prostych zadań
 
-1\. Zdefiniować funkcję `max()` o dwóch argumentach 
+1\. Zdefiniować funkcję `max()` o dwóch argumentach
 całkowitych, wypisującą większy z podanych argumentów.
 
 Przykładowe rozwiązanie:
@@ -49,7 +49,7 @@ Przykładowe rozwiązanie:
     }
     max(2, 99)
     max(2, -1)
-{:lang=javascript}
+
 
 Kod wpisujemy w pliku o nazwie *01.js*.
 Kod uruchamiamy z wiersza poleceń tak:
@@ -82,11 +82,11 @@ napisem składającym się z jednego znaku zwracającej *true*
 jeśli podany znak jest samogłoską i zwracającej *false*
 w przeciwnym wypadku.
 
-4\. Zdefiniować funkcję `translate()`, która tekst podany 
+4\. Zdefiniować funkcję `translate()`, która tekst podany
 jako jej jedyny argument tłumaczy w następujący sposób:
-podwają każdą spółgłoskę i wstawia między nie 
+podwają każdą spółgłoskę i wstawia między nie
 literę&nbsp;*o*.
-Na przykład, `translate('ala ma kota')` zostanie 
+Na przykład, `translate('ala ma kota')` zostanie
 przetłumaczone na *alola moma koktota*.
 
 5\. Zdefiniować funkcje `sum()` oraz `multiply()` obliczające,
@@ -95,10 +95,10 @@ przekazanej jako argument. Na przykład, wywołanie
 `sum([2,3,4])` powinno zwrócić 9, a `multiply([2,3,4])` — 24.
 
 6\. Zdefiniować funkcję `reverse()` obliczającą odwrócony
-napis podany jako argument. Na przykład, 
+napis podany jako argument. Na przykład,
 `reverse("ala ma kota")` powinno zwrócić *atok am ala*.
 
-7\. Zapamiętać w obiekcie Javascript, 
+7\. Zapamiętać w obiekcie Javascript,
 tłumaczenia kilku słów z języka angielskiego na polski.
 Użyć tego obiektu do tłumaczenia krótkich **Wielkanocnych**
 zdań z angielskiego na polski.

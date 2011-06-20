@@ -24,7 +24,7 @@ Do pliku `Capfile` dopisujemy:
         run "echo 'Can not START Sinatra application.'"
       end
     end
-{:lang=ruby}
+
 
 A zawartość `config/deploy.rb` wymieniamy na:
 
@@ -35,8 +35,8 @@ A zawartość `config/deploy.rb` wymieniamy na:
     set :repository, "git://github.com/wbzyl/sinatra_fortune.git"
 
     set :scm, :git
-    set :branch, "master"  
-    set :deploy_via, :export  
+    set :branch, "master"
+    set :deploy_via, :export
 
     set :deploy_to, "/home/wbzyl/www/#{application}"
 
@@ -44,14 +44,14 @@ A zawartość `config/deploy.rb` wymieniamy na:
     role :web, "localhost"
     role :db,  "localhost", :primary => true
 
-    set :keep_releases, "4"  # cap deploy:cleanup  
-{:lang=ruby}
+    set :keep_releases, "4"  # cap deploy:cleanup
+
 
 Na koniec, dopisujemy do pliku `/etc/hosts`:
 
     127.0.0.1  localhost.localdomain  localhost  education.local
 
-i tworzymy nowy plik `/etc/httpd/conf.d/mod_rails_vhosts.conf` 
+i tworzymy nowy plik `/etc/httpd/conf.d/mod_rails_vhosts.conf`
 dla Apacha, w którym wpisujemy:
 
     <VirtualHost *:80>
@@ -59,7 +59,7 @@ dla Apacha, w którym wpisujemy:
       DocumentRoot /home/wbzyl/www/education/current/public
     </VirtualHost>
 
-Jeśli poprawnie wklepaliśmy cały kod, to poniższe polecenia 
+Jeśli poprawnie wklepaliśmy cały kod, to poniższe polecenia
 powinny wykonać się **bez błędów**:
 
     cap deploy:setup
@@ -90,23 +90,23 @@ Plik `Capfile` dla Thina:
       task :start , :roles => :app do
         run "/usr/bin/thin -C #{current_path}/config/thin_config.yaml start"
       end
-      
+
       desc <<-DESC
-      Stop the Thin process on the app server. 
+      Stop the Thin process on the app server.
       DESC
       task :stop , :roles => :app do
         run "/usr/bin/thin -C #{current_path}/config/thin_config.yaml stop"
       end
-      
+
       desc <<-DESC
-      Restart the Mongrel process on the app server. 
+      Restart the Mongrel process on the app server.
       This uses the pid stored in the tmp/pids/mongrel.pid file.
       DESC
       task :restart , :roles => :app do
         run "/usr/bin/thin -C #{current_path}/config/thin_config.yaml restart"
       end
     end
-{:lang=ruby}
+
 
 Plik konfigurujący Thina, `thin_config.yaml`:
 
@@ -125,7 +125,7 @@ Plik konfigurujący Thina, `thin_config.yaml`:
     timeout: 30
     max_persistent_conns: 512
     daemonize: true
-{:lang=yaml}
+
 
 Uwaga: Szablon takiego pliku wygeneruje sam program
 jeśli wywołamy go w ten sposób:
@@ -139,7 +139,7 @@ Pierwsze wdrożenie zaczynamy od wykonania poleceń:
     cap deploy:update
     cap deploy:start
 
-A następne wdrożenia, po `git add`, `commit` i `push`, 
+A następne wdrożenia, po `git add`, `commit` i `push`,
 wykonujemy tak:
 
     cap deploy

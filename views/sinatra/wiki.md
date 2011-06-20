@@ -11,22 +11,22 @@ Plik rackup *config.ru*:
 
     require 'wiki'
     run Wiki.new
-{:lang=ruby}
+
 
 Wiki:
 
     require 'rubygems'
     require 'sinatra/base'
     require 'activerecord'
-    
+
     gem 'nakajima-rack-flash', '>=0.0.7'
     require 'rack/flash'
-    
+
     ActiveRecord::Base.establish_connection(
       :adapter => 'sqlite3',
       :database => 'wiki.sqlite'
     )
-    
+
     begin
       ActiveRecord::Schema.define do
         create_table :posts do |t|
@@ -38,31 +38,31 @@ Wiki:
     rescue ActiveRecord::StatementInvalid
       # do nothing, since the schema already exists
     end
-    
+
     class Post < ActiveRecord::Base
       validates_uniqueness_of :name
     # named_scope :recent, {:limit => 4, :order => 'updated_at DESC'}
     end
-    
+
     class Wiki < Sinatra::Base
       enable :sessions
       use Rack::Flash
-      
+
       get '/' do
         redirect '/home'
       end
-    
+
       get '/:page' do
         @page = Post.find_or_create_by_name(params[:page])
         @flash = flash[:notice]
         erb :show
       end
-    
+
       get '/:page/edit' do
         @page = Post.find_or_create_by_name(params[:page])
         erb :edit
       end
-    
+
       post '/:page' do
         @page = Post.find_or_create_by_name(params[:page])
         @page.content = params[:content]
@@ -71,7 +71,7 @@ Wiki:
         redirect "/#{@page.name}"
       end
     end
-{:lang=ruby}
+
 
 Layout *layout.erb*:
 
@@ -88,13 +88,13 @@ Layout *layout.erb*:
       <%%= yield %>
       </body>
     </html>
-{:lang=html}
-    
+
+
 Widok *show.erb*:
 
     <p><%%= @page.content %></p>
     <p><a href='/<%%= @page.name %>/edit'>Edit</a></p>
-{:lang=html}
+
 
 Widok *edit.erb*:
 
@@ -104,7 +104,7 @@ Widok *edit.erb*:
       <input type='submit' value='Save'>
       <a href='/<%%= @page.name %>'>Cancel</a>
     </form>
-{:lang=html}
+
 
 
 ## Git Wiki

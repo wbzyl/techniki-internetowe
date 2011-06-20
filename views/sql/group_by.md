@@ -25,7 +25,7 @@ Wpisujemy:
     select deptno, ename
       from emp
     where deptno=10;
-{:lang=sqlite}
+
 
 Otrzymujemy:
 
@@ -44,7 +44,7 @@ Wpisujemy:
       from emp
     where deptno=10
     group by deptno;
-{:lang=sqlite}
+
 
 Otrzymujemy:
 
@@ -63,12 +63,12 @@ Tworzymy tabelę i wpisujemy do niej dane:
     insert into owoce values('jabłka');
     insert into owoce values('gruszki');
     insert into owoce values('śliwki');
-{:lang=sqlite}
+
 
 Zapytanie:
 
     select name from owoce;
-{:lang=sqlite}
+
 
 Odpowiedź:
 
@@ -85,7 +85,7 @@ Zapytanie:
     select name
       from owoce
     group by name;
-{:lang=sqlite}
+
 
 Odpowiedź:
 
@@ -100,7 +100,7 @@ Zapytanie:
     select name, count(*) as cnt
       from owoce
     group by name;
-{:lang=sqlite}
+
 
 Odpowiedź:
 
@@ -115,13 +115,13 @@ Dodajemy nieco NULLi do tabelki z owocami:
     insert into owoce values(null);
     insert into owoce values(null);
     insert into owoce values(null);
-{:lang=sqlite}
+
 
 Zapytanie:
 
     select coalesce(name,'NULL') as name
       from owoce;
-{:lang=sqlite}
+
 
 Odpowiedź:
 
@@ -142,7 +142,7 @@ Zapytanie:
            count(name) as cnt
       from owoce
     group by name;
-{:lang=sqlite}
+
 
 Odpowiedź, niestety niepoprawna, ponieważ
 NULLe nie zostały policzone:
@@ -164,7 +164,7 @@ Zapytanie:
 
     select deptno, count(*) as cnt
       from emp;
-{:lang=sqlite}
+
 
 nie jest poprawne składniowo. Jeśli w zapytaniu korzystamy
 z funkcji grupującej, tutaj z *count()*,
@@ -173,7 +173,7 @@ to musi ona po czymś grupować, np. po *deptno*:
     select deptno, count(*) as cnt
       from emp
     group by deptno;
-{:lang=sqlite}
+
 
 Odpowiedź:
 
@@ -193,7 +193,7 @@ Takie sobie zapytanie:
       from emp
     group by deptno
     order by deptno;
-{:lang=sqlite}
+
 
 I odpowiedź:
 
@@ -209,7 +209,7 @@ Kilkukrotne grupowanie (agregowanie), nieposortowana odpowiedź:
     select deptno, job, count(*) as cnt
       from emp
     group by deptno, job;
-{:lang=sqlite}
+
 
 posortowana odpowiedź:
 
@@ -217,7 +217,7 @@ posortowana odpowiedź:
      from emp
     group by deptno, job
     order by deptno, job;
-{:lang=sqlite}
+
 
 Odpowiedź:
 
@@ -250,7 +250,7 @@ Zwykłe zapytanie:
 
     select count(*) as cnt
       from emp;
-{:lang=sqlite}
+
 
 Zwykła odpowiedź:
 
@@ -265,7 +265,7 @@ Okienkowe zapytanie (requires PostgreSQL **8.4**):
            count(*) OVER() as cnt
       from emp
     order by 2;
-{:lang=sqlite}
+
 
 Odpowiedź:
 
@@ -294,7 +294,7 @@ Odpowiedź:
       from emp
     where deptno=10
     order by 2;
-{:lang=sqlite}
+
 
 Odpowiedź:
 
@@ -324,7 +324,7 @@ Zapytanie:
            count(*) over(partition by deptno) as cnt
       from emp
     order by 2;
-{:lang=sqlite}
+
 
 Odpowiedź:
 
@@ -357,7 +357,7 @@ od takiego zapytania zwaracającego tę samą odpowiedź
            ) as cnt
       from emp e
     order by 2;
-{:lang=sqlite}
+
 
 Funkcje okienkowe z PARTITION BY wykonują swoje obliczenia
 niezależnie.
@@ -371,7 +371,7 @@ Zapytanie:
            count(*) over(partition by job) as job_cnt
       from emp
     order by 2;
-{:lang=sqlite}
+
 
 Odpowiedź:
 
@@ -399,7 +399,7 @@ Klauzula PARTITION BY umieszcza NULLe w jednej grupie.
     select coalesce(comm, -1) as comm,
            count(*) over(partition by comm) as cnt
     from emp;
-{:lang=sqlite}
+
 
 Odpowiedź:
 

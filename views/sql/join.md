@@ -12,12 +12,12 @@ ale bez rozwiązań.
 
 Chcemy uzyskać taki efekt:
 
-     ename_and_dname | deptno 
+     ename_and_dname | deptno
     -----------------+--------
      clark           |     10
      king            |     10
      miller          |     10
-     --------        |       
+     --------        |
      accounting      |     10
      research        |     20
      sales           |     30
@@ -36,7 +36,7 @@ Odpowiedź:
     union all
     select dname, deptno
       from dept;
-{:lang=sqlite}
+
 
 
 ### Łączenie powiązanych wierszy
@@ -44,7 +44,7 @@ Odpowiedź:
 Na przykład, chcemy wypisać nazwiska wszystkich zatrudnionych
 w Dept 10 wraz miejscowością w której jest zlokalizowany Dept:
 
-     ename  |   loc    
+     ename  |   loc
     --------+----------
      clark  | new york
      king   | new york
@@ -56,7 +56,7 @@ Odpowiedź:
       from emp e, dept d
     where e.deptno = d.deptno
       and e.deptno = 10;
-{:lang=sqlite}
+
 
 
 ### Wyszukujemy podobne wiersze między tabelami
@@ -69,27 +69,27 @@ Na przykład
     select ename, job, sal
       from emp
     where job = 'clerk';
-{:lang=sqlite}
+
 
 Zapytanie:
 
     select * from V;
-{:lang=sqlite}
+
 
 Wypisuje coś takiego:
 
-     ename  |  job  | sal  
+     ename  |  job  | sal
     --------+-------+------
      smith  | clerk |  800
      adams  | clerk | 1100
      james  | clerk |  950
      miller | clerk | 1300
 
-Ta odpowiedź nas nie zadowala. 
+Ta odpowiedź nas nie zadowala.
 
 Chcemy uzyskać coś takiego:
 
-     empno | ename  |  job  | sal  | deptno 
+     empno | ename  |  job  | sal  | deptno
     -------+--------+-------+------+--------
       7369 | smith  | clerk |  800 |     20
       7867 | adams  | clerk | 1100 |     20
@@ -105,7 +105,7 @@ Odpowiedź:
       intersect
       select ename, job, sal from V
     );
-{:lang=sqlite}
+
 
 
 ### Pobieramy wiersze z jednej tabeli, których nie ma w drugiej tabeli
@@ -114,7 +114,7 @@ Na przykład, DEPTNO 40 jest w tabeli DEPT i nie występuje w tabeli EMP.
 
 Chcemy uzyskać taki wynik:
 
-     deptno 
+     deptno
     --------
          40
 
@@ -123,14 +123,14 @@ Odpowiedź:
     select deptno from dept
     except
     select deptno from emp;
-{:lang=sqlite}
+
 
 
 ### Pobieramy wiersze z jednej tabeli, które nie mają odpowiadających im wierszy w drugiej tabeli
 
 Na przykład, chcemy wyszukać DEPTs bez pracowników:
 
-     deptno |   dname    |  loc   
+     deptno |   dname    |  loc
     --------+------------+--------
          40 | operations | boston
 
@@ -142,14 +142,14 @@ Odpowiedź:
       from dept d left outer join emp e
         on (d.deptno = e.deptno)
     where e.deptno is null;
-{:lang=sqlite}
 
-Jak to działa? 
+
+Jak to działa?
 
     select e.ename, e.deptno as emp_deptno, d.*
       from dept d left outer join emp e
         on (d.deptno = e.deptno);
-{:lang=sqlite}
+
 
 ### \*\*Czy dwie tabele zawierają takie same dane?
 
@@ -160,16 +160,16 @@ Utwórzmy następujący widok:
     select * from emp where deptno != 10
     union all
     select * from emp where ename = 'ward';
-{:lang=sqlite}
+
 
 Zapytanie:
 
     select * from V;
-{:lang=sqlite}
+
 
 Daje taki rezultat:
 
-     empno | ename  |   job    | mgr  |  hiredate  | sal  | comm | deptno 
+     empno | ename  |   job    | mgr  |  hiredate  | sal  | comm | deptno
     -------+--------+----------+------+------------+------+------+--------
       7369 | smith  | clerk    | 7902 | 1980-12-17 |  800 |      |     20
       7499 | allen  | salesman | 7698 | 1981-02-20 | 1600 |  300 |     30
@@ -184,12 +184,12 @@ Daje taki rezultat:
       7902 | ford   | analyst  | 7566 | 1981-12-03 | 3000 |      |     20
       7521 | ward   | salesman | 7698 | 1981-02-22 | 1250 |  500 |     30
 
-Tabelka V różni się od tabelki EMP pracownikami zatrudnionymi 
+Tabelka V różni się od tabelki EMP pracownikami zatrudnionymi
 w DEPTNO 10 oraz pracownikiem 'WARD'.
 
 Chcemy otrzymać następujący rezultat:
 
-     empno | ename  |    job    | mgr  |  hiredate  | sal  | comm | deptno | cnt 
+     empno | ename  |    job    | mgr  |  hiredate  | sal  | comm | deptno | cnt
     -------+--------+-----------+------+------------+------+------+--------+-----
       7521 | ward   | salesman  | 7698 | 1981-02-22 | 1250 |  500 |     30 |   2
       7839 | king   | president |      | 1981-11-17 | 5000 |      |     10 |   1
@@ -207,7 +207,7 @@ Odpowiedź:
       select empno, ename, job, mgr, hiredate, sal, comm, deptno, count(*) as cnt
         from emp
       group by empno, ename, job, mgr, hiredate, sal, comm, deptno
-    ) 
+    )
     union all
     (
       select empno, ename, job, mgr, hiredate, sal, comm, deptno, count(*) as cnt
@@ -218,23 +218,23 @@ Odpowiedź:
         from V
       group by empno, ename, job, mgr, hiredate, sal, comm, deptno
     );
-{:lang=sqlite}
 
-Dyskusja: 
+
+Dyskusja:
 
 1. Znajdź wszystkie wiersze w EMP - V
 2. Znajdź wszystkie wiersze w V - EMP
 3. Połącz rezultaty za pomocą UNION ALL
 
 Zapytanie w pierwszych nawiasach `( ... )` wypisuje:
- 
-     empno | ename |   job    | mgr  |  hiredate  | sal  | comm | deptno | cnt 
+
+     empno | ename |   job    | mgr  |  hiredate  | sal  | comm | deptno | cnt
     -------+-------+----------+------+------------+------+------+--------+-----
       7521 | ward  | salesman | 7698 | 1981-02-22 | 1250 |  500 |     30 |   2
 
 Zapytanie w drugich nawiasach `( ... )` wypisuje:
 
-     empno | ename  |    job    | mgr  |  hiredate  | sal  | comm | deptno | cnt 
+     empno | ename  |    job    | mgr  |  hiredate  | sal  | comm | deptno | cnt
     -------+--------+-----------+------+------------+------+------+--------+-----
       7839 | king   | president |      | 1981-11-17 | 5000 |      |     10 |   1
       7934 | miller | clerk     | 7782 | 1982-01-23 | 1300 |      |     10 |   1

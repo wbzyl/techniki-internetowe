@@ -1,4 +1,4 @@
-Linki do dokumentacji: 
+Linki do dokumentacji:
 
 * [Tables in HTML documents](http://www.w3.org/TR/html4/struct/tables.html).
 * [Tables](http://www.w3.org/TR/CSS2/tables.html)
@@ -16,7 +16,7 @@ Został jeszcze element **caption**.
 Na której warstwie jest on rysowany?
 
 Domyślnie wszystkie elementy mają przezroczyste tło.
-Style rysowane są kolejno, zaczynając od warstwy 
+Style rysowane są kolejno, zaczynając od warstwy
 *tabela* i kończąc na *komórki*.
 
 ## Przykładowa tabela
@@ -41,7 +41,7 @@ W przykładach poniżej zostanie użyta tabela:
         <td id="r4c3">4-3</td><td id="r4c4">4-4</td>
       </tr>
     </table>
-{:lang=html}
+
 
 Tabela ta po narysowaniu przez przeglądarkę
 (modulo, że strony tego wykładu mają ustawione szerokość
@@ -67,7 +67,7 @@ tabelek na 100%) wygląda tak:
 </table>
 
 Będziemy ją wstawiać do takiego dokumentu HTML 5:
- 
+
     <!doctype html>
     <meta charset="utf-8" />
     <title>Stylizowanie tabel</title>
@@ -76,10 +76,10 @@ Będziemy ją wstawiać do takiego dokumentu HTML 5:
     /* tutaj będziemy wstawiać kod CSS */
     </style>
     <!-- tutaj wstawiamy powyższą tabelę -->
-{:lang=html}
+
 
 Link do tego dokumentu:
-[skel.html](<%= url_for '/doc/examples/html/skel.html' %>).
+{%= link_to "skel.html", "/doc/examples/html/skel.html" %}.
 
 Uwaga: atrybut *style* przeszedł do pojemnika *style*.
 
@@ -92,37 +92,37 @@ Dodajemy wypełnienie i kolorujemy elementy tak:
     #r1c2 { background: #CCC; }
     #r3   { background: #AAA; }
     #r3c3 { background: #CCC; }
-{:lang=css21}
+
 
 Aby zobaczyć jak kod CSS interpretuje przeglądarka,
 kliknij w link obok:
-[warstwy.html](<%= url_for '/doc/examples/html/warstwy.html' %>).
+{%= link_to "warstwy.html", "/doc/examples/html/warstwy.html" %}.
 
 Otwórz okienko Firebuga i sprawdź jak są interpretowane
 poniższe deklaracje.
 
 Jak będzie rysowana tabela po dodaniu **kolejno**:
 
-    table { 
-      background: #888; 
+    table {
+      background: #888;
       border-spacing: 8px;
       table-layout: fixed; /* auto, inherit */
       width: 500px;
       border-collapse: collapse;
     }
-    td    { 
+    td    {
       padding: 20pt;
       border: 10px solid black;
     }
-{:lang=css21}
+
 
 
 ## Obramowania, składanie obramowań
 
 Tutaj kilka komórek zostało ekstra pokolorowanych:
 
-    table { 
-      background: #888; 
+    table {
+      background: #888;
       border-collapse: collapse;
       border: 8px outset gray;
     }
@@ -133,17 +133,17 @@ Tutaj kilka komórek zostało ekstra pokolorowanych:
     #r3c4        { border-style: dotted; border-width: 2px; border-color: #0C0; }
     #r4c1        { border-bottom-style: hidden; background: #DD0; }
     #r4c3        { border-top: 50px solid silver; }
-{:lang=css21}
+
 
 Aby zobaczyć jak kod CSS interpretuje przeglądarka,
 kliknij w link obok:
-[obramowania.html](<%= url_for '/doc/examples/html/obramowania.html' %>).
+{%= link_to "obramowania.html", "/doc/examples/html/obramowania.html" %}.
 
-Jak będzie rysowane kropkowane obramowanie jeśli 
+Jak będzie rysowane kropkowane obramowanie jeśli
 *border-width* będziemy zmieniać: 4px, 8px, 10px, 12px itd.
 
     #r3c4 { border-style: dotted; border-width: 12px; }
-{:lang=css21}
+
 
 
 ## Rozmiar tabeli
@@ -153,35 +153,35 @@ W każdym inaczej obliczana jest szerokość tabeli.
 
 W układzie *fixed* pierwszy wiersz jest wyróżniony.
 
-    table { 
+    table {
       table-layout: fixed;
       margin: 20px 50px;
       width: 600px;
       border-collapse: collapse;
       border-spacing: 0px;
-      background: #888; 
+      background: #888;
     }
     td    { padding: 8pt; border: 2px solid black; }
     #c1   { width: 200px; background: #CCC; }
     #r1c2 { width: 80px;  background: #AAA; }
     #r2c3 { width: 400px; background: #CCC; }
-{:lang=css21}
+
 
 Aby zobaczyć jak kod CSS interpretuje przeglądarka,
 kliknij w link obok:
-[szerokosc-fixed.html](<%=url_for '/doc/examples/html/szerokosc-fixed.html'%>).
+{%= link_to "szerokosc-fixed.html", "/doc/examples/html/szerokosc-fixed.html" %}.
 
 W układzie *auto* pierwszy wiersz **nie** jest wyróżniany.
 Zmieniamy tylko wartość *table-layout*:
 
-    table { 
+    table {
       table-layout: auto;
     }
-{:lang=css21}
+
 
 Aby zobaczyć jak kod CSS interpretuje przeglądarka,
 kliknij w link obok:
-[szerokosc-auto.html](<%=url_for '/doc/examples/html/szerokosc-auto.html'%>).
+{%= link_to "szerokosc-auto.html", "/doc/examples/html/szerokosc-auto.html"%}.
 
 *Zadanie:* Wyliczyć szerokość kolumn tabeli w każdym z układów.
 Sprawdzić wynik korzystając z rozszerzenia Firebug.

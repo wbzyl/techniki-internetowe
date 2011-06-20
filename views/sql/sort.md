@@ -13,8 +13,8 @@ ale bez rozwiązań.
 
 Poniższe dane, z tabeli EMP, dla pracowników zatrudnionych w DEPTNO o numerze 10,
 zostały posortowane rosnąco wzgledem SAL:
- 
-     ename  |    job    | sal  
+
+     ename  |    job    | sal
     --------+-----------+------
      miller | clerk     | 1300
      clark  | manager   | 2450
@@ -22,19 +22,19 @@ zostały posortowane rosnąco wzgledem SAL:
 
 Skorzystać z klauzuli: `order by`.
 
-    select ename, job, sal 
-      from emp 
-    where deptno = 10 
+    select ename, job, sal
+      from emp
+    where deptno = 10
     order by sal asc;
-{:lang=sqlite}
+
 
 
 ### Chcemy posortować dane z wybranych kolumn
 
-Dane z tabeli EMP sortujemy rosnąco względem DEPTNO 
+Dane z tabeli EMP sortujemy rosnąco względem DEPTNO
 i względem SAL malejąco:
 
-     empno | deptno | sal  | ename  |    job    
+     empno | deptno | sal  | ename  |    job
     -------+--------+------+--------+-----------
       7839 |     10 | 5000 | king   | president
       7782 |     10 | 2450 | clark  | manager
@@ -45,32 +45,32 @@ i względem SAL malejąco:
 
 Nazwy kolumn oddzielamy przecinkami:
 
-    select empno, deptno, sal, ename, job 
-      from emp 
+    select empno, deptno, sal, ename, job
+      from emp
     order by deptno asc, sal desc;
-{:lang=sqlite}
+
 
 
 ### Sortujemy wyniki zapytania względem części łańcucha
 
-Chcemy przygotować zestawienie nazwisk zatrudnionych 
+Chcemy przygotować zestawienie nazwisk zatrudnionych
 osób i ich stanowisk posortowanych względem
 ostatnich dwóch liter nazwy pracy:
 
     select ename, job
-      from emp 
+      from emp
     order by substr(job, length(job)-1);
-{:lang=sqlite}
+
 
 albo pierwszych dwóch liter nazwy pracy:
 
     select ename, job
-      from emp 
+      from emp
     order by substr(job, 1, 2);
-{:lang=sqlite}
 
 
-### Sortowanie danych alfanumerycznych 
+
+### Sortowanie danych alfanumerycznych
 
 Rozważmy następujący widok:
 
@@ -79,7 +79,7 @@ Rozważmy następujący widok:
     select ename||' '||deptno as data
       from emp;
     select data from V;
-{:lang=sqlite}
+
 
 Kolumna DATA zawiera „mieszane” dane: tekst plus liczba.
 Chcemy posortować dane w tej kolumnie względem
@@ -90,21 +90,21 @@ Skorzystać z funkcji: `replace` oraz `translate`.
 Przykłady:
 
     select translate(data, '0123456789', '##########') from V;
-{:lang=sqlite}
-      
+
+
     smith ##
     allen ##
     ward ##
     ...
 
-    select replace(data, 
+    select replace(data,
                    replace(
-                           translate(data, '0123456789', '##########'), 
-                           '#', 
+                           translate(data, '0123456789', '##########'),
+                           '#',
                            ''
-                          ), 
+                          ),
                    '') from V;
-{:lang=sqlite}
+
 
     20
     30
@@ -113,25 +113,25 @@ Przykłady:
 
 Dane posortowane wzgledem liczby DEPTNO:
 
-    select data 
-      from V 
-    order by replace(data, 
+    select data
+      from V
+    order by replace(data,
                      replace(
-                             translate(data, '0123456789', '##########'), 
-                             '#', 
+                             translate(data, '0123456789', '##########'),
+                             '#',
                              ''
-                            ), 
+                            ),
                      '');
-{:lang=sqlite}
+
 
 Dane posortowane wzgledem liczby ENAME:
 
     select data
       from V
-    order by replace(translate(data, '0123456789', '##########'), 
-                     '#', 
+    order by replace(translate(data, '0123456789', '##########'),
+                     '#',
                      '');
-{:lang=sqlite}
+
 
 
 ### Radzimy sobie z wartością NULL w trakcie sortowania
@@ -142,38 +142,38 @@ ponieważ nie każdy pracownik dostaje premię.
 
 To nie jest dobre rozwiązanie:
 
-    select ename, sal, comm 
-      from emp 
+    select ename, sal, comm
+      from emp
     order by comm ASC;
-{:lang=sqlite}
+
 
 To też nie jest dobre rozwiązanie:
 
-    select ename, sal, comm 
-      from emp 
+    select ename, sal, comm
+      from emp
     order by comm DESC;
-{:lang=sqlite}
+
 
 Chcemy aby wartości NULL były pierwsze, i po nich
 mają zostać wypisane premie uporządkowane rosnąco.
 
     select ename, sal, comm
       from (
-             select ename, sal, comm, 
+             select ename, sal, comm,
                     case when comm is null then 0 else 1 end as is_null
                from emp
            ) x
     order by is_null ASC, comm ASC;
-{:lang=sqlite}
+
 
 Tak to ma wyglądać:
 
-     ename  | sal  | comm 
+     ename  | sal  | comm
     --------+------+------
-     miller | 1300 |     
-     adams  | 1100 |     
+     miller | 1300 |
+     adams  | 1100 |
      ...
-     king   | 5000 |     
+     king   | 5000 |
      turner | 1500 |    0
      allen  | 1600 |  300
      ward   | 1250 |  500
@@ -181,28 +181,28 @@ Tak to ma wyglądać:
 
 ### Porządek zależy od danych
 
-Na przykład, jeśli JOB, to *salesman*, to 
+Na przykład, jeśli JOB, to *salesman*, to
 sortujemy względem COMM; w przeciwnym wypadku,
 sortujemy względem SAL.
 
     select ename, sal, job, comm
       from emp
     order by case when job = 'salesman' then comm else sal end;
-{:lang=sqlite3}
+
 
 Tak to ma wyglądać:
 
-     ename  | sal  |    job    | comm 
+     ename  | sal  |    job    | comm
     --------+------+-----------+------
      turner | 1500 | salesman  |    0
      allen  | 1600 | salesman  |  300
      ward   | 1250 | salesman  |  500
-     smith  |  800 | clerk     |     
-     james  |  950 | clerk     |     
-     adams  | 1100 | clerk     |     
-     miller | 1300 | clerk     |     
+     smith  |  800 | clerk     |
+     james  |  950 | clerk     |
+     adams  | 1100 | clerk     |
+     miller | 1300 | clerk     |
      martin | 1250 | salesman  | 1400
-     clark  | 2450 | manager   |     
+     clark  | 2450 | manager   |
      ...
 
 A tak można to wyjaśnić:

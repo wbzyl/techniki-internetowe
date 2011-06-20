@@ -5,8 +5,8 @@
    a, blockquote, img, h1, h2, h3, ol, p, ul.
 
 1. Do przygotowanej strony dodać jeden z szablonów
-   ze strony 
-   [Free CSS Templates](http://www.freecsstemplates.org). 
+   ze strony
+   [Free CSS Templates](http://www.freecsstemplates.org).
    Strona powinna zawierać menu z linkami do kilku innych stron.
 
 1. Jeszcze raz dwa poprzednie zadania ale w HTML 5.
@@ -31,12 +31,12 @@ Sformatować każdą z tabelek dwa razy: raz tak jak to
 widać na załączonych obrazkach; drugi raz — dodać
 kolor, dodać to i owo tak aby było lepiej.
 
-* Kurczaki <%= image_tag '/images/tabele/chicken.png', :alt => "[chicken]" %>
-* XVI w. <%= image_tag '/images/tabele/xvi.png', :alt => "[xvi]" %>
-* Populacja <%= image_tag '/images/tabele/population.png', :alt => "[population]" %>
-* Worksheet <%= image_tag '/images/tabele/worksheet.png', :alt => "[worksheet]" %>
-* AT&T <%= image_tag '/images/tabele/att.png', :alt => "[att]" %>
-* Chart <%= image_tag '/images/tabele/chart.png', :alt => "[chart]" %>
+* Kurczaki {%= image_tag '/images/tabele/chicken.png', :alt => "[chicken]" %}
+* XVI w. {%= image_tag '/images/tabele/xvi.png', :alt => "[xvi]" %}
+* Populacja {%= image_tag '/images/tabele/population.png', :alt => "[population]" %}
+* Worksheet {%= image_tag '/images/tabele/worksheet.png', :alt => "[worksheet]" %}
+* AT&T {%= image_tag '/images/tabele/att.png', :alt => "[att]" %}
+* Chart {%= image_tag '/images/tabele/chart.png', :alt => "[chart]" %}
 
 
 <!--

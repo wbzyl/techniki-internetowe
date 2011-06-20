@@ -6,20 +6,20 @@
 3. [Check out some Maps API Examples](http://code.google.com/intl/pl/apis/maps/documentation/examples/)
 4. [Read the Maps API Reference](http://code.google.com/intl/pl/apis/maps/documentation/reference.html)
 
-Zaczynamy od wejścia na stronę  
+Zaczynamy od wejścia na stronę
 [Sign Up for the Google Maps API](http://code.google.com/intl/pl/apis/maps/signup.html)
 i wygenerowania klucza do URL `http://localhost`.
 
-Teraz kilkamy przycisk `Generate API Key`, co spowoduje że 
+Teraz kilkamy przycisk `Generate API Key`, co spowoduje że
 zostaniemy przekierowani na stronę z informacją:
 
     Your key is:
-      
+
         1234...
-    
+
     This key is good for all URLs consisting of this registered domain
     (and directory if applicable):
-     
+
         http://localhost/
 
 Uwaga: wygenerowany klucz jest też dobry dla url z wpisanym portem:
@@ -27,8 +27,8 @@ Uwaga: wygenerowany klucz jest też dobry dla url z wpisanym portem:
     http://localhost:4567
 
 
-Uwaga **[4.04.2009]**: znalazłem  
-[jquery-googlemap](http://code.google.com/p/jquery-googlemap/), 
+Uwaga **[4.04.2009]**: znalazłem
+[jquery-googlemap](http://code.google.com/p/jquery-googlemap/),
 czyli „a jQuery javascript plugin for plug-and-play Google Maps UI”.
 
 
@@ -51,38 +51,38 @@ Plik `public/google.html`:
       <script src="/javascripts/google.js" type="text/javascript" charset="utf-8"></script>
       <title>Google Maps</title>
     </head>
-      
+
     <body>
       <div id="map"></div>
       <div id="route"></div>
     </body>
-      
+
     </html>
-{:lang=html}
+
 
 
 Plik `google.js`:
 
     // load the specific API you want
     google.load("maps", "2");
-    
+
     function initialize() {
       var map = new google.maps.Map2(document.getElementById("map"));
       // kawiarnia „U Samanty”, Zakopane
       map.setCenter(new google.maps.LatLng(49.29196, 19.94800), 13);
       map.addControl(new google.maps.SmallMapControl());
       map.addControl(new google.maps.MapTypeControl());
-    
+
       directionsPanel = document.getElementById("route");
       directions = new google.maps.Directions(map, directionsPanel);
       directions.load("from: Zakopane, Poland to: Nowy Targ, Poland");
     }
-    
+
     // call initialize when the page has been loaded
     google.setOnLoadCallback(initialize);
-{:lang=javascript}
 
-<%= link_to "Link do tej strony", "/doc/examples/javascript/google.html" %>.
+
+{%= link_to "Link do tej strony", "/doc/examples/javascript/google.html" %}.
 
 **Uwaga**: Google Maps API Key, dla tego przykładu i innych przykładów
 został wygenerowany dla URL **http://localhost/**.
@@ -90,7 +90,7 @@ został wygenerowany dla URL **http://localhost/**.
 
 ## Google AJAX Libs
 
-*Reklama*: 
+*Reklama*:
 The AJAX Libraries API is a content distribution network and loading
 architecture for the most popular, open source JavaScript
 libraries. By using the Google AJAX API Loader's `google.load()`
@@ -102,14 +102,14 @@ Aby skorzystać z tych udogodnień, musimy pobrać klucz.
 W **osobnym** bloku *&lt;script />* ładujemy interesujące
 nas wersje bibliotek:
 
-    <script type="text/javascript" 
+    <script type="text/javascript"
            src="http://www.google.com/jsapi?key=ABCDE..."></script>
-    
+
     <script type="text/javascript" charset="utf-8">
       google.load("maps", "2");
       google.load("jquery", "1");
     </script>
-{:lang=javascript}
+
 
 Teraz już możemy korzystać z tych bibliotek tak, jakby
 biblioteki te były ściągane lokalnie.
@@ -125,7 +125,7 @@ Przykład z zupełnie innej beczki.
 Chcemy na swojej stronie umieścić wyszukiwanie via Google.
 (Jest już gotowiec.)
 Dane od wyszukiwarki Google chcemy pobrać w tle
-(bez przeładowywania strony). 
+(bez przeładowywania strony).
 
 Do takich zadań idealnie nadaje się obiekt *XHTTPRequest*
 języka Javascript.
@@ -140,7 +140,7 @@ potrzebujemy tylko aby Google przed przesłaniem
 danych opakował je, tak jak chcemy.
 A chcemy aby przesłane dane były kodem Javascript,
 konkretnie wywołaniem funkcji, której nazwę
-prześlemy z żądaniem. 
+prześlemy z żądaniem.
 
 Będzie to możliwe, jeśli Google będzie chciało
 z nami współpracować. W API do JSONP jest napisane
@@ -168,25 +168,25 @@ Poniżej umieściłem kluczowy kawałek kodu.
         // }
       });
     });
-{:lang=javascript}
 
-Kilka uwag dotyczących metody *.ajaxForm* zdefiniowanej 
-w kodzie wtyczki jQuery.Form i użytej w kodzie powyżej. 
+
+Kilka uwag dotyczących metody *.ajaxForm* zdefiniowanej
+w kodzie wtyczki jQuery.Form i użytej w kodzie powyżej.
 Metoda ta:
 
 * korzysta z wartości atrybutów
   *action* i *method* wpisanych w kodzie HTML strony.
-* przesyła argument zawierający opcje do metody 
-  *$.ajax* biblioteki 
+* przesyła argument zawierający opcje do metody
+  *$.ajax* biblioteki
 
 W przykładzie, znacznik *form* wpisałem tak:
 
-    <form id="GoogleForm" 
-          action="http://ajax.googleapis.com/ajax/services/search/web?v=1.0" 
-          method="get"> 
-{:lang=html}
+    <form id="GoogleForm"
+          action="http://ajax.googleapis.com/ajax/services/search/web?v=1.0"
+          method="get">
 
-  
+
+
 
 Aby wyświetlić dane podesłane przez Google musimy znać format w jakim
 są one przesyłane. Przesłane dane można podejrzeć z Firebugiem (zakładki
@@ -195,7 +195,7 @@ pola *titleNoFormatting*.
 
     function processJSONP(data) {
       $('#service').empty(); // wyczyść miejsce na dane z Google
-    
+
       if (data.responseData.results && data.responseData.results.length > 0) {
         var results = data.responseData.results;
         for (var i=0; i < results.length; i++) {
@@ -203,10 +203,10 @@ pola *titleNoFormatting*.
         }
       }
     }
-{:lang=javascript}
+
 
 *Uwaga:* Na stronie [jQuery Form Plugin](http://www.malsup.com/jquery/form/)
 jest dużo przykładów.
-Repozytorium Git z kodem wtyczki znajdziemy 
+Repozytorium Git z kodem wtyczki znajdziemy
 [tutaj](http://github.com/malsup/form/).
 

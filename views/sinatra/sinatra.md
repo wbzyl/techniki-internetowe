@@ -13,7 +13,7 @@ To co napisano poniżej jest luźnym tłumaczeniem wyimków z tego co powyżej.
 Więcej linków:
 
 * [The blog that's almost nothing - now using CouchDB](http://github.com/jtulloch/scanty/)
-* [Construct absolute paths and full URLs to actions in a 
+* [Construct absolute paths and full URLs to actions in a
   Sinatra application](http://github.com/emk/sinatra-url-for/)
 * [Rack Flash](http://nakajima.github.com/rack-flash/)
   Simple flash hash implementation for Rack apps.
@@ -33,7 +33,7 @@ Najczęściej wykorzystywaną metodą jest `get`:
       # odpowiada na żądanie "GET /hi"
       "Hello"
     end
-{:lang=ruby}
+
 
 Z parametrami:
 
@@ -43,7 +43,7 @@ Z parametrami:
       # ustawia wartość params[:name]
       "hello #{params[:name]}"
     end
-{:lang=ruby}
+
 
 ### Więcej przykładów z GET
 
@@ -96,7 +96,7 @@ Z parametrami:
     get '/hello' do
       haml :index, :layout => 'layout'
     end
-{:lang=ruby}
+
 
 A to zawartość pliku `layout.haml`:
 
@@ -125,7 +125,7 @@ na stronach WWW, na przykład:
         %title Witaj!
       %body
         %p Przygotuj się na przywitanie
-        %form{:action => 'hello', :method => 'post'}
+        %form
           %input{:type => 'text', :name => 'name'}
           %input{:type => 'submit', :value => 'Przywitaj się'}
     END
@@ -153,7 +153,7 @@ na stronach WWW, na przykład:
     END
       haml inline_view, :layout => false
     end
-{:lang=ruby}
+
 
 ### Zagnieżdżone parametry
 
@@ -166,7 +166,7 @@ Na przykład
       <textarea name='note'></textarea>
       <input type='submit' value='Submit'>
     </form>
-{:lang=html}
+
 
 Po wpisaniu danych do formularza, przesyłane dane mogą
 wyglądać na przykład tak:
@@ -177,11 +177,11 @@ Sinatra przekształci powyższy napis na zagnieżdżony hasz.
 Z hasza odczytujemy wpisane dane, w taki oto wygodny sposób:
 
     post '/guestbook' do
-      # params['person']  # => { :name => 'Frank', :email => 'frank@theritz.com' }  
+      # params['person']  # => { :name => 'Frank', :email => 'frank@theritz.com' }
       person = params[:person]
       "Hi #{person[:name]}! Thanks for signing my guestbook."
     end
-{:lang=ruby}
+
 
 
 ## Session i Cookies
@@ -195,7 +195,7 @@ Sesja w Sinatrze umieszczana jest w ciasteczku.
       session["counter"] += 1
       "Byłeś na tej stronie #{session["counter"]} raz(y)."
     end
-{:lang=ruby}
+
 
 Po zainstalowaniu rozszerzenia
 [*LiveHeaders*](http://livehttpheaders.mozdev.org/installation.html)
@@ -225,7 +225,7 @@ A teraz przykład ciasteczka bez sesji:
       # wyrenderuj coś tam:
       "Coś tam teraz to: #{cookie}"
     end
-{:lang=ruby}
+
 
 
 ## Przykład z PUT/DELETE
@@ -240,7 +240,7 @@ Sinatra will interpret it as the desired method. For example:
       <input name="_method" value="delete" />
       <div><button type="submit">Destroy it</button></div>
     </form>
-{:lang=html}
+
 
 When you want to use PUT or DELETE from a client that does support
 them (`curl` or `wget`), just go ahead and use them as you normally
@@ -262,7 +262,7 @@ Metody pomocnicze dostępne są w
     get '/:name' do
       bar(params[:name])
     end
-{:lang=ruby}
+
 
 Najbardziej znaną metodą pomocniczą jest `redirect`.
 
@@ -270,7 +270,7 @@ Najbardziej znaną metodą pomocniczą jest `redirect`.
       redirect 'http://google.pl'
       # redirect 'http://google.pl', 303 # wymusza kod HTTP 303
     end
-{:lang=ruby}
+
 
 
 ## Modele
@@ -306,7 +306,7 @@ Prosty przykład.
     get '/' do
       'hello world'
     end
-{:lang=ruby}
+
 
 
 ## Error Handling
@@ -316,20 +316,20 @@ Błędy `not_found` i `on_error`.
 
 ## Zmiana typu mime
 
-Jeśli plik jest serwowany przez *Sinatrę*, to 
+Jeśli plik jest serwowany przez *Sinatrę*, to
 w bloku `before` wpisujemy:
 
     before do
       mime :sql, 'text/plain; charset="UTF-8"'
       ...
     end
-{:lang=ruby}
+
 
 Jeśli żądanie jest przechwytywane przez *Rack::Static* middleware,
 to w pliku rack, np. *config.ru* wpisujemy:
 
     Rack::Mime::MIME_TYPES.merge!('.sql' => 'text/plain; charset="UTF-8"')
-{:lang=ruby}
+
 
 Przykład: [insert](/doc/examples/sql/insert_d.sql).
 

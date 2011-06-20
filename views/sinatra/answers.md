@@ -7,11 +7,11 @@
     post '/sorter' do
       params[:upload][:tempfile].readlines.sort
     end
-{:lang=ruby}
+
 
 Dodajemy śledzenie:
 
-    curl --trace-ascii - --form "upload=@alpha.txt" localhost:4567/sorter 
+    curl --trace-ascii - --form "upload=@alpha.txt" localhost:4567/sorter
 
 Więcej przykładów użycia programu:
 [cURL – Manual](http://curl.haxx.se/docs/manual.html)

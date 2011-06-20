@@ -1,4 +1,4 @@
-SASS, czyli Syntactically Awesome StyleSheets 
+SASS, czyli Syntactically Awesome StyleSheets
 jest częścią pakietu HAML.
 
 [Dokumentacja](http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html)
@@ -19,7 +19,7 @@ What’s wrong with CSS? Zagnieżdżone atrybuty, brak zmiennych...
       color: white;
       ...
     }
-{:lang=css21}
+
 
 *Cytat:*
 SASS is a meta-language on top of CSS that’s used to describe the
@@ -109,7 +109,7 @@ Powyższy kod jest kompilowany do:
       font-family: fantasy;
       font-size: 4em;
       font-weight: bold; }
-{:lang=css21}
+
 
 Stałe (uwaga na znak równości — nie można go pominąć):
 
@@ -121,7 +121,7 @@ Opcjonalne przypisania:
 
     !content = "First content"
     !content ||= "Second content?"
-     
+
     #main
       :content = content
 

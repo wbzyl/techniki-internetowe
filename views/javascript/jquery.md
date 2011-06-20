@@ -21,10 +21,10 @@ Biblioteka jQuery to jeden duży **module pattern**
         }
       };
     }();
-{:lang=javascript}
+
 
 Luźne uwagi o module pattern:
-[Why I don't love JavaScript's Module 
+[Why I don't love JavaScript's Module
 Pattern](http://snook.ca/archives/javascript/no-love-for-module-pattern/),
 [A JavaScript Module Pattern](http://yuiblog.com/blog/2007/06/12/module-pattern/).
 
@@ -33,31 +33,28 @@ Pattern](http://snook.ca/archives/javascript/no-love-for-module-pattern/),
 
 * [jQuery home page](http://jquery.com),
 * [jQuery API Browser](http://api.jquery.com),
-* [Ściąga z selektorów jQuery](<%= url_for "/doc/cheatsheets/rc007-010d-jquery_selectors.pdf" %>)
-  (zawiera też tabelę z selektorami CSS).
-* [Updated jQuery 
-  Bookmarklet](http://www.learningjquery.com/2008/06/updated-jquery-bookmarklet),
+* [Updated jQuery Bookmarklet](http://www.learningjquery.com/2008/06/updated-jquery-bookmarklet),
   Karl Swedberg
 * [jQuery source viewer](http://james.padolsey.com/jquery/#v=1.4&fn=css)
+* {%= link_to "Ściąga z selektorów jQuery", "/doc/cheatsheets/rc007-010d-jquery_selectors.pdf" %}
+  (zawiera też tabelę z selektorami CSS).
 
-Szablon pliku do testowania jQuery: 
-[skel.html](<%= url_for "/doc/skel.html" %>)
 
 ## Zebra effect
 
-Pierwsze koty za płoty:  [ABBA](<%= url_for '/examples/javascript/abba' %>).
+Pierwsze koty za płoty:  {%= link_to "ABBA", "/examples/javascript/abba" %}.
 
 
 ## Sortowanie kolumn tabeli
 
 Dwie implementacje. Pierwsza korzysta z funkcji `sort` języka
 Javascript. Druga też, ale przed wywołaniem funkcji `sort`,
-pobiera z elementu `td` tekst, który będzie sortowany 
-i zapamiętuje go, po zamianie na duże litery, 
+pobiera z elementu `td` tekst, który będzie sortowany
+i zapamiętuje go, po zamianie na duże litery,
 w pseudoatrybucie elementu o nazwie *sortKey*.
 Ta technika nazywa się **expando**.
 
-[Sortowanie](<%= url_for '/examples/javascript/sort' %>).
+{%= link_to "Sortowanie", "/examples/javascript/sort" %}:
 
     $('#alpha').each(function() {
       var $table = $(this);  // zapamiętaj
@@ -69,7 +66,7 @@ Ta technika nazywa się **expando**.
           }, function() {
             $(this).removeClass('hover');
           }).click(function() {
-  
+
             var rows = $table.find('tbody > tr').get();  // get DOM elements
             rows.sort(function(a, b) {
               var keyA = $(a).children('td').eq(column).text().toUpperCase();
@@ -78,16 +75,15 @@ Ta technika nazywa się **expando**.
               if (keyA > keyB) return 1;
               return 0;
             });
-  
+
             $.each(rows, function(index, row) {
               $table.children('tbody').append(row);
             });
-  
+
           });
         }
       });
     });
-{:lang=javascript}
 
 
 ## Przyspieszamy kod funkcji sortującej
@@ -97,7 +93,7 @@ wywołaniu funkcja porównujaca, musi wyliczać:
 
     var keyA = $(a).children('td').eq(column).text().toUpperCase();
     var keyB = $(b).children('td').eq(column).text().toUpperCase();
-{:lang=javascript}
+
 
 co **wygląda** na kosztowną operację, na dodatek wykonywaną
 przy każdym porównaniu.
@@ -109,7 +105,7 @@ w specjalnym atrybucie (tutaj `sortKey`):
     $.each(rows, function(index, row) {
       row.sortKey = $(row).children('td').eq(column).text().toUpperCase();
     });
-{:lang=javascript}
+
 
 Takie użycie specjalnego atrybutu nazywamy **expando**.
 
@@ -122,14 +118,14 @@ o nazwie *alternateRowColors*, eksportującej jedną
 funkcję o takiej samej nazwie jak nazwa wtyczki
 (taka konwencja się przyjęła w świecie jQuery):
 
-    (function($){  
+    (function($){
        $.fn.alternateRowColors = function() {
          $('tbody tr:even', this).removeClass('odd').addClass('even');
          $('tbody tr:odd', this).removeClass('even').addClass('odd');
          return this;
        };
-    })(jQuery);  
-{:lang=javascript}
+    })(jQuery);
+
 
 Powyższy kod:
 
@@ -142,20 +138,20 @@ Powyższy kod:
 Z tej wtyczki korzystamy w taki sposób:
 
     $table.alternateRowColors();
-{:lang=javascript}
+
 
 i zrobiliśmy z niej użytek w ostatnim przykładzie.
 
-*Uwaga:* Kod `$table.alternateRowColors()` jest bardziej 
+*Uwaga:* Kod `$table.alternateRowColors()` jest bardziej
 w stylu jQuery niż zapis `alternateRowColors($table)`.
 
 
 ## You Still Can’t Create a jQuery Plugin?
 
-[Jeffrey Way](http://net.tutsplus.com/videos/screencasts/you-still-cant-create-a-jquery-plugin): 
+[Jeffrey Way](http://net.tutsplus.com/videos/screencasts/you-still-cant-create-a-jquery-plugin):
 „Never fear; I'm going to show you exactly how to build
 your own **tooltip** plugin, at the request of one of our loyal
-readers.” 
+readers.”
 
 [Alen Grakalic](http://cssglobe.com/post/4004/easy-slider-15-the-easiest-jquery-plugin-for-sliding):
 „The Easiest jQuery Plugin For Sliding Images and Content.”
@@ -163,7 +159,7 @@ readers.”
 
 ## Real Plugin: *TableSorter*
 
-Na stronie jQuery jest 
+Na stronie jQuery jest
 [link do podstrony z wtyczkami](http://plugins.jquery.com).
 Ale tutaj nie było wtyczki do sortowania kolumn tabel.
 
@@ -171,19 +167,17 @@ Szybkie guglanie dało link do
 [tablesorter](http://tablesorter.com/docs)
 (strona z fajnym demo).
 
-[A tutaj](<%= url_for "/examples/javascript/sort" %>) jest demo przeniesione na moją stronę.
-
 
 ## Więcej fajnych wtyczek:
 
 Tabelki:
 
-* [Expand table rows with jQuery - jExpand 
+* [Expand table rows with jQuery - jExpand
   plugin](http://www.jankoatwarpspeed.com/post/2009/07/20/Expand-table-rows-with-jQuery-jExpand-plugin.aspx)
   — naprawdę fajne!
 * [Flexgrid](http://flexigrid.info/) — przykład z kodami państw: PL/Polska itd.
 * [Ingrid](http://reconstrukt.com/ingrid/) — column resizing
-* [TreeTable](http://blog.cubicphuse.nl/2008/11/12/jquery-treetable-2-0) — 
+* [TreeTable](http://blog.cubicphuse.nl/2008/11/12/jquery-treetable-2-0) —
   nazwa mówi wszystko
 * [Coda Slider](http://www.ndoherty.biz/tag/coda-slider/) — coś do slajdów?
 * [jCarousel](http://sorgalla.com/jcarousel/) — j.w.

@@ -37,12 +37,12 @@ packaged as a gem:
 Plik *sinatra-fu.gemspec*:
 
     require 'rake'
-    
+
     Gem::Specification.new do |s|
       s.name = "sinatra-fu"
       s.version = '0.0.1'
       s.date = '2009-03-31'
-      
+
       s.summary = "Sinatra-Fu yields fu method for escaping html"
       s.email = "matwb@univ.gda.pl"
       s.homepage = "http://github.com/wbzyl/sinatra-fu"
@@ -52,36 +52,36 @@ Plik *sinatra-fu.gemspec*:
 
       s.add_dependency 'sinatra', '>=0.9.1'
       s.add_dependency 'rack', '>=0.9.1'
-      
+
       s.rubygems_version = '1.3.1'
     end
-{:lang=ruby}
+
 
 Plik *fu.rb*:
 
     require 'sinatra/base'
-    
+
     module Sinatra
       module HTMLFuHelper
         def fu(text)
           Rack::Utils.escape_html(text)
         end
       end
-    
+
       helpers HTMLFuHelper
     end
-{:lang=ruby}
+
 
 Plik *app.rb*:
 
     require 'rubygems'
     require 'sinatra'
     require 'sinatra/fu'
-    
+
     get "/" do
       fu "1 < 2"     # => "1 &lt; 2"
     end
-{:lang=ruby}
+
 
 Aplikację uruchamiamy tak:
 
@@ -92,29 +92,29 @@ Plik *app-base.rb*:
     require 'rubygems'
     require 'sinatra/base'
     require 'sinatra/fu'
-    
+
     class HelloApp < Sinatra::Base
       helpers Sinatra::HTMLFuHelper
-    
+
       get "/" do
         fu "1 < 2"
       end
     end
-{:lang=ruby}
+
 
 Plik *config.ru*:
 
     #\ -p 4000 -s thin
     require 'app-base'
     run FuApp.new
-{:lang=ruby}
+
 
 A tę aplikację uruchamiamy tak:
 
     rackup config.ru -p 4000
 
 albo tak:
- 
+
     thin --rackup config.ru start -p 4000
 
 ## Omówić moje rozszerzenie Sinatra-RDiscount.

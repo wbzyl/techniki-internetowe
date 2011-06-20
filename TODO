@@ -11,4 +11,8 @@ Throbber:
 
 Readme:
 
-  [strings in ruby 1.8](https://github.com/candlerb/string19/blob/master/string19.rb)
+    [strings in ruby 1.8](https://github.com/candlerb/string19/blob/master/string19.rb)
+
+Recursive etags:
+
+    find . -name "*.md" -print | etags -

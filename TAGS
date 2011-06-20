@@ -1,0 +1,558 @@
+
+views/sinatra/enki.md,75
+A ruby on rails blogging app forr the fashionable developer:developer2,1
+
+views/sinatra/rest.md,449
+REST,1,0
+The most important HTTP methods are POST,8,258
+The most important HTTP methods are POST, GET,8,258
+are often respectively associated with the CREATE,9,327
+are often respectively associated with the CREATE, READ,9,327
+are often respectively associated with the CREATE, READ, UPDATE,9,327
+DELETE 10,392
+    class Aside 101,3290
+    end105,3464
+Metodę pomocniczą `aside_url` zdefiniujemy późnpóź116,3735
+      aside 120,3859
+
+views/sinatra/hello.md,122
+Aplikację uruchamiamy,2,57
+Po uruchomieniu,6,162
+Wyświetlany cytat jest losowany z pliku `education.json`json10,245
+
+views/sinatra/ruby.md,414
+* arithmetic,3,13
+        x 8,122
+Program *c2fi.rb*rb59,867
+    num 72,1205
+    celsius 83,1467
+    str 94,1753
+        @health 123,2280
+A tak,184,3240
+Implementacja łamigłowki *Wieże Hanoi*Hanoi199,3474
+      A 208,3745
+      A = 0; B 208,3745
+      A = 0; B = 1; C 208,3745
+    p1 401,7970
+    Post.all(:conditions => {:body => 'ruby'}, :order order407,8103
+    graph.render :to to437,8832
+
+views/sinatra/intro.md,390
+1. Info o Ruby on Rails: linki,3,27
+1. Info o Ruby on Rails: linki, literatura,3,27
+1. Intro do Sinatry,15,332
+1. Sinatra/Rest: REST,23,507
+1. Sinatra/Rest: REST, CRUD,23,507
+1. (c.d.) Sinatra/Rest: dzidziczenie po ActiveRecord::Base,28,594
+1. Git: git init,30,687
+1. Git: git init, git add,30,687
+2. Capistano: thin,43,955
+   educations,46,1060
+TODO,59,1278
+TODO, Blog,59,1278
+
+views/sinatra/capistrano.md,843
+    end26,681
+    set :user,user31,752
+    set :use_sudo,use_sudo32,775
+    set :application,application34,801
+    set :repository,repository35,835
+    set :scm,scm37,902
+    set :branch,branch38,921
+    set :deploy_via,deploy_via39,949
+    set :deploy_to,deploy_to41,981
+    role :app,app43,1035
+    role :web,web44,1062
+    role :db,db45,1089
+    role :db,  "localhost", :primary primary45,1089
+Na koniec,50,1201
+dla Apacha,55,1377
+Jeśli poprawnie wklepaliśmy cały kod,62,1547
+Po zmianach w aplikacji,72,1846
+      task :start start90,2275
+      task :start , :roles roles90,2275
+Plik konfigurujący Thina,111,2915
+    daemonize: true127,3362
+A następne wdrożeniwdrożen142,3656
+A następne wdrożenia, po `git add`add142,3656
+A następne wdrożenia, po `git add`, `commit` i `push`push142,3656
+
+views/sinatra/answers.md,14
+    end9,202
+
+views/html/markdown.md,376
+characters, you must escape them as entities, e.g. `&lt;lt77,3074
+`&amp;amp78,3137
+    <pre><code>&lt;lt201,7163
+    <pre><code>&lt;div 201,7163
+        &amp;amp202,7205
+        &amp;copy;202,7205
+    &lt;lt203,7245
+    &lt;/div&gt;gt203,7245
+<h3 id=212,7516
+*   followed by a colon;258,8989
+<h3 id=350,12332
+You can use whichever style you prefer;369,12857
+
+views/html/maruku.md,71
+    function doReplace(116,2745
+    function replaceElement(125,3076
+
+views/html/haml.md,101
+1. Można łączyć z innymi szblonami,8,144
+1. Można łączyć z innymi szblonami, np. ERB,8,144
+
+views/html/hello.md,85
+        <meta http-equiv=equiv9,194
+    <meta charset=32,815
+{:lang=lang46,1220
+
+views/html/intro.md,1123
+Informacja o HTML 3,27
+Podstawowe znaczniki: h1,6,105
+Podstawowe znaczniki: h1, p,6,105
+Podstawowe znaczniki: h1, p, img,6,105
+Podstawowe znaczniki: h1, p, img, a,6,105
+Podstawowe znaczniki: h1, p, img, a, em;6,105
+znaczniki tabelkowe: table,7,146
+cudzysłowcudzysło18,398
+Szlifowanie strony WWW: HTML 26,508
+Szlifowanie strony WWW: HTML 5, CSS 26,508
+Podstawowa dokumentacja: HTML,36,667
+Firebug,39,761
+Tabelki,45,819
+Tabelki, obrazki,45,819
+Tabelki, obrazki, linki,45,819
+Tabelki, obrazki, linki, listy,45,819
+Elementy: div i span. Atrybuty elementóelement�47,861
+Podstawowe błędy: cudzysłowcudzysło50,929
+CSS: selektory,62,1097
+CSS: selektory, właściwwłaści62,1097
+CSS: selektory, właściwości, kaskada,62,1097
+Zen Garden,71,1256
+Formatowanie wizualne: pudełkpudeł73,1288
+Formatowanie wizualne: pudełka, pływanipływan73,1288
+Background,85,1484
+Stylizacja odsyłaczodsyłac90,1556
+Stylizacja odsyłaczy, list,90,1556
+Tablice,102,1779
+Proste przykłady: 100-Wstep,Wstep104,1808
+alert,105,1854
+alert, prompt,105,1854
+alert, prompt, document.writeln,writeln105,1854
+
+views/html/exercises.md,269
+   a,5,123
+   a, blockquote,5,123
+   a, blockquote, img,5,123
+   a, blockquote, img, h1,5,123
+   a, blockquote, img, h1, h2,5,123
+   a, blockquote, img, h1, h2, h3,5,123
+   a, blockquote, img, h1, h2, h3, ol,5,123
+   a, blockquote, img, h1, h2, h3, ol, p,5,123
+
+views/sql/group_by.md,693
+*Windowing Functions*Functions3,52
+than what is available in SQL Server 4,130
+{:lang=lang28,724
+{:lang=lang47,1033
+{:lang=lang66,1490
+    select name from owoce;70,1518
+{:lang=lang71,1546
+    group by name;87,1711
+{:lang=lang88,1730
+    group by name;102,1886
+{:lang=lang103,1905
+{:lang=lang118,2185
+{:lang=lang124,2272
+{:lang=lang145,2542
+{:lang=lang167,2910
+    group by deptno;175,3130
+{:lang=lang176,3151
+{:lang=lang196,3494
+{:lang=lang212,3875
+    order by deptno, job;219,3995
+{:lang=lang220,4021
+{:lang=lang253,4760
+{:lang=lang268,4980
+{:lang=lang297,5592
+{:lang=lang327,6189
+{:lang=lang360,6999
+{:lang=lang374,7299
+{:lang=lang402,8375
+
+views/sql/join.md,1080
+Tak jak w poprzednim projekcie,2,1
+tabelkami,3,56
+tabelkami, wykorzystanymi w poniższych przykładacprzykłada3,56
+Wskazówka: skorzystać z UNION ALL,26,644
+    select ename as ename_and_dname,30,714
+    where deptno=32,773
+{:lang=lang39,905
+Na przykłaprzykł44,959
+    select e.ename,ename55,1221
+      from emp e,56,1247
+    where e.deptno deptno57,1272
+{:lang=lang59,1327
+Zał�Zał64,1394
+    select ename,69,1509
+    select ename, job,69,1509
+    where job 71,1551
+{:lang=lang72,1576
+    select * from V;76,1604
+{:lang=lang77,1625
+    select empno,101,2175
+    select empno, ename,101,2175
+    select empno, ename, job,101,2175
+    select empno, ename, job, sal,101,2175
+    where 103,2232
+Na przykłaprzykł113,2452
+    select deptno from emp;125,2647
+{:lang=lang126,2675
+Na przykłaprzykł131,2794
+        on 143,3070
+    select e.ename,ename149,3165
+    select e.ename, e.deptno as emp_deptno,149,3165
+{:lang=lang152,3287
+{:lang=lang163,3512
+    select * from V;167,3540
+{:lang=lang168,3561
+Odpowied�Odpowied200,5354
+
+views/sql/rozenshtein.md,1703
+Przykłady z książeczki Davida Rozenshteina,2,1
+{:lang=lang16,206
+{:lang=lang26,344
+{:lang=lang37,506
+{:lang=lang46,658
+{:lang=lang55,814
+{:lang=lang73,1400
+{:lang=lang80,1592
+{:lang=lang89,1925
+{:lang=lang111,2703
+Znaleźć wszystkich studentóstudent�117,2762
+{:lang=lang126,3014
+„Kto uczęszcza na zajęcizajęc139,3272
+a studenci 140,3328
+jeśli student uczęszcza na CS112;167,3973
+jeśli student uczęszcza na CS112; w przeciwnym wypadku 167,3973
+{:lang=lang207,5190
+Wypisać wszystkich studentóstudent�212,5221
+Poniższe zapytanie wygląda obiecującobiecują215,5301
+{:lang=lang223,5528
+Wynik jest błębł�234,5699
+Wynik jest błędny, ponieważ AARON uczęszcza na oba wykładwykła234,5699
+STEVE chodzi tylko na CS113 i brak studenta CHUCK,235,5764
+    select s.sno,sno240,5859
+    select s.sno, s.sname,sname240,5859
+      from students s,241,5892
+    where s.sno sno242,5922
+{:lang=lang246,6078
+Zaczynamy od inner join tabeli STUDENTS z tabelą TAKE,258,6243
+oznaczając czy student chodzi 261,6408
+    select s.sno,sno289,7266
+    select s.sno, s.sname,sname289,7266
+    select s.sno, s.sname, s.age,age289,7266
+           sum(290,7300
+    select s.sno,sno313,7964
+    select s.sno, s.sname,sname313,7964
+      from students s,314,7998
+    where s.sno sno315,8028
+{:lang=lang322,8318
+      from students s,333,8525
+    where s.sno sno334,8555
+{:lang=lang335,8600
+Powyższa odpowiedź nie jest prawidłowprawidło346,8771
+Studenci AARON,348,8871
+      from students s,353,8972
+           take t1,354,8995
+      from take t1,381,9534
+aby odzczytać dane studenta o *sno=sno396,9856
+{:lang=lang406,10116
+
+views/sql/sort.md,1831
+Tak jak w poprzednim projekcie,2,1
+tabelkami,3,56
+tabelkami, wykorzystanymi w poniższych przykładacprzykłada3,56
+Poniższe dane,14,337
+Poniższe dane, z tabeli EMP,14,337
+Poniższe dane, z tabeli EMP, dla pracowników zatrudnionych w DEPTNO o numerze 14,337
+    select ename,25,662
+    select ename, job,25,662
+    where deptno 27,706
+{:lang=lang29,751
+    select empno,48,1276
+    select empno, deptno,48,1276
+    select empno, deptno, sal,48,1276
+    select empno, deptno, sal, ename,48,1276
+    order by deptno asc,50,1335
+    order by deptno asc, sal desc;50,1335
+{:lang=lang51,1370
+    select ename,60,1587
+{:lang=lang63,1666
+    select ename,67,1725
+{:lang=lang70,1795
+      from emp;80,1948
+    select data from V;81,1964
+{:lang=lang82,1988
+tekstu 86,2114
+    select replace(100,2349
+{:lang=lang125,2977
+{:lang=lang134,3183
+COMM. Kolumna COMM może zawierać wartości NULL,140,3316
+    select ename,145,3449
+    select ename, sal,145,3449
+    order by comm ASC;147,3494
+{:lang=lang148,3517
+    select ename,152,3571
+    select ename, sal,152,3571
+    order by comm DESC;154,3616
+{:lang=lang155,3640
+Chcemy aby wartości NULL były pierwsze,157,3656
+    select ename,160,3764
+    select ename, sal,160,3764
+      from 161,3792
+Na przykłaprzykł184,4309
+Na przykład, jeśli JOB,184,4309
+Na przykład, jeśli JOB, to *salesman*salesman184,4309
+sortujemy względem COMM;185,4354
+sortujemy względem COMM; w przeciwnym wypadku,185,4354
+    select ename,188,4428
+    select ename, sal,188,4428
+    select ename, sal, job,188,4428
+    order by case when job 190,4476
+{:lang=lang191,4540
+    select ename,210,5039
+    select ename, sal,210,5039
+    select ename, sal, job,210,5039
+    select ename, sal, job, comm,210,5039
+           case when job 211,5073
+
+views/sql/select.md,1375
+      from emp;10,165
+    select empno,11,181
+    select empno, ename,11,181
+    select empno, ename, job,11,181
+    select empno, ename, job, sal,11,181
+    select empno, ename, job, sal, mgr,11,181
+    select empno, ename, job, sal, mgr, hiredate,11,181
+    select empno, ename, job, sal, mgr, hiredate, comm,11,181
+      from emp;12,244
+{:lang=lang13,260
+    select ename,17,312
+    select ename, deptno,17,312
+      from emp;18,342
+{:lang=lang19,358
+    where deptno 26,472
+{:lang=lang27,495
+    where deptno 31,539
+{:lang=lang34,625
+    where 40,715
+    select sal as wynagrodzenie,51,927
+      from emp;52,975
+{:lang=lang53,991
+    select sal as wynagrodzenie,58,1066
+{:lang=lang61,1155
+    select sal as wynagrodzenie,65,1219
+{:lang=lang68,1315
+      from 75,1398
+    where deptno 94,1778
+{:lang=lang95,1801
+gdzie `underpaid` oznacza,116,2325
+    select ename,118,2394
+    select ename, sal,118,2394
+{:lang=lang124,2583
+      from emp limit 130,2679
+{:lang=lang131,2703
+    select ename,135,2786
+    order by random(137,2823
+    where comm is null;147,3038
+{:lang=lang148,3062
+    select ename,152,3113
+    select ename, coalesce(152,3113
+      from emp;162,3291
+{:lang=lang163,3307
+    select ename,170,3420
+    select ename, job,170,3420
+{:lang=lang173,3495
+    select ename,175,3511
+{:lang=lang178,3594
+
+views/sql/intro.md,40
+    wbzyl=102,3156
+    wbzyl=103,3213
+
+views/performance/intro.md,35
+Firebug,4,93
+Firebug, Yslow,4,93
+
+views/performance/loadtime.md,22
+RailsLabs Video,4,33
+
+views/javascript/google-maps.md,69
+    function initialize(69,2227
+    function processJSONP(196,6702
+
+views/javascript/ajax.md,285
+**Asynchronous Javascript and XML** czyli Ajax,2,1
+{:lang=lang38,1006
+Potrzebujemy jeszcze elementu,40,1020
+    <div id=43,1113
+{:lang=lang53,1317
+{:lang=lang366,11012
+      content_type 'application/json', :charset charset375,11173
+    end377,11325
+{:lang=lang415,12346
+
+views/javascript/good_parts.md,1213
+{:lang=lang21,628
+    var inny_obiekt 33,875
+    var pusty_obiekt_1 34,901
+    inny_obiekt.x x35,947
+{:lang=lang67,1965
+    var osoba 72,2040
+    var ja 77,2136
+    ja.nick;nick78,2170
+    ja.nick nick79,2195
+    delete ja.nick;nick80,2220
+    ja.nick;nick81,2240
+{:lang=lang82,2265
+{:lang=lang88,2398
+    obiekt.double double102,2752
+{:lang=lang111,3003
+    var cat 117,3087
+{:lang=lang133,3491
+    var mójKomójK137,3531
+{:lang=lang140,3617
+    Function.prototype.method method150,3742
+{:lang=lang155,3885
+{:lang=lang164,4086
+{:lang=lang173,4273
+    var fade 187,4584
+{:lang=lang200,4925
+    var add_the_handlers 204,5018
+    elems 214,5265
+{:lang=lang216,5342
+{:lang=lang223,5511
+      })(i)230,5657
+{:lang=lang232,5676
+    var sequencer 239,5763
+{:lang=lang261,6231
+    o.msg msg266,6367
+{:lang=lang285,6856
+    var add 298,7158
+    var add2 302,7217
+{:lang=lang304,7274
+{:lang=lang320,7613
+    var fibonacci 324,7649
+{:lang=lang339,8045
+    var memoizer 343,8118
+    var fibonacci 355,8414
+    var factorial 362,8615
+{:lang=lang368,8802
+    var t 376,8920
+    var kwadrat 390,9234
+    a.map map397,9373
+    var kwadrat 399,9516
+
+views/javascript/intro.md,98
+Według guru Javascript,1,0
+Według guru Javascript, Douglasa Crockforda,1,0
+      foo;47,1098
+
+views/javascript/exercises.md,26
+  With no umbrella,7,145
+
+views/javascript/jquery-ui.md,66
+images without jumping to another page,4,93
+{:lang=lang31,1053
+
+views/javascript/jquery.md,39
+      function privateFunction(12,334
+
+views/css/css21.md,97
+        <meta http-equiv=equiv20,448
+Dokument dzielimy na slajdy,47,1234
+{:lang=lang72,1758
+
+views/css/sass.md,52
+SASS,1,0
+{:lang=lang22,411
+{:lang=lang112,2195
+
+views/css/exercises.md,45
+{:lang=lang129,4914
+      <ul id=133,4966
+
+views/css/tables.md,130
+{:lang=lang79,2208
+{:lang=lang95,2619
+{:lang=lang117,3154
+{:lang=lang136,3825
+{:lang=lang168,4726
+{:lang=lang180,5047
+
+views/css/blueprint.md,761
+      <td>pulls a column x columns to the right;97,3490
+<table summary=123,4281
+Interlinię ustawiamy na 1,5\*16&#x200A;x200A219,6858
+Interlinię ustawiamy na 1,5\*16&#x200A;px=219,6858
+0.5\*16&#x200A;x200A222,6990
+0.5\*16&#x200A;px=222,6990
+się między 400&#x200A;x200A225,7144
+się między 400&#x200A;px–560&#x200A;x200A225,7144
+33&#x200A;px+11&#x200A;x200A232,7388
+33&#x200A;px+11&#x200A;px=232,7388
+572&#x200A;x200A234,7466
+572&#x200A;px+352&#x200A;x200A234,7466
+572&#x200A;px+352&#x200A;px-11&#x200A;x200A234,7466
+572&#x200A;px+352&#x200A;px-11&#x200A;px=234,7466
+Szerokość ekranu to co najmniej 1024&#x200A;x200A236,7523
+zostaje 111&#x200A;x200A237,7586
+44&#x200A;x200A238,7640
+{:lang=lang249,7936
+{:lang=lang266,8321
+
+views/css/intro.md,0
+
+views/css/css3.md,0
+
+views/javascript/coffee.md,0
+
+views/performance/apache.md,0
+
+views/layout.md,0
+
+views/sql/dates.md,0
+
+views/sql/delete.md,0
+
+views/sql/raporty.md,0
+
+views/sql/insert.md,0
+
+views/html/jtz.md,0
+
+views/sinatra/middleware.md,0
+
+views/sinatra/rack.md,0
+
+views/sinatra/rack-map.md,0
+
+views/sinatra/exercises.md,0
+
+views/sinatra/heroku.md,0
+
+views/sinatra/extensions.md,0
+
+views/sinatra/iphone.md,0
+
+views/sinatra/pastie.md,0
+
+views/sinatra/hello2.md,0
+
+views/sinatra/sinatra.md,0
+
+views/sinatra/wiki.md,0
+
+views/sinatra/cucumber.md,0

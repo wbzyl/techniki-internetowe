@@ -19,16 +19,16 @@
 1. Dopisać kilka cytatów do pliku `education.json`.
 
 1. Zmienić widok `views/index.erb`, tak aby można było
-   wyświetlać wieloakapitowe cytaty. 
+   wyświetlać wieloakapitowe cytaty.
    *Uwaga*: zmienić/rozszerzyć format pliku JSON.
 
 1. Dodać widok dla cytatów z obrazkiem.
 
 1. Rozszerzyć routing, tak aby wejście na
-   
+
         http://localhost/4
 
-   spowodowało wyświetlenie 4. cytatu. 
+   spowodowało wyświetlenie 4. cytatu.
 
 Na koniec coś z zupełnie innej beczki:
 
@@ -41,20 +41,20 @@ czyl prosty, blog aware, generator stron statycznych.
 
 
 ## Rozbudowywanie Fortune
-   
+
 1. Dodać obsługę nie istniejących cytatów. Wejście na
-   
+
         http://localhost/8888
 
    powinno nas przekierować na stronę z informacją
    o nie istniejącym cytacie o numerze 8888.
 
-1. Dodać inne kategorie cytatów, zob. źródła 
+1. Dodać inne kategorie cytatów, zob. źródła
    pakietu *fortune-mod*. Zmienić routing, tak aby
    były obsługiwane URL:
 
-        http://localhost/education 
-        http://localhost/science 
+        http://localhost/education
+        http://localhost/science
         http://localhost/humor
 
    Zmodyfikować routing, tak aby po wejściu na stronę
@@ -70,7 +70,7 @@ czyl prosty, blog aware, generator stron statycznych.
         http://localhost/new
         http://localhost/show/4
 
-1. Na stronie głównej aplikacji dodać formularz 
+1. Na stronie głównej aplikacji dodać formularz
    do wyszukiwania cytatów po autorach oraz po tekście.
    W formularzu umieścić element *select* z listą autorów.
 
@@ -82,13 +82,13 @@ czyl prosty, blog aware, generator stron statycznych.
 1. Przepisać *Asides* na Datamapper.
    Jak korzystać z biblioteki datamapper jest
    opisane [tutaj](http://datamapper.org/doku.php?id=docs).
-1. Załadować plik tekstowy do usługi WWW napisanej 
+1. Załadować plik tekstowy do usługi WWW napisanej
    w Sinatrze, która zwróci jego zawartość
    posortowaną (po wierszach).
    Do załadowania pliku użyć programu *curl*:
 
         curl --form "upload=@alpha.txt" localhost:4567/sorter
- 
+
    Powyżej emulujemy formularz, w którym użytkownik
    kliknął przycisk „Submit”. Nazwa ładowanego pliku
    to *alpha.txt*, a *upload* to nazwa elementu
@@ -104,25 +104,25 @@ umożliwia wysyłanie jednego emaila (plik *stmail.rb*):
     require 'sinatra'
     require 'tmail'
     require 'net/smtp'
-    
+
     # jak przesłać polskie literki?
-    
-    before do 
+
+    before do
       @mail = TMail::Mail.new
       @mail.to = 'matwb@julia.univ.gda.pl'
       @mail.from = 'wbzyl@manta.univ.gda.pl'
       @mail.subject = 'Wiadomosc testowa'
       @mail.body = 'Wiadomosc testowa z localhost via Sinatra/Tmail'
     end
-    
+
     post '/signup' do
       Net::SMTP.start( 'localhost', 25 ) do |smtp|
         smtp.send_message(@mail.to_s, @mail.from, @mail.to)
       end
     end
-{:lang=ruby}
 
-Aby wysłać emaila należy: 
+
+Aby wysłać emaila należy:
 
 * uruchomić tę aplikację:
 
@@ -132,11 +132,11 @@ Aby wysłać emaila należy:
 
         curl -X POST http://localhost:4000/signup
 
-Zobacz też 
+Zobacz też
 [Spotlight on Gems: TMail](http://ruby.about.com/od/gems/a/tmail.htm)
 
 1. Na FAQ Sinatry, ktoś napisał:
-   You can even use templates to render the body. 
+   You can even use templates to render the body.
    In `email.erb`:
 
         Good day <%%= params[:name] %>,
@@ -151,7 +151,7 @@ Zobacz też
             :subject => "Thanks for signing my guestbook, #{params[:name]}!",
             :body => erb(:email)
         end
-   {:lang=ruby}
+
 
    Wykorzystać te uwagi i zmienić kod, tak aby wysyłany
    email korzystał z szablonu i z `params[:name]`

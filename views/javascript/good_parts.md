@@ -18,7 +18,7 @@ a *value* własnością:
 
     obiekt.increment(2);
     print(obiekt.value);  // 3
-{:lang=javascript}
+
 
 Uwaga dotycząca uruchamiania kodu: kod Javascripy uruchamiamy na
 konsoli *js*.  Listę dostępnych funkcji uzyskamy wpisując
@@ -37,14 +37,14 @@ Literał obiektu:
     print(pusty_obiekt.x)
     pusty_obiekt_1.x = '_v_'
     print(pusty_obiekt_2.x)
-{:lang=javascript}
+
 
 Ważne:
 
     print(pusty_obiekt.x)   //=> undefined
     print(pusty_obiekt.x.y) //=> TypeError: inny_pusty_obiekt.x has no properties
     pusty_obiekt.x && pusty_obiekt.x.y  //=> tak unikamy TypeError
-{:lang=javascript}
+
 
 Do typów podstawowych można dodawać swoje metody, ponieważ
 każdy obiekt utworzony via `{ ... }` dziedziczy metody
@@ -64,7 +64,7 @@ swojego prototypu.
         return new F();
       }
     }
-{:lang=javascript}
+
 
 Przykład użycia: `ja` dziedziczy metody
 po `osoba`.
@@ -79,13 +79,13 @@ po `osoba`.
     ja.nick = "Włodek";
     delete ja.nick;
     ja.nick;  //=> Janek
-{:lang=javascript}
+
 
 Refleksja:
 
     osoba.toString();              //=> [object Object]
     osoba.hasOwnProperty('nick');  //=> true
-{:lang=javascript}
+
 
 
 ## The Function Invocation Pattern
@@ -108,7 +108,7 @@ której używamy do zapamiętania referencji do obiektu, to zwyczajowo
     }
     obiekt.double();
     print(obiekt.value);
-{:lang=javascript}
+
 
 ### Going functional
 
@@ -130,14 +130,14 @@ Definiujemy funkcję tworzącą obiekty:
       // zwracamy zmieniony obiekt
       return that;   //
     };
-{:lang=javascript}
+
 
 Przykład użycia:
 
     var mójKot = cat({name: 'Bazylek'});
     mójKot.says();
     mójKot.get_name();
-{:lang=javascript}
+
 
 
 ## Augumenting Types, I
@@ -152,7 +152,7 @@ o nazwie *method*.
         this.prototype[name] = func;
       }
     };
-{:lang=javascript}
+
 
 Dodajemy metodę *integer* do typu 'number'.
 
@@ -161,7 +161,7 @@ Dodajemy metodę *integer* do typu 'number'.
     });
 
     (-10 / -3).integer();
-{:lang=javascript}
+
 
 Dodajemy metodę *trim* do typu 'string'.
 
@@ -170,7 +170,7 @@ Dodajemy metodę *trim* do typu 'string'.
     });
 
     "  ala ma kota  ".trim();
-{:lang=javascript}
+
 
 
 ## Co to jest „lexical scope” i „current context”
@@ -197,7 +197,7 @@ funkcji w której są definiowane, za wyjątkiem
       setTimeout(step, 100);
     }
     fade(document.body);
-{:lang=javascript}
+
 
 Powyższy i poniższy kod uruchamiamy w konsoli rozszerzenia *Firebug*.
 
@@ -213,14 +213,14 @@ Powyższy i poniższy kod uruchamiamy w konsoli rozszerzenia *Firebug*.
     };
     elems = document.getElementsByTagName('p');
     add_the_handlers(elems);
-{:lang=javascript}
+
 
 I jeszcze jeden przykład. Co wypisuje poniższy kod:
 
     for (var i = 1; i <= 3; i++) {
       setTimeout(function() { console.log(i); }, 0);
     }
-{:lang=javascript}
+
 
 A co ten kod:
 
@@ -229,7 +229,7 @@ A co ten kod:
         setTimeout(function() { console.log(i); }, 0);
       })(i);
     }
-{:lang=javascript}
+
 
 
 ## Moduły
@@ -258,13 +258,13 @@ Tworzymy obiekt do generowania *numerów seryjnych*:
     sequencer.set_prefix('Q');
     sequencer.set_seq(1000);
     sequencer.gensym();
-{:lang=javascript}
+
 
 Prosty przykład wyjaśniający znaczenie `()` powyżej:
 
     var o = function() { return {msg: 'hello world'}; }()
     o.msg  //=> hello world
-{:lang=javascript}
+
 
 
 ## Curry
@@ -282,7 +282,7 @@ Dodajemy do języka metodę **curry**.
     });
     // nie działa, ponieważ arguments nie jest *prawdziwą* tablicą
     // (arguments nie ma metody concat)
-{:lang=javascript}
+
 
 Działający kod:
 
@@ -301,7 +301,7 @@ Działający kod:
 
     var add2 = add.curry(2);
     print(add2(6));  //=> 8
-{:lang=javascript}
+
 
 
 ## Memoization
@@ -317,7 +317,7 @@ Bez memoization:
     for (var i = 0; i <= 12; i += 1) {
       print('// ' + i + ': ' + fibonacci(i));
     };
-{:lang=javascript}
+
 
 Z memoization:
 
@@ -336,7 +336,7 @@ Z memoization:
     for (var i = 0; i <= 12; i += 1) {
       print('// ' + i + ': ' + fibonacci(i));
     };
-{:lang=javascript}
+
 
 Funkcja ułatwiająca kodowanie *memoized* funkcji.
 
@@ -365,7 +365,7 @@ Funkcja ułatwiająca kodowanie *memoized* funkcji.
     for (var i = 0; i <= 10; i += 1) {
       print('// ' + i + ': ' + factorial(i));
     };
-{:lang=javascript}
+
 
 
 ## Augumenting Objects, X
@@ -389,7 +389,7 @@ Kod wklejamy na konsoli *js*.
 
     var kwadrat = function(arg) { return arg*arg; }
     t.zmien1(kwadrat)
-{:lang=javascript}
+
 
 Lepszy przykład:
 
@@ -398,4 +398,4 @@ Lepszy przykład:
     a.map(function(arg) { return arg*arg; })  //=> 1,4,9,16
     var kwadrat = function(arg) { return arg*arg; }
     a.map(kwadrat)  //=> 1,16,81,256
-{:lang=javascript}
+

@@ -18,7 +18,7 @@ Walidator HTML: `http://validator.w3.org/`.
         <!-- ciało dokumentu -->
       </body>
     </html>
-{:lang=html}
+
 
 ## Szablon HTML 5
 
@@ -43,7 +43,7 @@ Kompletny(?) szablon dokumentu HTML 5:
     <p>ąćęłńóśźż ĄĆĘŁŃÓŚŹŻ</p>
     </body>
     </html>
-{:lang=html}
+
 
 Przykład pobrałem ze strony
 [HTML5 Doctor](http://html5doctor.com/html-5-boilerplates/).
@@ -58,7 +58,7 @@ Jeszcze jeden przykład:
     <meta charset="utf-8" />
     <title>Minimalny dokument HTML 5</title>
     <p>ąćęłńóśźż ĄĆĘŁŃÓŚŹŻ</p>
-{:lang=html}
+
 
 ### Różnice między HTM 4 a 5
 

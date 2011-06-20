@@ -50,7 +50,7 @@ Program *c2f.rb*:
     puts "The result is: "
     puts fahrenheit
     puts "."
-{:lang=ruby}
+
 
 Checking syntax:
 
@@ -64,7 +64,7 @@ Program *c2fi.rb* (interactive):
     print "The Fahrenheit equivalent is "
     print fahrenheit
     puts "."
-{:lang=ruby}
+
 
 Reading temperature from data file:
 
@@ -75,7 +75,7 @@ Reading temperature from data file:
     puts "The number is " + num
     print "Result: "
     puts fahrenheit
-{:lang=ruby}
+
 
 Writing temperature to file:
 
@@ -86,7 +86,7 @@ Writing temperature to file:
     fh = File.new("temp.out", "w")
     fh.puts fahrenheit
     fh.close
-{:lang=ruby}
+
 
 Two in one: c2f and f2c:
 
@@ -113,7 +113,7 @@ Two in one: c2f and f2c:
     else
       print "#{f} degrees F\n"
     end
-{:lang=ruby}
+
 
 
 ## Clases and Modules
@@ -164,7 +164,7 @@ Two in one: c2f and f2c:
       attr_accessor :visible
       include Invisibility
     end
-{:lang=ruby}
+
 
 ## Przykłady: silnia i wieża Hanoi
 
@@ -179,7 +179,7 @@ Tak wygląda zwykła implementacja:
     end
 
     fact(10)
-{:lang=ruby}
+
 
 A tak, dodajemy metodę `fact` do klasy *Integer*:
 
@@ -194,7 +194,7 @@ A tak, dodajemy metodę `fact` do klasy *Integer*:
     end
 
     10.fact
-{:lang=ruby}
+
 
 Implementacja łamigłowki *Wieże Hanoi*,
 nie dużo różni się od implementacji w języku *C*:
@@ -267,7 +267,7 @@ nie dużo różni się od implementacji w języku *C*:
       end
       toh.run
     end
-{:lang=ruby}
+
 
 
 ## Szablony Erb (i Erubis)
@@ -391,7 +391,7 @@ Tworzymy plik *ar.rb* o zawartości:
     r1.comments.create :body => "i like ruby"
     r1.comments << c1
     r2.comments << c1
-{:lang=ruby}
+
 
 Teraz uruchamiamy `irb`.
 
@@ -404,12 +404,12 @@ Teraz uruchamiamy `irb`.
     c1.save
     Post.find_by_body "perl"
     # Post.find(:all, ...
-    Post.all(:conditions => {:body => 'ruby'}, :order => "created_at DESC")
+    Post.all(:conditions =>
     Post.find_all_by_body "perl"
     Post.all(:conditions => ['body LIKE ?', '%ub%']) # SQL fragment
     what = 'ub'
     Post.all(:conditions => ['body LIKE ?', '%#{what}%'])
-{:lang=ruby}
+
 
 [Rails API](http://api.rubyonrails.org) — ActiveRecord README
 więcej przykładów.
@@ -437,7 +437,7 @@ Na mancie ciągle ImageMagick < 6.3.0.
     graph.render :to => "pie_test.svg"
     graph.render :width => 300, :height => 200,
       :to => "pie_test.png", :as => 'png'
-{:lang=ruby}
+
 
 
 ## Znalezione w sieci

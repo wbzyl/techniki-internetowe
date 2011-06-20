@@ -13,7 +13,7 @@ Student:
        sname varchar(10),
        age integer
     );
-{:lang=sqlite}
+
 
 Przedmiot:
 
@@ -23,7 +23,7 @@ Przedmiot:
        title varchar(10),
        credits integer
     );
-{:lang=sqlite}
+
 
 Profesor:
 
@@ -34,7 +34,7 @@ Profesor:
        salary integer,
        age integer
     );
-{:lang=sqlite}
+
 
 Tabela studentów i przedmiotów na które uczęszczają:
 
@@ -43,16 +43,16 @@ Tabela studentów i przedmiotów na które uczęszczają:
        sno integer,
        cno varchar(5)
     );
-{:lang=sqlite}
+
 
 Tabela profesorów i przedmiotów których nauczają:
 
     create table teach
     (
        lname varchar(10),
-       cno varchar(5) 
+       cno varchar(5)
     );
-{:lang=sqlite}
+
 
 **Zadanie:** Narysować diagram ERD do powyższych tabelek.
 
@@ -70,14 +70,14 @@ Studenci:
     insert into students values (8,'kay',20);
     insert into students values (9,'gillian',20);
     insert into students values (10,'chad',21);
-{:lang=sqlite}
+
 
 Przedmioty:
 
     insert into courses values ('CS112','physics',4);
     insert into courses values ('CS113','calculus',4);
     insert into courses values ('CS114','history',4);
-{:lang=sqlite}
+
 
 Profesorowie:
 
@@ -86,7 +86,7 @@ Profesorowie:
     insert into professors values ('mayer','math',400,55);
     insert into professors values ('pomel','science',500,65);
     insert into professors values ('feuer','math',400,40);
-{:lang=sqlite}
+
 
 Pozostałe dwie tabele:
 
@@ -101,14 +101,14 @@ Pozostałe dwie tabele:
     insert into take values (5,'CS113');
     insert into take values (6,'CS113');
     insert into take values (6,'CS114');
-      
+
     insert into teach values('choi','CS112');
     insert into teach values('choi','CS113');
     insert into teach values('choi','CS114');
     insert into teach values('pomel','CS113');
     insert into teach values('mayer','CS112');
     insert into teach values('mayer','CS114');
-{:lang=sqlite}
+
 
 # Zapytania z zaprzeczeniem
 
@@ -123,11 +123,11 @@ Poniższe zapytanie zwraca błędne wyniki:
     where sno in ( select sno
                      from take
                    where cno != 'CS112' );
-{:lang=sqlite}
+
 
 Wyniki:
 
-     sno | sname  | age 
+     sno | sname  | age
     -----+--------+-----
        1 | aaron  |  20
        3 | doug   |  20
@@ -138,7 +138,7 @@ Wyniki:
 Wyniki są błędne ponieważ zapytanie odpowiada na pytanie:
 „Kto uczęszcza na zajęcia, które nie są CS112?”
 a studenci (zwykle) uczęszczają na kilka zajęć
-i (czasami) nie uczęszczają na żadne zajęcia. 
+i (czasami) nie uczęszczają na żadne zajęcia.
 
 Odpowiedź:
 
@@ -148,11 +148,11 @@ Odpowiedź:
       group by s.sno, s.sname, s.age
     having max(case when t.cno = 'CS112' then 1 else 0 end) = 0
     order by s.sno;
-{:lang=sqlite}
+
 
 Prawidłowy wynik:
 
-     sno |  sname  | age 
+     sno |  sname  | age
     -----+---------+-----
        5 | steve   |  22
        6 | jing    |  18
@@ -167,18 +167,18 @@ Tworzymy dodatkową kolumnę w której zapisujemy 1
 jeśli student uczęszcza na CS112; w przeciwnym wypadku — 0
 (left outer join zwraca studentów nie chodzących na żadne zajęcia):
 
-    select s.sno, s.sname, s.age, 
+    select s.sno, s.sname, s.age,
            case when t.cno = 'CS112'
                 then 1
                 else 0
            end as takes_CS112
     from students s left join take t
       on (s.sno = t.sno);
-{:lang=sqlite}
+
 
 Wynik:
-    
-     sno |  sname  | age | takes_cs112 
+
+     sno |  sname  | age | takes_cs112
     -----+---------+-----+-------------
        1 | aaron   |  20 |           1
        1 | aaron   |  20 |           0
@@ -199,12 +199,12 @@ Wynik:
 
 ### Sprytne rozwiązanie
 
-    select * 
+    select *
       from students
     where sno not in ( select sno
                          from take
                        where cno = 'CS112' );
-{:lang=sqlite}
+
 
 
 ## Zadanie 2
@@ -215,16 +215,16 @@ na CS112 **albo** CS114.
 Poniższe zapytanie wygląda obiecująco,
 ale zwraca błędny wynik:
 
-    select * 
+    select *
       from students
     where sno in ( select sno
                      from take
                    where cno != 'CS112' and cno != 'CS114' );
-{:lang=sqlite}
+
 
 Wynik:
 
-     sno | sname  | age 
+     sno | sname  | age
     -----+--------+-----
        1 | aaron  |  20
        4 | maggie |  19
@@ -243,11 +243,11 @@ Odpowiedź:
     group by s.sno, s.sname, s.age
     having sum(case when t.cno in ('CS112', 'CS114')
                     then 1 else 0 end) = 1;
-{:lang=sqlite}
+
 
 Wynik:
 
-     sno | sname  | age 
+     sno | sname  | age
     -----+--------+-----
        2 | chuck  |  21
        4 | maggie |  19
@@ -266,11 +266,11 @@ na odpowiednie zajęcia:
                 then 1 else 0 end as takes_either_or
       from students s, take t
     where s.sno = t.sno;
-{:lang=sqlite}
+
 
 Wynik:
 
-     sno | sname  | age | takes_either_or 
+     sno | sname  | age | takes_either_or
     -----+--------+-----+-----------------
        1 | aaron  |  20 |               1
        1 | aaron  |  20 |               0
@@ -292,11 +292,11 @@ Teraz sumujemy '1':
       from students s, take t
     where s.sno = t.sno
     group by s.sno, s.sname, s.age;
-{:lang=sqlite}
+
 
 Wynik:
 
-     sno | sname  | age | takes_either_or 
+     sno | sname  | age | takes_either_or
     -----+--------+-----+-----------------
        3 | doug   |  20 |               2
        2 | chuck  |  21 |               1
@@ -310,33 +310,33 @@ TAKES\_EITHER\_OR.
 
 ### Sprytne rozwiązanie
 
-    select s.sno, s.sname, s.age 
+    select s.sno, s.sname, s.age
       from students s, take t
     where s.sno = t.sno
       and t.cno in ('CS112', 'CS114')
       and s.sno not in ( select a.sno
-                           from take a, take b 
+                           from take a, take b
                          where a.sno = b.sno
                            and a.cno = 'CS112'
                            and b.cno = 'CS114' );
-{:lang=sqlite}
-                           
+
+
 
 ## Zadanie 3
 
-Znaleźć wszystkich studentów uczęszczających 
+Znaleźć wszystkich studentów uczęszczających
 **tylko** na przedmiot CS112.
 
 Poniższe zapytanie nie zwraca poprawnego wyniku:
 
-    select s.* 
+    select s.*
       from students s, take t
     where s.sno = t.sno and t.cno = 'CS112';
-{:lang=sqlite}
+
 
 Wynik:
 
-     sno | sname  | age 
+     sno | sname  | age
     -----+--------+-----
        1 | aaron  |  20
        2 | chuck  |  21
@@ -356,14 +356,14 @@ Odpowiedź:
                from   take
              group by sno
              having   count(*) = 1 ) t2
-    where s.sno = t1.sno 
+    where s.sno = t1.sno
       and t1.sno = t2.sno
       and t1.cno = 'CS112';
-{:lang=sqlite}
+
 
 Wynik:
 
-     sno | sname | age 
+     sno | sname | age
     -----+-------+-----
        2 | chuck |  21
 
@@ -384,11 +384,11 @@ Tak może wyglądać zapytanie realizujące powyższy plan:
              group by sno
              having   count(*) = 1 ) t2
     where t1.sno = t2.sno and t1.cno = 'CS112';
-{:lang=sqlite}
+
 
 Wynik:
 
-     sno |  cno  
+     sno |  cno
     -----+-------
        2 | CS112
 
@@ -400,7 +400,7 @@ aby odzczytać dane studenta o *sno=2*.
     select s.*
       from students s, take t
     where s.sno = t.sno
-      and s.sno not in ( select sno 
+      and s.sno not in ( select sno
                            from take
                          where  cno != 'CS112' );
-{:lang=sqlite}
+

@@ -1,5 +1,5 @@
 Strona domowa projektu [BlueprintCSS](http://www.blueprintcss.org),
-[Wiki](http://wiki.github.com/joshuaclayton/blueprint-css), 
+[Wiki](http://wiki.github.com/joshuaclayton/blueprint-css),
 [Articles](http://wiki.github.com/joshuaclayton/blueprint-css/articles).
 
 ## Setup Instructions
@@ -13,17 +13,17 @@ Here’s how you set up Blueprint on your site.
 2\. Add the following three lines to every `<head/>` of your site. Make
    sure the three href paths are correct (here, BP is in my CSS folder):
 
-     <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" 
+     <link rel="stylesheet" href="/stylesheets/blueprint/screen.css"
            type="text/css" media="screen, projection">
-     <link rel="stylesheet" href="/stylesheets/blueprint/print.css" 
-           type="text/css" media="print"> 
+     <link rel="stylesheet" href="/stylesheets/blueprint/print.css"
+           type="text/css" media="print">
      <!--[if IE]>
-     <link rel="stylesheet" href="/stylesheets/blueprint/ie.css" 
+     <link rel="stylesheet" href="/stylesheets/blueprint/ie.css"
            type="text/css" media="screen, projection">
      <![endif]-->
-{:lang="html"}
 
-   Remember to include trailing slashes („` />`”) in these lines if 
+
+   Remember to include trailing slashes („` />`”) in these lines if
    you’re using XHTML.
 
 3\. For development, add the `.showgrid` class to any container or column
@@ -31,9 +31,9 @@ Here’s how you set up Blueprint on your site.
    advanced functionality.
 
 
-><img src="<%= image('alan_kay.jpg') %>" alt="[Alan Kay]">
+><img src="{%= image('alan_kay.jpg') %}" alt="[Alan Kay]">
 >
-> Don't worry about what anybody else is going to do. 
+> Don't worry about what anybody else is going to do.
 > The best way to predict the future is to invent it.
 >
 > <p class="author">— Alan Kay</p>
@@ -69,8 +69,8 @@ Solution.
          <div class="column span-24">Footer</div>
       </div>
     </body>
-{:lang=html}
-       
+
+
 <table summary="Classes used in Grids">
   <caption><em>Klasy używane w Siatce (Grid)</em></caption>
   <thead>
@@ -179,10 +179,10 @@ few classes provided. Here’s a list of their names and what they do:
     </tr>
   </tbody>
 </table>
-        
+
 To make Blueprint style your input elements, each text input element
-should have the class `.text`, or `.title`, where `.text` 
-is the normal size, and `.title` gives you an input field 
+should have the class `.text`, or `.title`, where `.text`
+is the normal size, and `.title` gives you an input field
 with larger text.
 
 <table summary="Classes used in Forms">
@@ -218,38 +218,38 @@ powinny być czytelne po wyświetleniu przez rzutniki w laboratoriach.
 
 Interlinię ustawiamy na 1,5\*16&#x200A;px=24&#x200A;px. Dlaczego?
 
-Szerokość literek „n”, „e”, „p” to mniej więcej 
+Szerokość literek „n”, „e”, „p” to mniej więcej
 0.5\*16&#x200A;px=8&#x200A;px.
 Aby wiersz tekstu łatwo się czytał powinien zawierać
 50–70 liter. Zatem szerokość kolumny tekstu powinna zawierać
-się między 400&#x200A;px–560&#x200A;px. 
+się między 400&#x200A;px–560&#x200A;px.
 
 Zamierzam składać na siatce 13+8=21 kolumn, gdzie 13 kolumn
 będzie zawierać notatki, a 8 kolumn przeznaczone będzie na
 spis treści, cytaty itp.
 
-Jeśli ustawimy szerokość jednej kolumny na 
+Jeśli ustawimy szerokość jednej kolumny na
 33&#x200A;px+11&#x200A;px=44&#x200A;px,
-szerokość kolumn będzie wynosiła 
+szerokość kolumn będzie wynosiła
 572&#x200A;px+352&#x200A;px-11&#x200A;px=913&#x200A;px.
 
 Szerokość ekranu to co najmniej 1024&#x200A;px, na marginesy
-zostaje 111&#x200A;px. Na lewy margines przeznaczymy 
+zostaje 111&#x200A;px. Na lewy margines przeznaczymy
 44&#x200A;px (w przybliżeniu 1/3 z 111).
 
 ## Skrypt kompresujący *compressor.rb*
 
 W katalogu z wtyczkami `blueprint/plugins/` tworzymy katalog
-`tutorials` i umieszczamy w nim plik `screen.css` 
+`tutorials` i umieszczamy w nim plik `screen.css`
 w którym przebijamy domyślne ustawienie rozmiaru fontu:
 
-    body { 
+    body {
       font-size: 16px;
     }
-{:lang=css21}
+
 
 Pozostałe wyliczone ustawienia zapisujemy w pliku `lib/settings.yml`:
- 
+
     couchdb:
       path: /home/wbzyl/www/couchdb/public/stylesheets
       custom_layout:
@@ -263,7 +263,7 @@ Pozostałe wyliczone ustawienia zapisujemy w pliku `lib/settings.yml`:
       path: /home/wbzyl/www/ti/public/stylesheets
       ...
       ...
-{:lang=yaml}
+
 
 W katalogu `lib` uruchamiamy Skrypt `compressor.rb`:
 
@@ -273,7 +273,7 @@ W katalogu `lib` uruchamiamy Skrypt `compressor.rb`:
 
 Tak wygląda layout:
 
-<p><%= image_tag("/images/layout.png", :alt => "BlueprintCSS based layout") %></p>
+<p>{%= image_tag("/images/layout.png", :alt => "BlueprintCSS based layout") %}</p>
 
 A tak HTML:
 
@@ -288,8 +288,8 @@ A tak HTML:
         <![endif]-->
         <link rel="stylesheet" href="/stylesheets/uv.css" type="text/css" media="screen, projection" charset="utf-8">
         <link rel="stylesheet" href="/stylesheets/couchdb.css" type="text/css" media="screen,projection" charset="utf-8">
-    
-        <title><%= @title || "WB/CouchDB" %></title>
+
+        <title><%= @title || "WB/CouchDB" %}</title>
       </head>
       <body>
         <div class="span-21" id="header">
@@ -305,16 +305,16 @@ A tak HTML:
         </div>
         <div class="span-21 container">
           <div class="span-13" id="content">
-          
-            <%%= yield %>          
-            
+
+            <%%= yield %>
+
           </div>
           <div class="span-8 last">
           </div>
         </div>
-    
+
       </body>
     </html>
-{:lang=html}
+
 
 A tak HAML: TODO

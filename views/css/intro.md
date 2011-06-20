@@ -1,5 +1,5 @@
 <blockquote>
-<%= image_tag "/images/agnieszka_osiecka.jpg", :alt => "[Agnieszka Osiecka]" %>
+{%= image_tag "/images/agnieszka_osiecka.jpg", :alt => "[Agnieszka Osiecka]" %}
 <p>
   Kolory razem połączone<br/>
   w przeróżnym mogą być humorze:<br/>

@@ -1,27 +1,27 @@
 ## Style projekcyjne
 
-Styl projekcyjny idealnie nadaje się do 
+Styl projekcyjny idealnie nadaje się do
 przygotowywania i wyświetlania slajdów.
 
 Od niedawna przeglądarka Firefox obsługuje
 ten styl? Czyżby?
 
-Ale Opera obsługuje. 
-Wciskając klawisz F11 przełączamy styl 
+Ale Opera obsługuje.
+Wciskając klawisz F11 przełączamy styl
 na projekcyjny.
 
-Oto przykładowy dokument korzystający z stylu 
+Oto przykładowy dokument korzystający z stylu
 projekcyjnego:
 
-    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
         "http://www.w3.org/TR/html4/strict.dtd">
     <html>
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link href="/stylesheets/examples/css/projection.css" 
+        <link href="/stylesheets/examples/css/projection.css"
               title="domyślny"
-              media="screen, projection" 
-              rel="Stylesheet" 
+              media="screen, projection"
+              rel="Stylesheet"
               type="text/css"
               charset="utf-8">
         <title>Jakiś tytuł</title>
@@ -42,7 +42,7 @@ projekcyjnego:
         </ul>
       </body>
     </html>
-{:lang=html}
+
 
 Dokument dzielimy na slajdy, korzystając
 z własności: `page-break-before`
@@ -61,7 +61,7 @@ Plik `projection.css`:
       }
       h2 {
         page-break-before: always;
-      }      
+      }
       h1 {
         position: fixed;
         top: 0;
@@ -69,6 +69,6 @@ Plik `projection.css`:
         font-size: 50%;
       }
     }
-{:lang="css21"}
 
-[Tutaj jest link do tego przykładu](<%= url_for '/doc/examples/css/projection.html' %>).
+
+[Tutaj jest link do tego przykładu]({%= url_for '/doc/examples/css/projection.html' %}).

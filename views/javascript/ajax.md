@@ -12,17 +12,17 @@
 Techniki opisane poniżej pochodzą z książki:
 J. Chaffer, K. Swedberg. *Learning jQuery*.
 
-Poniżej zostaną opisane cztery sposoby przesyłanie 
+Poniżej zostaną opisane cztery sposoby przesyłanie
 danych na żądanie.
 
 * Love: przysyłamy fragment kodu HTML.
 * Linux: przesyłamy obiekt JSON
 * Pets: przesyłamy dokument XML
-* Ascii-Art: wybieramy dokument po wpisaniu 
-  liczby w formularzu. 
+* Ascii-Art: wybieramy dokument po wpisaniu
+  liczby w formularzu.
 
 
-<p>Tutaj umieściłem <%= link_to "przykład", "/examples/javascript/ajax-ahah" %> 
+<p>Tutaj umieściłem {%= link_to "przykład", "/examples/javascript/ajax-ahah" %}
 w którym użyto wszystkich czterech technik.</p>
 
 
@@ -35,13 +35,13 @@ i miejsce na stronie w które go wstrzykniemy.
 Zarezerwowane miejsce:
 
     <div id="content">&nbsp;</div>
-{:lang=html}
+
 
 Potrzebujemy jeszcze elementu, który po kliknięciu
 wygeneruje żądanie *XMLHttpRequest*:
 
     <div id="love">Love</div>
-{:lang=html}
+
 
 Kod Javascript:
 
@@ -50,9 +50,9 @@ Kod Javascript:
         $('#content').load('/data/html/love.html');
       });
     });
-{:lang=javascript}
 
-Powyższy kod korzysta z funkcji 
+
+Powyższy kod korzysta z funkcji
 [load](http://docs.jquery.com/Ajax/load).
 
 
@@ -62,24 +62,24 @@ Tak jak poprzednio potrzebujemy czegoś, co po kliknięciu
 wygeneruje żądanie AJAX:
 
     <div id="linux>Linux</div>
-{:lang=html}
+
 
 oraz miejsca na stronie na cytaty:
 
     <div id="content">&nbsp;</div>
-{:lang=html}
 
-Dane są pamiętane w pliku w formacie JSON w postaci 
+
+Dane są pamiętane w pliku w formacie JSON w postaci
 tablicy haszy:
 
     [
-      { 
+      {
         "q": "Linux is not user-friendly ...",
         "a": "[seen somewhere on the net]"
       },
       ...
     ]
-{:lang=javascript}
+
 
 **Uwaga:** Dane powinny być gotowe do *konsumpcji*,
 czyli do umieszczenia na stronie.
@@ -106,10 +106,10 @@ na kod HTML:
         });
       });
     });
-{:lang=javascript}
 
-Powyższy kod korzysta z globalnych metod obiektu *jQuery*:  
-[getJSON](http://docs.jquery.com/Ajax/jQuery.getJSON) oraz 
+
+Powyższy kod korzysta z globalnych metod obiektu *jQuery*:
+[getJSON](http://docs.jquery.com/Ajax/jQuery.getJSON) oraz
 [each](http://docs.jquery.com/Utilities/jQuery.each).
 
 
@@ -143,7 +143,7 @@ Oto kilka cytatów, które trzymamy w pliku w formacie XML:
       A door is what a dog is perpetually on the wrong side of.
     </quote>
     </quotes>
-{:lang=xml}
+
 
 Tyle kodu Javascript jest potrzebne, aby zamienić XML na HTML:
 
@@ -167,10 +167,10 @@ Tyle kodu Javascript jest potrzebne, aby zamienić XML na HTML:
         });
       });
     });
-{:lang=javascript}
 
-Powyższy kod korzysta z globalnej metody obiektu *jQuery*:  
-[get](http://docs.jquery.com/Ajax/jQuery.get) oraz 
+
+Powyższy kod korzysta z globalnej metody obiektu *jQuery*:
+[get](http://docs.jquery.com/Ajax/jQuery.get) oraz
 metody [find](http://docs.jquery.com/Traversing/find).
 
 
@@ -184,7 +184,7 @@ Tutaj wybieramy obrazek wpisując jego numer w formularzu.
         <input type="submit" name="show" id="show" value="Show Ascii Art">
       </p>
     </form>
-{:lang=html}
+
 
 Użytkownik, po wpisaniu czegoś w formularzu i kliknięciu
 przycisku "Show Ascii Art", oczekuje że zobaczy obrazek.
@@ -197,7 +197,7 @@ przycisku "Show Ascii Art", oczekuje że zobaczy obrazek.
         event.preventDefault();
       });
     });
-{:lang=javascript}
+
 
 Żądanie POST wygląda jakoś tak: <code>num 2</code>
 (można to podejrzeć korzystając z rozszerzenia Firebug).
@@ -210,7 +210,7 @@ przycisku "Show Ascii Art", oczekuje że zobaczy obrazek.
         "<h3>Please, enter a number in the 1..4 range.</h3>"
       end
     end
-{:lang=ruby}
+
 
 Jak widać z kodu, obrazki są pamiętane w plikach o nazwach
 postaci *liczba*.html.
@@ -221,12 +221,12 @@ o nazwie [post](http://docs.jquery.com/Ajax/jQuery.post).
 
 ## Śledzimy żądanie
 
-Do tej pory cierpliwie czekaliśmy na odpowiedź na 
-nasze żądanie. Teraz chcielibysmy wiedzieć, co się 
+Do tej pory cierpliwie czekaliśmy na odpowiedź na
+nasze żądanie. Teraz chcielibysmy wiedzieć, co się
 dzieje z wysłanym żądaniem.
 
 Biblioteka jQuery umożliwia zarejestrowanie kilku funkcji
-zwrotnych powiązanych z różnymi 
+zwrotnych powiązanych z różnymi
 [zdarzeniami ajaxowymi](http://docs.jquery.com/Ajax)
 (kompletna lista).
 
@@ -244,7 +244,7 @@ Po umieszczeniu throbbera (pulsujący obrazek) na stronie:
       <!-- http://www.ajaxload.info/ -->
       <img id="throbber" src="/images/ajax-loader.gif" />
     </div>
-{:lang=html}
+
 
 ukrywamy go, aby pokazać go w chwili kiedy zostanie wysłane
 żądanie ajax:
@@ -257,7 +257,7 @@ ukrywamy go, aby pokazać go w chwili kiedy zostanie wysłane
         $(this).hide();
       });
     });
-{:lang=javascript}
+
 
 Po obsłużeniu żądania, ukrywamy throbbera.
 
@@ -272,8 +272,8 @@ originating from the same site to access each other's methods and
 properties with no specific restrictions — but prevents access to most
 methods and properties across pages on different sites.
 
-[Cross-domain communications with JSONP, Part 1: 
-Combine JSONP and jQuery to quickly build powerful 
+[Cross-domain communications with JSONP, Part 1:
+Combine JSONP and jQuery to quickly build powerful
 mashups](http://www.ibm.com/developerworks/library/wa-aj-jsonp1):
 You can stop these security errors if you control the remote server
 where data resides and every request goes to the same domain, but
@@ -282,9 +282,9 @@ server?
 
 Technika [JSONP](http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp)
 (*JSON with Padding*) pozwala obejść to ograniczenie.
-**Ale to już nie jest AJAX.** 
+**Ale to już nie jest AJAX.**
 
-JSON, czyli JavaScript Object Notation, jest lekkim 
+JSON, czyli JavaScript Object Notation, jest lekkim
 (w porównaniu, np. z XML), formatem danych.
 JSON, to napis reprezentujący obiekt Javascript
 (stąd nazwa).
@@ -292,7 +292,7 @@ JSON, to napis reprezentujący obiekt Javascript
 Na przykład, `ticker` zdefiniowany poniżej jest obiektem Javascript:
 
     var ticker = { 'symbol': 'IBM', 'price': '91.42' };
-{:lang=javascript}
+
 
 a jego reprezentacja w postaci napisu, czyli JSON to:
 
@@ -302,7 +302,7 @@ Idea JSONP jest jakaś taka:
 
     <script type="text/javascript">
       var showPrice = function(data) {
-        alert("Symbol: " + data.symbol + " Price: " + data.price); 
+        alert("Symbol: " + data.symbol + " Price: " + data.price);
       };
     </script>
     <script type="text/javascript">
@@ -314,14 +314,14 @@ pokazane). Ale przed wysłaniem żądania klient
 definiuje funkcję *showPrice* wstrzykując sobie zawartość
 pierwszego skryptu. Oczywiście, aby napisać taką
 funkcję musimy wcześniej wiedzieć jak będzie wyglądać
-odopwiedź. Takie rzeczy są opisane w API usługi. 
+odopwiedź. Takie rzeczy są opisane w API usługi.
 
 Aha, funkcja *showPrice* to padding (literka P w JSONP).
 
 
 ### How it works in jQuery?
 
-*Cytat:* 
+*Cytat:*
 jQuery attaches a global function to the window object that is called
 when the script is injected, then the function is removed on
 completion.
@@ -335,25 +335,25 @@ do analizy.
 
 **BUG w jQuery:**
 poniższy kod nie działa zgodnie ze specyfikacją.
-Jeśli web service i client są uruchomione na 
+Jeśli web service i client są uruchomione na
 różnych portach na *http://localhost*, to
 *$.getJSON* wysyła żądanie XHR zamiast wstrzyknąć
 kod Javascript.
 
 Zobacz poniżej działający skrypt korzystający z metody *$.ajax*.
 
-Jeśli **przed** wejściem 
-<%= link_to "na taką stronę", "/doc/examples/javascript/jsonp.html" %>:
+Jeśli **przed** wejściem
+{%= link_to "na taką stronę", "/doc/examples/javascript/jsonp.html" %}:
 
-    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                         "http://www.w3.org/TR/html4/loose.dtd">
     <html>
     <head>
       <script src="http://code.jquery.com/jquery-latest.js"></script>
       <script>
       $(document).ready(function(){
-        $.getJSON("http://localhost:4567/jsonp", 
-                  { 'callback': '?', 'id': '8' }, 
+        $.getJSON("http://localhost:4567/jsonp",
+                  { 'callback': '?', 'id': '8' },
                   function(data) {
                     alert('Ticker: ' + data.symbol + ' Price: ' + data.price);
                   }
@@ -363,7 +363,7 @@ Jeśli **przed** wejściem
     </head>
     <body><h3>JSONP test</h3></body>
     </html>
-{:lang=html}
+
 
 uruchomimy *testowy* web service *ticker.rb* na porcie 4567:
 
@@ -372,10 +372,10 @@ uruchomimy *testowy* web service *ticker.rb* na porcie 4567:
     require 'json'
 
     get '/jsonp' do
-      content_type 'application/json', :charset => 'utf-8'  
+      content_type 'application/json', :charset => 'utf-8'
       params['callback'] + "(" + { 'symbol' => 'IBM', 'price' => '91.42' }.to_json + ")\n"
     end
-{:lang=ruby}
+
 
 Uruchamiamy server:
 
@@ -386,10 +386,10 @@ i sprawdzamy, czy działa:
     curl -X GET --url 'http://localhost:4567/jsonp?id=4&callback=?'
 
 
-Po uruchomieniu tego serwera na porcie 4567, 
-<%= link_to "wchodzimy na tę stronę", "/doc/examples/javascript/jsonp-ajax.html" %>:
+Po uruchomieniu tego serwera na porcie 4567,
+{%= link_to "wchodzimy na tę stronę", "/doc/examples/javascript/jsonp-ajax.html" %}:
 
-    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                         "http://www.w3.org/TR/html4/loose.dtd">
     <html>
     <head>
@@ -412,7 +412,7 @@ Po uruchomieniu tego serwera na porcie 4567,
     </head>
     <body><h3>JSONP test via .ajax call</h3></body>
     </html>
-{:lang=html}
+
 
 Można dołożyć do powyższego kodu Javascript funkcje zwrotne:
 *$.ajaxStart* oraz *$.ajaxStop*. Po co?

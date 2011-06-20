@@ -3,7 +3,7 @@
 Dlaczego nowa notacja?
 
 * XHTML: syntax highlighting via the [*Syntax*][syntax] library
-        
+
 * LaTeX: syntax highlighting via the [*Listings*][listings] package
 
 [syntax]: http://syntax.rubyforge.org/
@@ -23,9 +23,9 @@ of email headers:
     Javascript: jquery.js main.js
     HTML use syntax: true
     LaTeX use listings: true
-    
+
     Content of the document
-{:markdown}
+
 
 Meta-data keys are assumed to be case-insensitive.
 
@@ -42,51 +42,51 @@ Meta-data keys are assumed to be case-insensitive.
       <body>
       </body>
     </html>
-{:lang=html}
+
 
 ### Ruby: lang=ruby
 
     def hello
       "hello world"
     end
-{:lang=ruby}
+
 
 ### ANSI C: lang=ansic
 
-    int main() 
+    int main()
     {
        printf("hello world\n");
        return 0;
     }
-{:lang=ansic}
+
 
 ### SQLite: lang=sqlite
 
-    --  jp.sql  
-    drop table if exists studenci;  
-    create table studenci (  
-      id        integer       primary key autoincrement,  
-      nazwisko  varchar(128)  not null,  
-      imię      varchar(128)  not null,  
-      login     varchar(128)  not null collate nocase,  
-      indeks    integer       default 0,  
-      data      datetime,  
-      uwagi     text          default ''  
-    );  
-    drop table if exists zaliczenia;  
-    create table zaliczenia (  
-      id          integer       primary key autoincrement,  
-      student_id  integer       not null,  -- klucz obcy  
-      ocena       varchar(128)  default 'unknown' collate nocase,  
-      kiedy       datetime,  
-      termin      text          default 'pierwszy'  
-    );  
-    -- wyzwalacz automatycznie wstawiający datę w polu kiedy  
-    create trigger wstaw_do_zaliczeń_kiedy after insert on zaliczenia  
-    begin  
-      update zaliczenia set kiedy = datetime('now') where rowid = new.rowid;  
-    end;  
-{:lang=sqlite}
+    --  jp.sql
+    drop table if exists studenci;
+    create table studenci (
+      id        integer       primary key autoincrement,
+      nazwisko  varchar(128)  not null,
+      imię      varchar(128)  not null,
+      login     varchar(128)  not null collate nocase,
+      indeks    integer       default 0,
+      data      datetime,
+      uwagi     text          default ''
+    );
+    drop table if exists zaliczenia;
+    create table zaliczenia (
+      id          integer       primary key autoincrement,
+      student_id  integer       not null,  -- klucz obcy
+      ocena       varchar(128)  default 'unknown' collate nocase,
+      kiedy       datetime,
+      termin      text          default 'pierwszy'
+    );
+    -- wyzwalacz automatycznie wstawiający datę w polu kiedy
+    create trigger wstaw_do_zaliczeń_kiedy after insert on zaliczenia
+    begin
+      update zaliczenia set kiedy = datetime('now') where rowid = new.rowid;
+    end;
+
 
 ### CSS 2.1: lang=css21
 
@@ -98,18 +98,18 @@ Meta-data keys are assumed to be case-insensitive.
       background-color: #D6D8FF;
       font: normal 14px/1.6 Arial, Helvetica, sans-serif;
     }
-    
+
     h1 {
       color: #54310E;
     }
-    
+
     p.author {
       color: #0007CC;
       font-style: italic;
       text-align: right;
       padding-right: 10em;
     }
-{:lang=css21}
+
 
 ### Javascript: lang=javascript
 
@@ -117,14 +117,14 @@ Meta-data keys are assumed to be case-insensitive.
       var str = document.getElementById("search_regex").value;
       var regex = eval("/" + str + "/g");
       var subst = document.getElementById("search_replacement").value;
-     
+
       replaceElement(document.body,regex,subst);
       //  alert("search=" + str + "\n" + "replacement=" + subst);
     }
 
     function replaceElement(e,r,s) {
-      if (e.nodeType == 3) { // TEXT_NODE  
-        e.nodeValue = e.nodeValue.replace(r,s); 
+      if (e.nodeType == 3) { // TEXT_NODE
+        e.nodeValue = e.nodeValue.replace(r,s);
         return;
       }
       for (var m=e.firstChild; m!=null; m=m.nextSibling)
@@ -139,7 +139,7 @@ Meta-data keys are assumed to be case-insensitive.
         }
       });
     });
-{:lang=javascript}
+
 
 
 
@@ -150,14 +150,14 @@ Meta-data keys are assumed to be case-insensitive.
             def hello
               "hello world"
             end
-            {:lang=ruby}
+
 
 *	tables (how to add id and class attribute?)
 
 		Col1 | Very very long head | Very very long head|
 		-----|:-------------------:|-------------------:|
 		cell | center-align        | right-align        |
-	{:markdown}
+
 
 	Col1 | Very very long head | Very very long head|
 	-----|:-------------------:|-------------------:|
@@ -168,7 +168,7 @@ Meta-data keys are assumed to be case-insensitive.
 		<div markdown="1">
 		   This is a `div` with Markdown **strong text**
 		</div>
-	{:html}
+
 
 	<div markdown="true">
 	   This is a `div` with Markdown **strong text**
@@ -177,14 +177,14 @@ Meta-data keys are assumed to be case-insensitive.
 *	header `id`
 
 		## Download    {#download}
-	{:markdown}
+
 
 	For example, [a link to the download](#download) header.
 
 *	header `class`
 
 		## Download    {.download}
-	{:markdown}
+
 
 	This adds attribute `class="download"` to header element
 
