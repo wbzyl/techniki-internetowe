@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href='stylesheets/application.css' type="text/css" media="screen" charset="utf-8">
-    <link href='stylesheets/screen.css' rel='stylesheet' type='text/css' />
-    <link href='stylesheets/application.css' rel='stylesheet' type='text/css' />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-    <script src='javascripts/jquery.js' type="text/javascript" charset="utf-8"></script>
-    <script src='javascripts/application.js' type="text/javascript" charset="utf-8"></script>
-    
+  <head>
+    <meta charset="utf-8">
+
+    <%= stylesheet_link_tag "/stylesheets/screen.css", "/stylesheets/coderay.css", "/stylesheets/application.css" %>
+
+    <script src='/javascripts/jquery.js' type="text/javascript" charset="utf-8"></script>
+    <script src='/javascripts/application.js' type="text/javascript" charset="utf-8"></script>
+
     <title>Techniki internetowe</title>
   </head>
   <body>
+    <h1 class="header"><%= @title %></h1>
     <%= yield %>
   </body>
+
 </html>
