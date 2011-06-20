@@ -1,5 +1,5 @@
 
-Maruku BUG: 
+Maruku BUG:
 
   w automatycznie generowanych `id` pomijane są polskie literki
 
@@ -8,3 +8,7 @@ Throbber:
   wygenerować w odpowiednich kolorach:
 
   Online Throbber Generator: http://www.ajaxload.info/
+
+Readme:
+
+  [strings in ruby 1.8](https://github.com/candlerb/string19/blob/master/string19.rb)

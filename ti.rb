@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
 require 'sinatra'
-require 'maruku'
+#require 'maruku'
+require 'rdiscount'
 require 'json'
 
 require 'sinatra/static_assets'
 #require 'sinatra/maruku'
+
+set :erubis, :pattern => '\{% %\}', :trim => true
+set :markdown, :layout => false
 
 before do
   # When served by Sinatra itself
@@ -107,7 +111,8 @@ end
 get '/:part/:section' do
   #STDERR.puts "part: #{params[:part]}, section: #{params[:section]}"
   @title = title(params[:part], params[:section])
-  markdown :"#{params[:part]}/#{params[:section]}", :layout_engine => :erubis
+  #markdown :"#{params[:part]}/#{params[:section]}"
+  erubis markdown(:"#{params[:part]}/#{params[:section]}")
 end
 
 # jeśli nie zostanie obsłużone przez routing

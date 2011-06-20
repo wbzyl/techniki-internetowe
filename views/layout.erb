@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <%= stylesheet_link_tag "/stylesheets/screen.css", "/stylesheets/coderay.css", "/stylesheets/application.css" %>
+    {%= stylesheet_link_tag "/stylesheets/screen.css", "/stylesheets/coderay.css", "/stylesheets/application.css" %}
 
     <script src='/javascripts/jquery.js' type="text/javascript" charset="utf-8"></script>
     <script src='/javascripts/application.js' type="text/javascript" charset="utf-8"></script>
@@ -11,8 +11,8 @@
   </head>
   <body>
     <h1 class="header">
-      <%= @title %>
+      {%= @title %}
     </h1>
-    <%= yield.force_encoding "UTF-8" %>
+    {%= yield %}
   </body>
 </html>

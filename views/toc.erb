@@ -1,25 +1,25 @@
-<h2>HTML 4.01, HTML 5</h2>
+<h1>HTML 4.01, HTML 5</h1>
 
 <ol>
-<% @html.each do |section| %>
-  <li><%= link_to_chapter section, 'html' %></li>
-<% end %>
+{% @html.each do |section| %}
+  <li>{%= link_to_chapter section, 'html' %}</li>
+{% end %}
 </ol>
 
 <h2>CSS 2.1</h2>
 
 <ol>
-<% @css.each do |section| %>
-  <li><%= link_to_chapter section, 'css' %></li>
-<% end %>
+{% @css.each do |section| %}
+  <li>{%= link_to_chapter section, 'css' %}</li>
+{% end %}
 </ol>
 
 <h2>Javascript</h2>
 
 <ol>
-<% @javascript.each do |section| %>
-  <li><%= link_to_chapter section, 'javascript' %></li>
-<% end %>
+{% @javascript.each do |section| %}
+  <li>{%= link_to_chapter section, 'javascript' %}</li>
+{% end %}
 </ol>
 
 
@@ -29,26 +29,26 @@
 <h2>Sinatra</h2>
 
 <ol>
-<% @sinatra.each do |section| %>
-  <li><%= link_to_chapter section, 'sinatra' %></li>
-<% end %>
+{% @sinatra.each do |section| %}
+  <li>{%= link_to_chapter section, 'sinatra' %}</li>
+{% end %}
 </ol>
 
 
 <h1 class="header">SQL Receptury</h1>
 
 <ol>
-<% @sql.each do |section| %>
-  <li><%= link_to_chapter section, 'sql' %></li>
-<% end %>
+{% @sql.each do |section| %}
+  <li>{%= link_to_chapter section, 'sql' %}</li>
+{% end %}
 </ol>
 
 
 <h1 class="header">Ty i Wydajność. Wydajność i Ty</h1>
 
 <ol>
-<% @performance.each do |section| %>
-  <li><%= link_to_chapter section, 'performance' %></li>
-<% end %>
+{% @performance.each do |section| %}
+  <li>{%= link_to_chapter section, 'performance' %}</li>
+{% end %}
 </ol>
 

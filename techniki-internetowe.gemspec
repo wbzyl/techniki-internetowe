@@ -16,10 +16,9 @@ Gem::Specification.new do |s|
   # If you have other dependencies, add them here
   # s.add_runtime_dependency 'rack'
   s.add_runtime_dependency 'sinatra'
-  s.add_runtime_dependency 'maruku'
+  s.add_runtime_dependency 'rdiscount'
   s.add_runtime_dependency 'erubis'
-  #s.add_runtime_dependency 'coderay'
-  #s.add_runtime_dependency 'rdiscount'
+  #s.add_runtime_dependency 'json'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
