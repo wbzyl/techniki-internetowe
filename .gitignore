@@ -1,4 +1,11 @@
+Gemfile.lock
+.bundle
 log
-tmp
+pkg
 *~
 .\#*
+\#*
+*.sqlite3
+lib/tmp/**/*
+Gemfile.lock
+vendor/cache
