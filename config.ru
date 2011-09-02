@@ -1,4 +1,4 @@
-require 'ti'
+require './ti'
 
 #gem 'rack-htmltidy'
 #require 'rack/htmltidy'

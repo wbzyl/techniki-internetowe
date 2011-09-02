@@ -30,7 +30,7 @@ helpers do
   def link_to_chapter(where, part)
     filename = where[0]
     title = where[1]
-    "<a href='#{part}/#{filename}'>#{title}</a>"
+    "<a href='#{request.env['SCRIPT_NAME']}/#{part}/#{filename}'>#{title}</a>"
   end
 
   def title(part, filename)
